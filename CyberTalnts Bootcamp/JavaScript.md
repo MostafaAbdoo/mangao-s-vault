@@ -1,0 +1,1 @@
+https://cybertalents.com/learn/introduction-to-cybersecurity-bootcamp-cohort-10/units/cybertalents-certified-cybersecurity-practitioner-v2/lessons/javascript-2

@@ -1,0 +1,12 @@
+{
+  "encore-settings@@encore-translucency": true,
+  "encore-settings@@colors": "encore-colors-colorful",
+  "encore-settings@@encore-translucency-background": "encore-bg-dawn",
+  "encore-settings@@theme-dark": "encore-theme-dark-atom",
+  "encore-settings@@encore-fancy-headers": true,
+  "encore-settings@@encore-mobile-oled-mode": true,
+  "encore-settings@@encore-mobile-translucency": true,
+  "encore-settings@@encore-coloured-tooltip": true,
+  "encore-settings@@encore-highlight-border": true,
+  "encore-settings@@encore-bright-accent": true
+}
