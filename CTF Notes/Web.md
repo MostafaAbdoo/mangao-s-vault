@@ -1,3 +1,4 @@
+## Gobuster
 used for **brute-forcing directories, files, DNS subdomains, and virtual hosts** on web servers.
 
 **Directory and File Brute-Forcing (`dir` mode):**
@@ -14,5 +15,6 @@ used for **brute-forcing directories, files, DNS subdomains, and virtual hosts**
 **S3 Bucket Enumeration (`s3` mode):**
 - Identifies publicly accessible AWS S3 buckets.
 - `gobuster s3 -b example`
-
-
+---------
+`ssh -l <urname> <website> -p <port>`
+`nc <website> <port>`

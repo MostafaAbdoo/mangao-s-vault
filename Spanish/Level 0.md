@@ -51,7 +51,8 @@ disculpe > excuse me
 yo hablo inglés > i speak english
 ```
 
-``` Spanish Basics - Lecture Three
+``` 
+# Spanish Basics - Lecture Three
 el passaporte > the passport
 mi taxi > my taxi
 el teléfono > the phone
@@ -78,4 +79,112 @@ el baño > the bathroom >  sounds like banio
 calle > street
 el supermercado
 cerrado > closed > sounds like serrado
+```
+
+```
+# Spanish Basics - Lecture Three
+el restaurante
+tres > three
+uno > one
+dos > two
+la mesa > the table
+las personas > the people
+para > for
+el queso > the cheese
+el sandwich
+de,con > with  >"un sandwich de carne con queso" >a meat sandwich with cheese
+la carne > the meat
+el pescado > the fish
+hamburguesa
+el café
+el azúcar > the sugar
+la taza > the cup
+el vaso > the glass
+el jugo > the juice
+la naranja > the orange
+sin > without
+el tomate 
+la sal > the salt
+la ensalada > the salad
+o > or
+la cuenta > the check
+quiero > want
+pagar > pay
+cansada > tired
+un restaurante espanol > a spanish restaurant
+```
+
+```
+# Spanish Basics - Lecture Four
+la casa > the house
+el padre > the father
+la madre > the mother
+el carro > the car
+elegante > elegant/stylish
+el tiene > he has > yo tengo > i have > tu tienes
+inteligente
+el perro > the dog
+el gato > the cat
+hermana > sister
+hermano > brother
+muy > very
+grande > big
+bonito > pretty
+la familia
+la abuela > the grandmother
+el esposo > the husband
+el abuelo > the grandfather
+la esposa > the wife
+el apartamento
+la bicicleta > the bicycle
+hijo > son
+hija > daughter
+y > and > sounds like 'e'
+yo vivo > i live
+interesante
+una cosa > one thing
+nieta > granddaughter
+al > to the
+vas/va/vo > go
+qué > what
+está bien > ok
+conocer > meet
+only > solo
+pero > but
+ahora > now
+bienvenida > welcome
+```
+
+```
+# Spanish Basics - Lecture Five
+la ropa > the clothes
+azul > blue
+verde > green
+la tienda > the store
+la camisa > the shirt
+una camisa azul > a blue shirt
+la chaqueta > the jackt
+yo quiero > i want
+gris > gray
+la camiseta > the t-shirt
+marron > brown
+el sombrero > the hat
+el vestido > the dress
+este > this
+comprar > buy
+rojo > red
+el abrigo > the coat
+la falda > the skirt
+ese > that
+caro > expensive
+barato > cheap
+differente
+el regalo > the gift
+la cartera > the purse
+el cinturon > the belt
+el reloj > the watch
+demasiade > too/too much
+comoda > comfortable
+favorita
+
 ```
