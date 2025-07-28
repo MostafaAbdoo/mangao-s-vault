@@ -290,6 +290,16 @@ Host: example.com
 ## Revisit this lap > Method-based access control can be circumvented
 
 But in short, if you gonna change request method (by clicking on change method option in burp) you need first to edit the session cookie to by the attacker's
+
+---
+## rs0n Video
+
+- make accounts using your bugcrowd account +demo1 , +demo2
+- get rid of headers until u reach the least amount of headers that still be able to identify you and your note to pointers section
+  ![[Pasted image 20250721115527.png]]
+- try to remove or edit the signature (salt) because maybe it's doesn't validate it
+- jwt.io > to see the URL encoding and to see which of the json parameters they are validating and compare with the two users
+- 
  
 -----
 ## Resources
