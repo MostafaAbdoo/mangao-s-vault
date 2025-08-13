@@ -1,3 +1,4 @@
+[[JavaScript Essentials]]
 >> only the things that i am afraid of forgetting about or didn't know about at all
 
 ![[Pasted image 20250727093611.png]]

@@ -19,6 +19,11 @@ used for **brute-forcing directories, files, DNS subdomains, and virtual hosts**
 - `ssh -l <urname> <website> -p <port>`
 - `nc <website> <port>`
 - `strings` command in Linux is used to extract printable (human-readable) strings from binary files. > `strings strings | grep "pico"`
+- This little bit of JavaScript is what is removing the red popup from the page. We can utilise another feature of debugger called **breakpoints**. These are points in the code that we can force the browser to stop processing the JavaScript and pause the current execution. If you click the line number that contains the above code, you'll notice it turns blue; you've now inserted a breakpoint on this line. Now try refreshing the page, and you'll notice the red box stays on the page instead of disappearing, and it contains a flag. (from debugger in the web browser)
+- also from debugger there's a button in the bottom called "{}" to beatify the js files
+- u can edit the code in the js and css files
+- `/.htaccess` > Apache. A common use for `.htaccess` is to restrict access to certain files or directories, or to redirect web traffic.
+- `/.DS_Store` > macOS. The `.DS_Store` file is a hidden file created by macOS to store custom attributes of its containing folder, such as icon positions and view options
 
 ---
 ## Hydra

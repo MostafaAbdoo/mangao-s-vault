@@ -364,3 +364,7 @@ damn’UnIUNIONon/**/sESELECTlect/**/1,2,load_file(‘/etc/passwd’),4||1=’1 
 `--drop-set-cookie` > to avoid sending cookie
 `--ignore-code <no of code>` > to avoid the error codes 
 
+---
+## MUST SEE
+- https://www.youtube.com/watch?v=0tqF7lx_dBg
+- 
