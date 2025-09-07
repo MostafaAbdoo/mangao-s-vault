@@ -25,6 +25,7 @@ https://github.com/Quitten/Autorize > read about itttt
 - Understand how they use ID's, hashes, and their API. Do this by looking at the API Documentations if they have one.
 - If endpoint has a name like /api/users/myinfo, check for /api/admins/myinfo
 - try copy attacker's session
+- Burp's Sequencer > checks randomness of a cookie or a token 
 
 ## Top IDOR parameters to look out for
 ```
