@@ -75,6 +75,9 @@ let's say we will try on the username.
 - make the username like : `"ma133' UNION SELECT username, passwird FROM Users;--"`
 - then try to access an end point where the application retrieve the username form it's database 
 # Arjun
+
+>~/.local/bin/arjun -u https://www.realestate.com.au/
+
 designed to discover **HTTP parameters**
 `arjun -u "http://example.com/page.php"`
 `arjun -u "http://example.com/page.php" -m POST` > **Specify HTTP method (GET/POST)**

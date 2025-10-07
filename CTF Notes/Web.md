@@ -74,3 +74,16 @@ tomcat9@basic2:/tmp$ ./linpeas.sh
 
 > on the Attackerbox linPEAS is located at /Tools/PEAS and you can locate it using
 `locate linPEAS`
+
+----
+`mget` = "multiple get", used in FTP clients to download multiple files.
+
+The author then **opened the file in a hex editor** (or with a command like `xxd`, `hexdump`, or `hexedit`).
+ Every file has a **header** at the beginning (first few bytes) called **magic numbers**.
+Magic numbers tell the operating system or software **what type of file it is**.
+For example:
+PNG files start with: ``89 50 4E 47 0D 0A 1A 0A``
+JPG files start with: `FF D8 FF`
+GIF files start with: `47 49 46 38`
+
+So, when he checked `Leave-me_alone.png`, the **magic number at the beginning of the file didn’t match PNG’s expected header**.

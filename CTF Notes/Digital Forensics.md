@@ -57,3 +57,40 @@ Steghide uses **least significant bit (LSB)** steganography to embed data into t
 `stegcracker image.jpg custom_wordlist.txt
 ![[Pasted image 20241225181635.png]]
 
+# xxd
+`xxd` is a **command-line tool** that creates a **hex dump** of a file (or input) and can also do the reverse (convert a hex dump back into binary).
+
+### 🔎 What it does:
+
+1. **Hex Dump**:
+    - It shows the raw bytes of a file in hexadecimal alongside their ASCII representation.
+    - Useful for inspecting binary files, images, executables, etc.
+Example:
+`xxd cutie.png | head`
+
+Output looks like:
+```
+```00000000: 8950 4e47 0d0a 1a0a 0000 000d 4948 4452  .PNG........IHDR
+00000010: 0000 01f4 0000 01f4 0806 0000 00de 8e2c  ...............,
+```
+
+Left side = offset (file position)
+Middle = hexadecimal bytes
+Right side = ASCII characters (if printable)
+
+2. **Reverse (hex → binary)**:
+You can take a hex dump and rebuild the original file.
+
+    xxd -r dump.hex output.bin
+
+💡 Why it’s useful in CTFs / pentesting:
+
+- Inspecting hidden data in files (e.g., when normal tools don’t show anomalies).
+- Looking for magic numbers (file signatures like 89 50 4E 47 for PNG, 50 4B 03 04 for ZIP).
+- Spotting embedded files inside other files (common in steganography).
+- Extracting or editing binary content at byte-level.
+
+---
+Tools like **`zip2john`**, `rar2john`, `ssh2john`, `pdf2john`, etc. exist because those file formats can be **password-protected/encrypted**, so you need to extract a hash for cracking.
+`zip2john secret.zip > zip_hash.txt`
+`john --wordlist=/usr/share/wordlists/rockyou.txt zip_hash.txt`
