@@ -135,6 +135,8 @@ Thus, knowledge of the secret signing key is required to compute a valid signatu
 - **KID header path traversal** : when generating a key replace `k` parameter with `AA==` (base64 of null byte) and then in the JWT replace the KID with `../../../dev/null` (keep trying cuz u don't know where u r in the system) and then sign and send
 - **KEY CONFUSION ATTACK** : if the `alg` is RSA try change it to `hmac` and generate a key
 - It's important to determine whether the token was generated server-side or client-side by examining the proxy's request history. Tokens first seen from the client side suggest the key might be exposed to client-side code, necessitating further investigation.
+  https://www.youtube.com/watch?v=d-X9CmpnJdE
+  https://www.youtube.com/watch?v=4roTwhGSWZY
 - Check if the token lasts more than 24h... maybe it never expires. If there is a "exp" filed, check if the server is correctly handling it.
 
 ---
