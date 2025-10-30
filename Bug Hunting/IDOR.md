@@ -1,5 +1,8 @@
 ![[Pasted image 20250704013750.png]]
 https://github.com/Quitten/Autorize > read about itttt
+
+https://www.unixtimestamp.com > use this with the python script in [[Insecure Randomness]] to guess the timestamps
+https://www.openwall.com/php_mt_seed/ > to predict seed, also in [[Insecure Randomness]]
 # IDOR Checklist
 
 - Check URL > Try edit your ID

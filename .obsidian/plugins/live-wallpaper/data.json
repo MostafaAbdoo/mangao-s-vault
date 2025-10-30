@@ -1,0 +1,19 @@
+{
+  "wallpaperPath": "plugins/live-wallpaper/wallpaper/652756.png",
+  "wallpaperType": "image",
+  "playbackSpeed": 1,
+  "opacity": 40,
+  "zIndex": 0,
+  "blurRadius": 8,
+  "brightness": 100,
+  "mobileBackgroundWidth": "100vw",
+  "mobileBackgroundHeight": "100vh",
+  "AdnvOpend": false,
+  "TextArenas": [
+    {
+      "target": "",
+      "attribute": ""
+    }
+  ],
+  "Color": "#000000"
+}
