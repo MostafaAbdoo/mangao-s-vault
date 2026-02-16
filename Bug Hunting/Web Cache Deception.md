@@ -81,5 +81,3 @@ Content-Type: text/html
 Cf-Cache-Status: HIT 
 ...
 ```
-
-If the `Cf-Cache-Status` response the request with `HIT` not `MISS` or `Error`. And then try to open the url in incognito mode

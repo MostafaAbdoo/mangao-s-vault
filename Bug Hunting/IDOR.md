@@ -3,6 +3,8 @@ https://github.com/Quitten/Autorize > read about itttt
 
 https://www.unixtimestamp.com > use this with the python script in [[Insecure Randomness]] to guess the timestamps
 https://www.openwall.com/php_mt_seed/ > to predict seed, also in [[Insecure Randomness]]
+
+https://www.uuidtools.com/decode > UUID Decoder
 # IDOR Checklist
 
 - Check URL > Try edit your ID

