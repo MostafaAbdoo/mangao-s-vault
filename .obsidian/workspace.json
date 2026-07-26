@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "dd156674bb4864dc",
+            "id": "567c83078d324b1e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bug Hunting/Web Cache Poisoning.md",
+                "file": "API Hacking/Bug Bounty Bootcamp Chapter.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Web Cache Poisoning"
+              "title": "Bug Bounty Bootcamp Chapter"
             }
           },
           {
-            "id": "371a6eafeb256832",
+            "id": "c3082aec2a861fe9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Web Application Hackers Handbook/Chapter 2 Core Defense Mechanisms.md",
+                "file": "Things to work on about AWS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2 Core Defense Mechanisms"
+              "title": "Things to work on about AWS"
             }
           }
         ]
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Directory Service",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bug Hunting/Web Cache Poisoning.md",
+                "file": "API Hacking/Bug Bounty Bootcamp Chapter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Web Cache Poisoning"
+              "title": "Backlinks for Bug Bounty Bootcamp Chapter"
             }
           },
           {
@@ -177,54 +177,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd156674bb4864dc",
+  "active": "567c83078d324b1e",
   "lastOpenFiles": [
-    "Bug Hunting/Web Cache Deception.md",
-    "Bug Hunting/Web Cache Poisoning.md",
-    "The Web Application Hackers Handbook/Chapter 2 Core Defense Mechanisms.md",
-    "THM rooms/Linux Privilege Escalation.md",
-    "The Web Application Hackers Handbook",
-    "Bug Hunting/IDOR.md",
-    "THM rooms/ffuf.md",
-    "THM rooms/Passive Reconnaissance.md",
-    "THM rooms/Active Reconnaissance.md",
-    "THM rooms/Content Discovery.md",
-    "Bug Hunting/SQL injection.md",
-    "THM rooms/Enumeration & Brute Force.md",
-    "THM rooms/Nmap Basic Port Scans.md",
-    "eJPTv2/Linux Privilege Escalation.md",
-    "eJPTv2/Host based attacks.md",
-    "eJPTv2/Reconnaissance.md",
-    "THM rooms/Shell Overview.md",
-    "THM rooms/What the Shell.md",
-    "THM rooms/Metasploit Meterpreter.md",
-    "THM rooms/Metasploit Introduction.md",
-    "THM rooms/Metasploit Exploitation.md",
-    "CyberTalnts Bootcamp/Hash Cracking.md",
+    "Web Hacking Arsenal/Chapter 1 - Introduction to Web and Browser.md",
+    "API Hacking/Bug Bounty Bootcamp Chapter.md",
+    "API Hacking",
+    "Spanish/A1.md",
+    "AWS Summery.md",
+    "AWS 1 Intro to Cloud Computing/AWS-10 Further AWS Services.md",
+    "AWS 1 Intro to Cloud Computing/AWS-08 Cloud Technology and Services.md",
+    "AWS 1 Intro to Cloud Computing/AWS-09 Billing, Pricing, and Support.md",
+    "Things to work on about AWS.md",
+    "AWS 1 Intro to Cloud Computing/AWS-05 Amazon S3.md",
+    "AWS 1 Intro to Cloud Computing/AWS-04 Virtual Private Cloud Fundamentals.md",
+    "AWS 1 Intro to Cloud Computing/AWS-03 Elastic Load Balancing & Auto-Scaling Groups.md",
+    "AWS 1 Intro to Cloud Computing/AWS-02 AWS Core Services [EC2 Instances].md",
+    "Pasted image 20260626030040.png",
+    "AWS 1 Intro to Cloud Computing/AWS-01 Cloud Computing Fundamentals and Concepts.md",
+    "AWS 1 Intro to Cloud Computing/AWS-06 Database Fundamentals.md",
+    "Pasted image 20260625155233.png",
+    "AWS 1 Intro to Cloud Computing/AWS-07 Security and Compliance.md",
+    "Pasted image 20260624185603.png",
+    "Pattern.md",
+    "Pasted image 20260620114350.png",
+    "Pasted image 20260620114328.png",
+    "Pasted image 20260620105920.png",
+    "Pasted image 20260620100254.png",
+    "Pasted image 20260620092329.png",
+    "Pasted image 20260620092208.png",
+    "Pasted image 20260620091541.png",
+    "Concepts.md",
+    "Archi.md",
+    "NLP.md",
+    "Graphics.md",
+    "ALGORITHM.md",
+    "Concepts.md",
     "Untitled.base",
-    "THM rooms/Protocols and Servers 2.md",
-    "THM rooms/Broken Access Control.md",
-    "CTF Notes/Digital Forensics.md",
-    "CTF Notes/Web.md",
-    "THM rooms/Protocols and Servers.md",
-    "Pasted image 20251026135826.png",
-    "1_qysX388cvvszR9UOW3PbmA.webp",
-    "Pasted_image_20240122152547.webp",
-    "Pasted image 20250928174453.png",
-    "image (935).png",
-    "Pasted image 20250922210230.png",
+    "Software.md",
+    "Archi/Archi.md",
+    "Bug Hunting/Tools.md",
+    "Archi",
+    "Bug Hunting/SQL injection.md",
+    "AWS 1 Intro to Cloud Computing",
+    "Web Hacking Arsenal",
+    "HTB Notes",
+    "The Web Application Hackers Handbook",
     "eJPTv2",
-    "Pasted image 20250824160522.png",
-    "895ba351ef24ef6495d290222e49470e.png",
-    "Pasted image 20250729122315.png",
-    "Pasted image 20250729121711.png",
     "THM rooms",
     "IBM SkillsBuild Cybersecurity",
-    "PortSwigger Labs",
-    "Bug Hunting",
-    "Cisco Ethical Hacker/Module 2 Planning and Scoping a Penetration Testing Assessment",
-    "Cisco Ethical Hacker/Module 1",
-    "Cisco Ethical Hacker",
     "Untitled.canvas"
   ]
 }

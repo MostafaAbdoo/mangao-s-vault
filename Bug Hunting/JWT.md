@@ -118,7 +118,7 @@ Thus, knowledge of the secret signing key is required to compute a valid signatu
   Now we can use the signature to forge the JWT by using jwt.io or in burp suite add-on
 - **JWK header injection**: using JWT Editor, instead of singing the JWT with the new key, press attack + embed JWK 
 - **JKU header injection**: in a hosted server put the key(copy as JWK) that you have generated using the JWT Editor in this format:
-  ``` json
+  ```json
    {
   "keys": [
     {
@@ -130,8 +130,9 @@ Thus, knowledge of the secret signing key is required to compute a valid signatu
     }
   ]
   }
-    ```
-  and then add a JKU header in JWT points to it and then sign the JWT with the new key and replace the KID header with the new one then send the request 
+  ```
+
+and then add a JKU header in JWT points to it and then sign the JWT with the new key and replace the KID header with the new one then send the request 
 - **KID header path traversal** : when generating a key replace `k` parameter with `AA==` (base64 of null byte) and then in the JWT replace the KID with `../../../dev/null` (keep trying cuz u don't know where u r in the system) and then sign and send
 - **KEY CONFUSION ATTACK** : if the `alg` is RSA try change it to `hmac` and generate a key
 - It's important to determine whether the token was generated server-side or client-side by examining the proxy's request history. Tokens first seen from the client side suggest the key might be exposed to client-side code, necessitating further investigation.

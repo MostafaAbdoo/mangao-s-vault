@@ -5,6 +5,9 @@ https://www.unixtimestamp.com > use this with the python script in [[Insecure Ra
 https://www.openwall.com/php_mt_seed/ > to predict seed, also in [[Insecure Randomness]]
 
 https://www.uuidtools.com/decode > UUID Decoder
+
+CAPTCHA response can be viewed in source code
+https://cirt.net/passwords/ > default credentials
 # IDOR Checklist
 
 - Check URL > Try edit your ID
