@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "API Hacking/Bug Bounty Bootcamp Chapter.md",
+                "file": "API Hacking/Broken Object Level Authorization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bug Bounty Bootcamp Chapter"
+              "title": "Broken Object Level Authorization"
+            }
+          },
+          {
+            "id": "977da9a84b801e10",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Meeting.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Meeting"
             }
           },
           {
@@ -27,15 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Things to work on about AWS.md",
+                "file": "Docker and Kubernetes/Docker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Things to work on about AWS"
+              "title": "Docker"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -55,7 +70,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -108,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "API Hacking/Bug Bounty Bootcamp Chapter.md",
+                "file": "Meeting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +135,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Bug Bounty Bootcamp Chapter"
+              "title": "Backlinks"
             }
           },
           {
@@ -177,19 +194,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "567c83078d324b1e",
+  "active": "977da9a84b801e10",
   "lastOpenFiles": [
-    "Web Hacking Arsenal/Chapter 1 - Introduction to Web and Browser.md",
+    "API Hacking/Broken Object Level Authorization.md",
+    "Meeting.md",
+    "Docker and Kubernetes/Docker.md",
+    "Pasted image 20260813231001.png",
+    "Pasted image 20260813230628.png",
+    "Pasted image 20260813225859.png",
+    "Pasted image 20260813225622.png",
+    "Pasted image 20260808080114.png",
     "API Hacking/Bug Bounty Bootcamp Chapter.md",
+    "Pasted image 20260729004548.png",
+    "AWS 1 Intro to Cloud Computing/AWS-04 Virtual Private Cloud Fundamentals.md",
+    "Docker and Kubernetes",
+    "HTB Notes/Introduction to Web Applications Notes.md",
+    "Pasted image 20260728114719.png",
+    "Things to work on about AWS.md",
+    "Web Hacking Arsenal/Chapter 1 - Introduction to Web and Browser.md",
     "API Hacking",
     "Spanish/A1.md",
     "AWS Summery.md",
     "AWS 1 Intro to Cloud Computing/AWS-10 Further AWS Services.md",
     "AWS 1 Intro to Cloud Computing/AWS-08 Cloud Technology and Services.md",
     "AWS 1 Intro to Cloud Computing/AWS-09 Billing, Pricing, and Support.md",
-    "Things to work on about AWS.md",
     "AWS 1 Intro to Cloud Computing/AWS-05 Amazon S3.md",
-    "AWS 1 Intro to Cloud Computing/AWS-04 Virtual Private Cloud Fundamentals.md",
     "AWS 1 Intro to Cloud Computing/AWS-03 Elastic Load Balancing & Auto-Scaling Groups.md",
     "AWS 1 Intro to Cloud Computing/AWS-02 AWS Core Services [EC2 Instances].md",
     "Pasted image 20260626030040.png",
@@ -199,13 +228,6 @@
     "AWS 1 Intro to Cloud Computing/AWS-07 Security and Compliance.md",
     "Pasted image 20260624185603.png",
     "Pattern.md",
-    "Pasted image 20260620114350.png",
-    "Pasted image 20260620114328.png",
-    "Pasted image 20260620105920.png",
-    "Pasted image 20260620100254.png",
-    "Pasted image 20260620092329.png",
-    "Pasted image 20260620092208.png",
-    "Pasted image 20260620091541.png",
     "Concepts.md",
     "Archi.md",
     "NLP.md",
@@ -213,18 +235,13 @@
     "ALGORITHM.md",
     "Concepts.md",
     "Untitled.base",
-    "Software.md",
-    "Archi/Archi.md",
-    "Bug Hunting/Tools.md",
     "Archi",
-    "Bug Hunting/SQL injection.md",
     "AWS 1 Intro to Cloud Computing",
     "Web Hacking Arsenal",
     "HTB Notes",
     "The Web Application Hackers Handbook",
     "eJPTv2",
     "THM rooms",
-    "IBM SkillsBuild Cybersecurity",
     "Untitled.canvas"
   ]
 }

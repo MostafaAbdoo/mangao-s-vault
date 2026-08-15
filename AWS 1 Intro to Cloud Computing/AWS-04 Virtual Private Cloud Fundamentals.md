@@ -60,3 +60,5 @@
     - Internet to subnets.
 - They also capture network information from AWS managed interfaces like Elastic Load Balancers, ElastiCache, RDS, and Aurora.
 - VPC Flow Logs data can be sent to S3, CloudWatch Logs, and Kinesis Data Firehose for analysis and storage.
+![[Pasted image 20260728114719.png]]
+Connection Steps: Private subnet -> NAT -> IGW -> Internet
