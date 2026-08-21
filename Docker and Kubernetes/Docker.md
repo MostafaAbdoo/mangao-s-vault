@@ -1,5 +1,6 @@
 # Containers
 Containers are like Virtual machines but without independent OS; they share the OS(kernel mode) of the physical server
+docker uses layers, every change makes a new layer
 
 A **Base Image** is a complete, pre-configured operating system snapshot designed to be copied or referenced to deploy new VMs rapidly.
 A **Base Disk** is the actual virtual hard drive file that contains the underlying operating system and core data (common between VMs).
@@ -28,7 +29,10 @@ docker exec $name <command>
 docker attach $name  -> view the container's live log output in real time and can send keyboard inputs to its main running process.
 -p $HostPort : $ContainerPort    -> port mapping to accesss them externaly
 -> or u can access it on the same host using internal IP *inspect command to get it*
--v $HostVloume : $ContainerVolume  -> volume mapping to store data
+-v $HostVloumeName : $ContainerVolume  -> volume mapping to store data(volume mounting)
+-v $PATH : $ContainerVolume  -> to use an existing volume (bind mounting)
+the modern way using this command:
+docker run / --mount type=$TYPE, source=$SOURCE, target=$TARGET $IMAGENAME
 
 ```
 notice when u `exit` it exits the whole container because container = application + kernel = application 
@@ -42,7 +46,22 @@ so when u write exit rn it will exit python3 env not the whole container cuz u m
 ```
 ![[Pasted image 20260808080114.png]]
 > docker listens on HTTP - 2375
+> docker daemon manages objects, CLI uses Docker API to talk to it
 
+Docker uses namespaces to separate processes, for a process to run its ID should be 1, so we use namespaces to make every process(container)'s ID = 1 in it's own environment but they are all running on the same host
+we can use CGROUPS to limit and control resources the container uses
+# Docker Storage
+```
+Docker filesystem
+/var/lib/docker
+   -aufs
+   -containers
+   -images
+   -volumes
+```
+**Copy-on-Write** is when u want to edit a file that is built in within the image, docker creates a copy of the file so that the changes remain container-based
+
+---
 u pull from `hub.docker.com` which is a big registry contains repos for every type
 every repo has multiple versions of the same image
 image name = `repo : tag`    ex: kali:3.5.2
@@ -126,3 +145,26 @@ but u need to add `depends_on` if a service must go up before another
 u can also add environment section in these versions to add environment variables
 ![[Pasted image 20260813231001.png]]
 and that's if u wanna make two separate networks 
+# Docker Network
+Docker creates 3 networks by default
+## Bridge
+it is the network the every container attach to by default
+## Host
+u can attach containers to this network which is your host's network. When assign it to a port it will directly be assigned it to the host's port without the need to map it, u won't be able to assign the same port to another container cuz they all share the same ports
+## None 
+it's an isolated network with no access to any other network or any other container
+
+`docker network create` -> to create a network
+`docker network inspect $NAME`
+
+![[Pasted image 20260818201844.png]]
+# Container Orchestration
+automated software management of the lifecycle, deployment, scaling, networking, and availability of containerized applications across a cluster of servers.
+While running a handful of Docker containers on a single machine can be managed manually, managing hundreds or thousands of microservices across distributed cloud environments requires an automated system to keep applications running smoothly without human intervention.
+- Automated Deployment & Scheduling
+- Self-Healing & Fault Tolerance
+- Auto-Scaling
+- Load Balancing & Service Discovery
+- Secrets & Config Management
+- **Rollouts & Rollbacks:** Manages zero-downtime updates (e.g., rolling updates) by deploying new versions incrementally and reverting automatically if health checks fail.
+-> Kubernetes is used to implement Container Orchestration
