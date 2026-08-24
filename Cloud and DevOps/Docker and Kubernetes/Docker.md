@@ -1,4 +1,5 @@
 # Containers
+Container: it's an isolated process with controlled access to system resources
 Containers are like Virtual machines but without independent OS; they share the OS(kernel mode) of the physical server
 docker uses layers, every change makes a new layer
 
@@ -49,6 +50,9 @@ so when u write exit rn it will exit python3 env not the whole container cuz u m
 > docker daemon manages objects, CLI uses Docker API to talk to it
 
 Docker uses namespaces to separate processes, for a process to run its ID should be 1, so we use namespaces to make every process(container)'s ID = 1 in it's own environment but they are all running on the same host
+> namespaces isolate what process can see
+> CGROUPS limit what process can use
+
 we can use CGROUPS to limit and control resources the container uses
 # Docker Storage
 ```
@@ -75,6 +79,7 @@ A *Manifest List* is a higher-level JSON document that groups several individual
 
 install docker extension on VSCODE
 ## Build your own image
+https://dev.to/prodevopsguytech/writing-a-dockerfile-beginners-to-advanced-31ie
 make a docker file and name it Dockerfile and write the following inside it: (i think this is an example, each app has other requirements and u have to write them instead)
 ```dockerfile
 Dockerfile
