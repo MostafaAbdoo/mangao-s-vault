@@ -88,3 +88,5 @@ A state in which the system spends most of its time swapping pieces rather than 
 ![[Pasted image 20261018203202.png|535]]
 ![[Pasted image 20261018203339.png|533]]
 or u can just concatenate, if page size = 2^k then offset is limited to k
+- *MMU* is responsible for adding and concatenation
+- We need 1 bits in virtual paging and segmentation: P -> present in RAM or not, M -> modified or not 
