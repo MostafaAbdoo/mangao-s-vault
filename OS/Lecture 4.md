@@ -68,6 +68,8 @@ in 6-level paging? -> 7
 - we will use Associative Mapping to scan every entry at the same time in O(1) unlike page table that uses Direct Mapping which is also O(1)
 - anther difference between Direct Mapping and Associative Mapping is that the second one implemented using Hardware components (circuits) as we said it's managed by MMU but Direct Mapping is done using code 
 ![[Pasted image 20261026185258.png]]
+- EAT = Hit Rate x Hit Time + Miss Rate x Miss Time
+- EAT = Hit Time + Miss Rate x Miss Penalty
 we will use cache memory to reduce the time for fetching the content
 
 ---

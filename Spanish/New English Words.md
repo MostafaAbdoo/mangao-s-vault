@@ -16,3 +16,4 @@
 `fragile` > قابل للكسر/ضعيف
 `exile` > المنفى
 `talon` > مخلب
+**Vindication** is the act of proving that someone or something is right, justified, or free from blame after a period of doubt, criticism, or accusation.
