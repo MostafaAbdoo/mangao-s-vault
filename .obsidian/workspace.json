@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -123,7 +123,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299
+    "width": 200
   },
   "right": {
     "id": "999a0f706ab86c32",
@@ -139,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OS/Lecture 6.md",
+                "file": "DSP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -208,22 +208,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a53ae57f9ead5943",
+  "active": "977da9a84b801e10",
   "lastOpenFiles": [
+    "Pasted image 20261106205828.png",
+    "Pasted image 20261106200552.png",
+    "Pasted image 20261106191213.png",
+    "Pasted image 20261106191151.png",
+    "Pasted image 20261106141117.png",
+    "OS/Lecture 6.md",
     "Pasted image 20261104221611.png",
     "Pasted image 20260912052638.png",
     "Pasted image 20260912071503.png",
     "Pasted image 20260914043515.png",
     "Pasted image 20260915063240.png",
     "Pasted image 20260915065213.png",
-    "Pasted image 20260915071921.png",
-    "Pasted image 20260915071915.png",
-    "Pasted image 20260921022129.png",
-    "Pasted image 20260921022154.png",
-    "Pasted image 20260921022518.png",
     "OS/Lecture 4.md",
     "RAG/mini-rag notes.md",
-    "OS/Lecture 6.md",
     "OS/Lecture 5.md",
     "OS/Lecture 3.md",
     "Spanish/New English Words.md",

@@ -15,22 +15,39 @@ $$r[n] = \begin{cases} n, & n \ge 0 \\ 0, & n < 0 \end{cases}$$
 - $\sin^2 x = \frac{1 - \cos(2x)}{2}$
 - $\cos^2 x = \frac{1 + \cos(2x)}{2}$
 - $\sin(2x) = 2\sin x \cos x$
+- $\sin(\theta + 2\pi) = +\sin \theta$
+- $\cos(\theta + 2\pi) = +\cos \theta$
+- $e^{ix} = \cos x + i \sin x$
+- $e^{-ix} = \cos(-x) + i \sin(-x) = \cos x - i \sin x$
+- $\cos x = \operatorname{Re}\{e^{ix}\} = \frac{e^{ix} + e^{-ix}}{2}$
+- $\sin x = \operatorname{Im}\{e^{ix}\} = \frac{e^{ix} - e^{-ix}}{2i}$
+- $\cos(A)\sin(B) = \frac{1}{2} \left[ \sin(B + A) + \sin(B - A) \right]$
 ![[Pasted image 20261030195305.png]]
 ![[Pasted image 20261030200214.png]]
 
+Scaling:- 
+Case 1: If a > 1, the signal z(t) is a compressed version of x(t).
+Case 2: If a < 1, the signal z(t) is an expanded (stretched) version of x(t).
+
+• **Sampling** is used to convert a continuous-time signal into a discrete-time signal. 
+• **Quantization** is used to convert a discrete-time signal into a digital signal.
+The quantization errors can be reduced by increasing k (number of bits, or
+levels)
 $$F_s = \frac{1}{T_s}$$
 $$|\Delta_{error}| \le \frac{\Delta}{2}$$
 $$y(t) = A \sin(2\pi F t + \theta) + D$$
 $$x(t) = A \cos(\omega t + \theta)$$
 $$f = \frac{F}{F_s}$$
+Normalized Frequency only in discrete signals
 $$\omega_0 = 2\pi f = \frac{2\pi F}{F_s}$$
 **Discrete Angular Frequency**: $\omega_0$
 
 $$F_s \ge 2 \cdot F_{\max}$$
 $$F_{\text{fold}} = \frac{F_s}{2}$$
+Any analog signal has to be a periodic signal
 ![[Pasted image 20261030210519.png]]
 ![[Pasted image 20261030211825.png]]
-![[Pasted image 20261031064808.png]]
+
 ![[Pasted image 20261031064947.png]]
 ![[Pasted image 20261031072703.png]]
 ![[Pasted image 20261031072814.png]]
@@ -39,17 +56,18 @@ $$F_{\text{fold}} = \frac{F_s}{2}$$
 for continues it's always periodic
 
 ---
-- **Static (Memoryless) System:** The output at any given time depends _only_ on the input at that exact same time instant (e.g., $y[n] = 2x[n]$). It has no memory of past inputs or anticipation of future ones.
-- **Dynamic (Memory) System:** The output depends on past inputs, current inputs, and/or future inputs (e.g., $y[n] = x[n] + x[n-1]$). It requires memory elements (like delay units) to store past values.
-- **Causal System:** The output at the current time depends _only_ on the present and/or past inputs. It never depends on future inputs
-- **Non-Causal System:** The output depends on future input values
-- **Time-Invariant System:** A time shift in the input signal results in an identical time shift in the output signal. If an input $x[n]$ produces $y[n]$, then a delayed input $x[n-k]$ will produce the exact same output delayed by $k$, i.e., $y[n-k]$. The system's characteristics do not change over time
-- **Time-Variant System:** The system's behavior or parameters change with time. A delay in the input does _not_ result in a simple identical delay in the output (e.g., $y[n] = n \cdot x[n]$).
-- **Linear System:** Satisfies both the **superposition principle** (additivity) and the **scaling property** (homogeneity). If input $x_1[n]$ gives output $y_1[n]$ and $x_2[n]$ gives $y_2[n]$, then a linear combination of inputs $a x_1[n] + b x_2[n]$ will produce the exact same combination of outputs $a y_1[n] + b y_2[n]$.
-- **Nonlinear System:** Does not obey the superposition or scaling rules (e.g., systems involving squaring $y[n] = x^2[n]$, products, or constants like $y[n] = x[n] + 5$). Doubling the input does not necessarily double the output.
+## Direct Method
+𝑘𝑚𝑖𝑛 = 𝑥𝑚𝑖𝑛 + ℎ𝑚𝑖𝑛 , 𝑘𝑚𝑎𝑥 = 𝑥𝑚𝑎𝑥 + ℎ𝑚𝑎𝑥 
+$y[n] = \sum_{k=-\infty}^{\infty} x[k] \cdot h[n - k]$                  n -> 𝑘𝑚𝑖𝑛 to 𝑘𝑚𝑎𝑥
+## Table Method
+![[Pasted image 20261106191151.png]]
+## Array Method
+![[Pasted image 20261106191213.png]]
 
 
-any scaling is time variant
-Nonlinear System (due to a constant offset)
-![[Pasted image 20261031080459.png]]
-![[Pasted image 20261031080710.png]]
+---
+𝑐𝑜𝑚𝑝𝑙𝑒𝑥 𝑛𝑢𝑚𝑏𝑒𝑟 = 𝑧 = cos 𝜃 + 𝑖 sin 𝜃, Exponential Signals are complex
+𝑎𝑠𝑠𝑢𝑚𝑖𝑛𝑔 𝑟 = 1
+ note: 𝑑/𝑑𝑥 𝑒2𝑥 = $2𝑒^2𝑥$   
+ ![[Pasted image 20261106200552.png]]
+ ![[Pasted image 20261106205828.png]]
