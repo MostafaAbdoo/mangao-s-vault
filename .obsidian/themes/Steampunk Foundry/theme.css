@@ -1,0 +1,1935 @@
+/* ==========================================================================
+   Steampunk Foundry v1.4 — Obsidian theme（蒸氣朋克：管道 / 齒輪 / 機械錶）
+   安裝：整個資料夾放到  <vault>/.obsidian/themes/Steampunk Foundry/
+   ========================================================================== */
+
+/* @settings
+
+name: Steampunk Foundry
+id: steampunk-foundry
+settings:
+- id: sp-warn
+  title: ⚠ Performance warning (may slow down large notes)
+  title.zh-TW: ⚠ 效能提示（較可能拖慢大型筆記）
+  title.zh-tw: ⚠ 效能提示（較可能拖慢大型筆記）
+  title.zh: ⚠ 性能提示（可能拖慢大型笔记）
+  title.zh-cn: ⚠ 性能提示（可能拖慢大型笔记）
+  title.ja: ⚠ パフォーマンスの注意（大きなノートで重くなることがあります）
+  description: 'Heavy: metallic shine, steam haze. Medium: aurora / nebula / meteors / wonders, scroll-linked gear. Light: sun and moon sky, background gears. For large notes, set the Performance preset to Power saving.'
+  description.zh-TW: 很耗：金屬閃光、蒸氣霧氣。中等：極光/星雲/流星/奇觀、捲動連動齒輪。輕微：日月天空、背景齒輪。大型筆記請把「效能預設」選成省電。
+  description.zh-tw: 很耗：金屬閃光、蒸氣霧氣。中等：極光/星雲/流星/奇觀、捲動連動齒輪。輕微：日月天空、背景齒輪。大型筆記請把「效能預設」選成省電。
+  description.zh: 很耗：金属闪光、蒸汽雾气。中等：极光/星云/流星/奇观、滚动联动齿轮。轻微：日月天空、背景齿轮。大型笔记请把「性能预设」选成省电。
+  description.zh-cn: 很耗：金属闪光、蒸汽雾气。中等：极光/星云/流星/奇观、滚动联动齿轮。轻微：日月天空、背景齿轮。大型笔记请把「性能预设」选成省电。
+  description.ja: 重い：金属の輝き、蒸気のもや。中程度：オーロラ／星雲／流星／奇観、スクロール連動の歯車。軽い：日月の空、背景の歯車。大きなノートでは「パフォーマンスプリセット」を省電力にしてください。
+  type: info-text
+- id: sp-h-perf
+  title: Performance and update rate
+  title.zh-TW: 效能與更新頻率
+  title.zh-tw: 效能與更新頻率
+  title.zh: 性能与更新频率
+  title.zh-cn: 性能与更新频率
+  title.ja: パフォーマンスと更新頻度
+  type: heading
+  level: 1
+  collapsed: false
+- id: sp-perf
+  title: Performance preset
+  title.zh-TW: 效能預設
+  title.zh-tw: 效能預設
+  title.zh: 性能预设
+  title.zh-cn: 性能预设
+  title.ja: パフォーマンスプリセット
+  description: High quality = everything on. Balanced = celestial bodies 30 fps; steam, metallic shine and scroll-linked gear off. Power saving = also turns off full-window particles; celestial bodies 10 fps.
+  description.zh-TW: 高畫質＝全開。平衡＝天體 30fps，關閉蒸氣 / 金屬閃光 / 捲動齒輪。省電＝再關閉整窗粒子，天體降為 10fps。
+  description.zh-tw: 高畫質＝全開。平衡＝天體 30fps，關閉蒸氣 / 金屬閃光 / 捲動齒輪。省電＝再關閉整窗粒子，天體降為 10fps。
+  description.zh: 高画质＝全开。平衡＝天体 30fps，关闭蒸汽 / 金属闪光 / 滚动联动齿轮。省电＝再关闭整窗粒子，天体降为 10fps。
+  description.zh-cn: 高画质＝全开。平衡＝天体 30fps，关闭蒸汽 / 金属闪光 / 滚动联动齿轮。省电＝再关闭整窗粒子，天体降为 10fps。
+  description.ja: 高画質＝すべてオン。バランス＝天体 30fps、蒸気・金属の輝き・スクロール連動の歯車をオフ。省電力＝さらにウィンドウ全体の粒子をオフ、天体 10fps。
+  type: class-select
+  allowEmpty: false
+  default: sp-perf-high
+  options:
+  - label: High quality 高畫質
+    value: sp-perf-high
+  - label: Balanced 平衡
+    value: sp-perf-balanced
+  - label: Power saving 省電
+    value: sp-perf-low
+- id: sp-fps
+  title: Celestial body (sun / moon) frame rate
+  title.zh-TW: 天體（太陽/月亮）幀率
+  title.zh-tw: 天體（太陽/月亮）幀率
+  title.zh: 天体（太阳/月亮）帧率
+  title.zh-cn: 天体（太阳/月亮）帧率
+  title.ja: 天体（太陽／月）のフレームレート
+  description: Based on a 90-second day; lower saves power
+  description.zh-TW: 以預設 90 秒一天計算；越低越省電
+  description.zh-tw: 以預設 90 秒一天計算；越低越省電
+  description.zh: 以默认 90 秒一天计算；越低越省电
+  description.zh-cn: 以默认 90 秒一天计算；越低越省电
+  description.ja: 1日90秒の場合の値です。低いほど省電力
+  type: class-select
+  allowEmpty: false
+  default: sp-fps-60
+  options:
+  - label: 60 fps
+    value: sp-fps-60
+  - label: 30 fps
+    value: sp-fps-30
+  - label: 15 fps
+    value: sp-fps-15
+  - label: 10 fps
+    value: sp-fps-10
+  - label: 5 fps
+    value: sp-fps-5
+- id: sp-rate
+  title: Effect update rate (meteors, lightning, wonders)
+  title.zh-TW: 特效更新率（流星、閃電、奇觀）
+  title.zh-tw: 特效更新率（流星、閃電、奇觀）
+  title.zh: 特效更新率（流星、闪电、奇观）
+  title.zh-cn: 特效更新率（流星、闪电、奇观）
+  title.ja: エフェクトの更新頻度（流星・稲妻・奇観）
+  description: High ≈ 12 updates per second.
+  description.zh-TW: 高＝約每秒 12 次。
+  description.zh-tw: 高＝約每秒 12 次。
+  description.zh: 高＝约每秒 12 次。
+  description.zh-cn: 高＝约每秒 12 次。
+  description.ja: 高＝毎秒約12回。
+  type: class-select
+  allowEmpty: false
+  default: sp-rate-high
+  options:
+  - label: High 高
+    value: sp-rate-high
+  - label: Medium 中
+    value: sp-rate-mid
+  - label: Low 低
+    value: sp-rate-low
+- id: sp-h-motion
+  title: Master motion switch and effect switches
+  title.zh-TW: 動態總開關與效果開關
+  title.zh-tw: 動態總開關與效果開關
+  title.zh: 动态总开关与效果开关
+  title.zh-cn: 动态总开关与效果开关
+  title.ja: 動きのマスタースイッチと効果スイッチ
+  type: heading
+  level: 1
+  collapsed: false
+- id: sp-motion-note
+  title: Everything is off by default
+  title.zh-TW: 預設全部關閉
+  title.zh-tw: 預設全部關閉
+  title.zh: 默认全部关闭
+  title.zh-cn: 默认全部关闭
+  title.ja: 初期状態ではすべてオフ
+  description: Turn on each item you want. Effects that are off are not loaded, so Obsidian also starts faster.
+  description.zh-TW: 以下每一項都需要自己開啟才會執行；沒開的效果不會載入，Obsidian 啟動也比較快。
+  description.zh-tw: 以下每一項都需要自己開啟才會執行；沒開的效果不會載入，Obsidian 啟動也比較快。
+  description.zh: 以下每一项都需要自己开启才会执行；没开的效果不会加载，Obsidian 启动也比较快。
+  description.zh-cn: 以下每一项都需要自己开启才会执行；没开的效果不会加载，Obsidian 启动也比较快。
+  description.ja: 以下の項目は、オンにしたものだけが実行されます。オフの効果は読み込まれないため、Obsidian の起動も速くなります。
+  type: info-text
+- id: sp-motion
+  title: Background motion (sky cycle, gears / steam / metallic shine)
+  title.zh-TW: 開啟背景動態（天空日夜流轉、齒輪 / 蒸汽 / 金屬閃光運轉）
+  title.zh-tw: 開啟背景動態（天空日夜流轉、齒輪 / 蒸汽 / 金屬閃光運轉）
+  title.zh: 开启背景动态（天空日夜流转、齿轮 / 蒸汽 / 金属闪光运转）
+  title.zh-cn: 开启背景动态（天空日夜流转、齿轮 / 蒸汽 / 金属闪光运转）
+  title.ja: 背景の動きをオン（空の昼夜、歯車・蒸気・金属の輝き）
+  type: class-toggle
+- id: sp-on-sky
+  title: Day-and-night sky on the tab bar and breadcrumb bar
+  title.zh-TW: 開啟分頁列與路徑列的日月星空
+  title.zh-tw: 開啟分頁列與路徑列的日月星空
+  title.zh: 开启标签栏与路径栏的日月星空
+  title.zh-cn: 开启标签栏与路径栏的日月星空
+  title.ja: タブバーとパンくずバーの昼夜の空をオン
+  type: class-toggle
+- id: sp-sky-extend
+  title: Extend sky to the breadcrumb bar (off = tab bar only)
+  title.zh-TW: 天空延伸到路徑列（關＝只畫在分頁列）
+  title.zh-tw: 天空延伸到路徑列（關＝只畫在分頁列）
+  title.zh: 天空延伸到路径栏（关＝只画在标签栏）
+  title.zh-cn: 天空延伸到路径栏（关＝只画在标签栏）
+  title.ja: 空をパンくずバーまで広げる（オフ＝タブバーのみ）
+  type: class-toggle
+- id: sp-on-gears
+  title: Background gears (top-right meshing gears, sidebar gears)
+  title.zh-TW: 開啟背景齒輪（右上咬合齒輪、側欄齒輪）
+  title.zh-tw: 開啟背景齒輪（右上咬合齒輪、側欄齒輪）
+  title.zh: 开启背景齿轮（右上啮合齿轮、侧栏齿轮）
+  title.zh-cn: 开启背景齿轮（右上啮合齿轮、侧栏齿轮）
+  title.ja: 背景の歯車をオン（右上のかみ合う歯車、サイドバーの歯車）
+  type: class-toggle
+- id: sp-on-scrollgear
+  title: Scroll-linked gear
+  title.zh-TW: 開啟捲動連動的齒輪
+  title.zh-tw: 開啟捲動連動的齒輪
+  title.zh: 开启滚动联动的齿轮
+  title.zh-cn: 开启滚动联动的齿轮
+  title.ja: スクロール連動の歯車をオン
+  type: class-toggle
+- id: sp-on-parchment
+  title: Parchment texture background
+  title.zh-TW: 開啟羊皮紙質感背景
+  title.zh-tw: 開啟羊皮紙質感背景
+  title.zh: 开启羊皮纸质感背景
+  title.zh-cn: 开启羊皮纸质感背景
+  title.ja: 羊皮紙風の背景をオン
+  type: class-toggle
+- id: sp-on-steam
+  title: Steam haze
+  title.zh-TW: 開啟蒸氣霧氣
+  title.zh-tw: 開啟蒸氣霧氣
+  title.zh: 开启蒸汽雾气
+  title.zh-cn: 开启蒸汽雾气
+  title.ja: 蒸気のもやをオン
+  type: class-toggle
+- id: sp-on-frame
+  title: Riveted frame
+  title.zh-TW: 開啟鉚釘外框
+  title.zh-tw: 開啟鉚釘外框
+  title.zh: 开启铆钉外框
+  title.zh-cn: 开启铆钉外框
+  title.ja: リベット付きの枠をオン
+  type: class-toggle
+- id: sp-on-shine
+  title: Metallic shine
+  title.zh-TW: 開啟金屬閃光
+  title.zh-tw: 開啟金屬閃光
+  title.zh: 开启金属闪光
+  title.zh-cn: 开启金属闪光
+  title.ja: 金属の輝きをオン
+  type: class-toggle
+- id: sp-on-widgets
+  title: Brass style for buttons / tags / search box
+  title.zh-TW: 開啟按鈕 / 標籤 / 搜尋框的黃銅樣式
+  title.zh-tw: 開啟按鈕 / 標籤 / 搜尋框的黃銅樣式
+  title.zh: 开启按钮 / 标签 / 搜索框的黄铜样式
+  title.zh-cn: 开启按钮 / 标签 / 搜索框的黄铜样式
+  title.ja: ボタン／タグ／検索ボックスの真鍮スタイルをオン
+  type: class-toggle
+- id: sp-on-nameplate
+  title: File name plate style
+  title.zh-TW: 開啟檔名銘牌樣式
+  title.zh-tw: 開啟檔名銘牌樣式
+  title.zh: 开启文件名铭牌样式
+  title.zh-cn: 开启文件名铭牌样式
+  title.ja: ファイル名プレートのスタイルをオン
+  type: class-toggle
+- id: sp-on-fileicons
+  title: Folder and file icons (keep off if you use another icon plugin)
+  title.zh-TW: 開啟文件夾與文件圖標（用其他圖標插件時請保持關閉）
+  title.zh-tw: 開啟文件夾與文件圖標（用其他圖標插件時請保持關閉）
+  title.zh: 开启文件夹与文件图标（使用其他图标插件时请保持关闭）
+  title.zh-cn: 开启文件夹与文件图标（使用其他图标插件时请保持关闭）
+  title.ja: フォルダとファイルのアイコンをオン（他のアイコン系プラグイン使用時はオフのまま）
+  type: class-toggle
+- id: sp-on-cogarrow
+  title: Gear expand arrows (off = original arrows)
+  title.zh-TW: 開啟齒輪展開符號（關＝原本箭頭）
+  title.zh-tw: 開啟齒輪展開符號（關＝原本箭頭）
+  title.zh: 开启齿轮展开符号（关＝原本箭头）
+  title.zh-cn: 开启齿轮展开符号（关＝原本箭头）
+  title.ja: 歯車の展開記号をオン（オフ＝元の矢印）
+  type: class-toggle
+- id: sp-on-guides
+  title: Railway indent guides in the file list
+  title.zh-TW: 開啟檔案列表的鐵軌縮排線
+  title.zh-tw: 開啟檔案列表的鐵軌縮排線
+  title.zh: 开启文件列表的铁轨缩进线
+  title.zh-cn: 开启文件列表的铁轨缩进线
+  title.ja: ファイル一覧の線路風インデント線をオン
+  type: class-toggle
+- id: sp-h-numbers
+  title: Adjustments
+  title.zh-TW: 數值調整
+  title.zh-tw: 數值調整
+  title.zh: 数值调整
+  title.zh-cn: 数值调整
+  title.ja: 数値の調整
+  type: heading
+  level: 1
+  collapsed: true
+- id: sp-on-linewidth
+  title: Custom content width (off = Obsidian's own width)
+  title.zh-TW: 開啟自訂內容欄寬度（關＝使用 Obsidian 原本的欄寬）
+  title.zh-tw: 開啟自訂內容欄寬度（關＝使用 Obsidian 原本的欄寬）
+  title.zh: 开启自定义内容栏宽度（关＝使用 Obsidian 原本的栏宽）
+  title.zh-cn: 开启自定义内容栏宽度（关＝使用 Obsidian 原本的栏宽）
+  title.ja: カスタムのコンテンツ幅をオン（オフ＝Obsidian 本来の幅）
+  type: class-toggle
+- id: sp-line-width
+  title: Content width (editor / reading view)
+  title.zh-TW: 內容欄寬度（編輯器 / 閱讀模式）
+  title.zh-tw: 內容欄寬度（編輯器 / 閱讀模式）
+  title.zh: 内容栏宽度（编辑器 / 阅读模式）
+  title.zh-cn: 内容栏宽度（编辑器 / 阅读模式）
+  title.ja: コンテンツ幅（エディター／閲覧モード）
+  type: variable-number-slider
+  default: 60
+  min: 40
+  max: 100
+  step: 5
+  format: rem
+- id: sp-day-length
+  title: Length of one day-night cycle (seconds)
+  title.zh-TW: 日夜循環一天的長度（秒）
+  title.zh-tw: 日夜循環一天的長度（秒）
+  title.zh: 日夜循环一天的长度（秒）
+  title.zh-cn: 日夜循环一天的长度（秒）
+  title.ja: 昼夜サイクル1日の長さ（秒）
+  type: variable-number-slider
+  default: 90
+  min: 10
+  max: 600
+  step: 5
+  format: s
+- id: sp-sky-dim
+  title: Sky dimming (raise it if tab text is hard to read)
+  title.zh-TW: 天空壓暗程度（分頁文字看不清楚就調高）
+  title.zh-tw: 天空壓暗程度（分頁文字看不清楚就調高）
+  title.zh: 天空压暗程度（标签文字看不清楚就调高）
+  title.zh-cn: 天空压暗程度（标签文字看不清楚就调高）
+  title.ja: 空の暗さ（タブの文字が読みにくいときは上げてください）
+  type: variable-number-slider
+  default: 0.45
+  min: 0
+  max: 1
+  step: 0.05
+- id: sp-watermark-opacity
+  title: Background gear opacity
+  title.zh-TW: 背景齒輪濃度
+  title.zh-tw: 背景齒輪濃度
+  title.zh: 背景齿轮浓度
+  title.zh-cn: 背景齿轮浓度
+  title.ja: 背景の歯車の濃さ
+  type: variable-number-slider
+  default: 0.08
+  min: 0
+  max: 0.3
+  step: 0.01
+- id: sp-steam-opacity
+  title: Steam haze opacity
+  title.zh-TW: 蒸氣霧氣濃度
+  title.zh-tw: 蒸氣霧氣濃度
+  title.zh: 蒸汽雾气浓度
+  title.zh-cn: 蒸汽雾气浓度
+  title.ja: 蒸気のもやの濃さ
+  type: variable-number-slider
+  default: 0.8
+  min: 0
+  max: 1
+  step: 0.05
+- id: sp-h-colors
+  title: Colors
+  title.zh-TW: 顏色
+  title.zh-tw: 顏色
+  title.zh: 颜色
+  title.zh-cn: 颜色
+  title.ja: 色
+  type: heading
+  level: 1
+  collapsed: true
+- id: sp-brass-hi
+  title: Bright brass (H1, emphasis, bold)
+  title.zh-TW: 亮黃銅（H1、強調、粗體）
+  title.zh-tw: 亮黃銅（H1、強調、粗體）
+  title.zh: 亮黄铜（H1、强调、粗体）
+  title.zh-cn: 亮黄铜（H1、强调、粗体）
+  title.ja: 明るい真鍮（H1・強調・太字）
+  type: variable-themed-color
+  format: hex
+  default-light: '#7a4f10'
+  default-dark: '#e8b85a'
+- id: sp-brass
+  title: Brass (borders, table headers, buttons)
+  title.zh-TW: 黃銅（邊框、表頭、按鈕）
+  title.zh-tw: 黃銅（邊框、表頭、按鈕）
+  title.zh: 黄铜（边框、表头、按钮）
+  title.zh-cn: 黄铜（边框、表头、按钮）
+  title.ja: 真鍮（枠線・表の見出し・ボタン）
+  type: variable-themed-color
+  format: hex
+  default-light: '#9a6a1f'
+  default-dark: '#c8923a'
+- id: sp-copper
+  title: Copper (H2, folder names)
+  title.zh-TW: 紅銅（H2、文件夾名稱）
+  title.zh-tw: 紅銅（H2、文件夾名稱）
+  title.zh: 红铜（H2、文件夹名称）
+  title.zh-cn: 红铜（H2、文件夹名称）
+  title.ja: 銅（H2・フォルダ名）
+  type: variable-themed-color
+  format: hex
+  default-light: '#a2502a'
+  default-dark: '#c0693a'
+- id: sp-verdigris
+  title: Verdigris (H3, links)
+  title.zh-TW: 銅綠（H3、連結）
+  title.zh-tw: 銅綠（H3、連結）
+  title.zh: 铜绿（H3、链接）
+  title.zh-cn: 铜绿（H3、链接）
+  title.ja: 緑青（H3・リンク）
+  type: variable-themed-color
+  format: hex
+  default-light: '#2f7566'
+  default-dark: '#5fa896'
+- id: sp-h-fonts
+  title: Fonts (enter a full font list, separated by commas)
+  title.zh-TW: 字體（填完整字體清單，用逗號分隔）
+  title.zh-tw: 字體（填完整字體清單，用逗號分隔）
+  title.zh: 字体（填完整字体列表，用逗号分隔）
+  title.zh-cn: 字体（填完整字体列表，用逗号分隔）
+  title.ja: フォント（フォント一覧をカンマ区切りで入力）
+  type: heading
+  level: 1
+  collapsed: true
+- id: sp-font-head
+  title: Heading font
+  title.zh-TW: 標題字體
+  title.zh-tw: 標題字體
+  title.zh: 标题字体
+  title.zh-cn: 标题字体
+  title.ja: 見出しフォント
+  type: variable-text
+  default: Cinzel, "Noto Serif TC", "Songti TC", "PMingLiU", serif
+- id: sp-font-text
+  title: Body font
+  title.zh-TW: 正文字體
+  title.zh-tw: 正文字體
+  title.zh: 正文字体
+  title.zh-cn: 正文字体
+  title.ja: 本文フォント
+  type: variable-text
+  default: '"Crimson Pro", "Noto Serif TC", "Songti TC", "PMingLiU", serif'
+- id: sp-font-code
+  title: Code font
+  title.zh-TW: 代碼字體
+  title.zh-tw: 代碼字體
+  title.zh: 代码字体
+  title.zh-cn: 代码字体
+  title.ja: コードフォント
+  type: variable-text
+  default: '"Courier Prime", "Cascadia Mono", "Menlo", monospace'
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* ---------- 1. 字體與圖標（SVG 當 mask 用，顏色由 background 決定） ---------- */
+body {
+  --sp-font-head: "Cinzel", "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sp-font-text: "Crimson Pro", "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sp-font-code: "Courier Prime", "Cascadia Mono", "Menlo", monospace;
+  --font-text-theme: var(--sp-font-text);
+  --font-interface-theme: var(--sp-font-text);
+  --font-monospace-theme: var(--sp-font-code);
+
+  /* 齒輪 */
+  --sp-gear: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill-rule='evenodd' d='M12 3.8a8.2 8.2 0 1 0 0 16.4a8.2 8.2 0 1 0 0-16.4zm0 5.2a3 3 0 1 1 0 6a3 3 0 1 1 0-6z'/><circle cx='12' cy='12' r='9.6' fill='none' stroke='black' stroke-width='3' stroke-dasharray='2.4 2.574'/></svg>");
+  /* 展開符號：齒輪中間鏤空一個箭頭（展開時整顆轉 90°，箭頭朝下） */
+  --sp-cog-arrow: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill-rule='evenodd' d='M12 3.8a8.2 8.2 0 1 0 0 16.4a8.2 8.2 0 1 0 0-16.4zM8.4 8.2L9.8 6.6L15.8 12L9.8 17.4L8.4 15.8L12.4 12z'/><circle cx='12' cy='12' r='9.6' fill='none' stroke='black' stroke-width='3' stroke-dasharray='2.4 2.574'/></svg>");
+  /* 文件夾：鉚接銅盒 */
+  --sp-folder: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill-rule='evenodd' d='M2 5.5A1.5 1.5 0 0 1 3.5 4h5.2l2 2.2h9.8A1.5 1.5 0 0 1 22 7.7v10.8a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5zM5 9.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2zM19 9.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2zM5 15.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2zM19 15.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2z'/></svg>");
+  /* 文件：機械錶盤（錶冠 + 四個刻度 + 指針） */
+  --sp-dial: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='13.5' r='8.2' fill='none' stroke='black' stroke-width='2'/><rect x='10' y='2' width='4' height='3' rx='.8'/><path d='M12 7.6v1.6M12 17.8v1.6M6.1 13.5h1.6M16.3 13.5h1.6' stroke='black' stroke-width='1.5' fill='none' stroke-linecap='round'/><path d='M12 13.5V9.8M12 13.5l2.8 1.8' stroke='black' stroke-width='1.8' fill='none' stroke-linecap='round'/></svg>");
+  --sp-compass: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='none' stroke='black' stroke-width='2'/><path d='M16 8l-2.2 5.8L8 16l2.2-5.8z'/></svg>");
+  --sp-card: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' d='M4 4h16v16H4z'/><path d='M8 8h2M14 8h2M8 12h2M12 12h2M8 16h2M14 16h2' stroke='black' stroke-width='2' stroke-linecap='round'/></svg>");
+  --sp-lens: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='8.5' fill='none' stroke='black' stroke-width='2'/><circle cx='12' cy='12' r='3.4'/></svg>");
+  --sp-ico-html: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14'/></svg>");
+  --sp-ico-audio: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M9 18V6l10-2v12'/><circle cx='6.5' cy='18' r='2.5'/><circle cx='16.5' cy='16' r='2.5'/></svg>");
+  --sp-ico-video: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='3' y='5' width='18' height='14' rx='1.5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M10 9.5v5l4.5-2.5z'/></svg>");
+  --sp-ico-code: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M9 4c-2.5 0-3 1-3 3v2c0 1.5-1 3-3 3 2 0 3 1.5 3 3v2c0 2 .5 3 3 3M15 4c2.5 0 3 1 3 3v2c0 1.5 1 3 3 3-2 0-3 1.5-3 3v2c0 2-.5 3-3 3'/></svg>");
+  --sp-ico-zip: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M4 7l8-4 8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10'/></svg>");
+  --sp-ico-doc: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M6 3h8l4 4v14H6z'/><path fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M9 12h6M9 16h6'/></svg>");
+  --sp-ico-sheet: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M4 4h16v16H4zM4 10h16M4 15h16M10 4v16'/></svg>");
+  --sp-needle: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M11.1 3h1.8l.6 10.5h-3z'/><circle cx='12' cy='13' r='2.2'/></svg>");
+  /* 背景裝飾用的大小齒輪 */
+  --sp-gear-big: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill-rule='evenodd' d='M50 10a40 40 0 1 0 0 80a40 40 0 1 0 0-80zM50 44a6 6 0 1 1 0 12a6 6 0 1 1 0-12zM50 18.5a10 10 0 1 0 0 20a10 10 0 1 0 0-20zM50 61.5a10 10 0 1 0 0 20a10 10 0 1 0 0-20zM28.5 40a10 10 0 1 0 0 20a10 10 0 1 0 0-20zM71.5 40a10 10 0 1 0 0 20a10 10 0 1 0 0-20z'/><circle cx='50' cy='50' r='44' fill='none' stroke='black' stroke-width='8' stroke-dasharray='6 5.52'/></svg>");
+  --sp-gear-small: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill-rule='evenodd' d='M50 13a37 37 0 1 0 0 74a37 37 0 1 0 0-74zM50 41a9 9 0 1 1 0 18a9 9 0 1 1 0-18zM50 21a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM50 65a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM28 43a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM72 43a7 7 0 1 0 0 14a7 7 0 1 0 0-14z'/><circle cx='50' cy='50' r='42' fill='none' stroke='black' stroke-width='10' stroke-dasharray='11 10.99'/></svg>");
+}
+
+/* ---------- 2. 配色：深色「鍋爐房」/ 淺色「羊皮藍圖」 ---------- */
+.theme-dark {
+  --sp-soot:#1a1411; --sp-soot-2:#231a14; --sp-soot-3:#2d2118;
+  --sp-brass:var(--sp-brass-dark,#c8923a); --sp-brass-hi:var(--sp-brass-hi-dark,#e8b85a); --sp-brass-lo:#7a5524;
+  --sp-copper:var(--sp-copper-dark,#c0693a); --sp-verdigris:var(--sp-verdigris-dark,#5fa896); --sp-steel:#a9b2ad; --sp-rust:#b4573a;
+  --sp-paper:#e8d8b4; --sp-paper-dim:#a8977a; --sp-ink-on-brass:#1a1411;
+
+  --background-primary:var(--sp-soot); --background-primary-alt:var(--sp-soot-2);
+  --background-secondary:#15100d; --background-secondary-alt:var(--sp-soot-2);
+  --background-modifier-border:#4a3622;
+  --background-modifier-border-hover:var(--sp-brass-lo);
+  --background-modifier-border-focus:var(--sp-brass);
+  --background-modifier-hover:rgba(200,146,58,.12);
+  --background-modifier-active-hover:rgba(200,146,58,.2);
+  --text-normal:var(--sp-paper); --text-muted:var(--sp-paper-dim); --text-faint:#6f6350;
+  --text-accent:var(--sp-brass-hi); --text-accent-hover:#f5cf84;
+  --text-selection:rgba(95,168,150,.32); --text-highlight-bg:rgba(232,184,90,.3);
+  --interactive-accent:var(--sp-brass); --interactive-accent-hover:var(--sp-brass-hi);
+  --text-on-accent:var(--sp-ink-on-brass);
+  --code-background:#120d0a; --sp-gutter:#0b0705;
+  --sp-rivet:radial-gradient(circle at 35% 35%,#f3d28b 0,var(--sp-brass) 45%,#5b3d16 100%);
+  --sp-shadow:rgba(0,0,0,.55); --sp-watermark-opacity:.07;
+  --sp-orn-color:var(--sp-orn-color-dark,#c8923a); --sp-ornament-opacity:.4;
+  --sp-vig-center:rgba(200,146,58,.06); --sp-vig-edge:rgba(0,0,0,.45);
+  --sp-grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1.000  0 0 0 0 0.882  0 0 0 0 0.667  0.45 0 0 0 -0.17'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"); --sp-blotch:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='700'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.008' numOctaves='3' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.275  0 0 0 0 0.165  0 0 0 0 0.063  1.0 0 0 0 -0.42'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+}
+.theme-light {
+  --sp-soot:#ecdcb0; --sp-soot-2:#e0cc9a; --sp-soot-3:#d3bd84;
+  --sp-brass:var(--sp-brass-light,#9a6a1f); --sp-brass-hi:var(--sp-brass-hi-light,#7a4f10); --sp-brass-lo:#b9985a;
+  --sp-copper:var(--sp-copper-light,#a2502a); --sp-verdigris:var(--sp-verdigris-light,#2f7566); --sp-steel:#5c655f; --sp-rust:#8f3a22;
+  --sp-paper:#33261a; --sp-paper-dim:#6b5a42; --sp-ink-on-brass:#f6ecd2;
+
+  --background-primary:var(--sp-soot); --background-primary-alt:var(--sp-soot-2);
+  --background-secondary:#e3d1a7; --background-secondary-alt:var(--sp-soot-3);
+  --background-modifier-border:#b9985a;
+  --background-modifier-border-hover:var(--sp-brass);
+  --background-modifier-border-focus:var(--sp-brass-hi);
+  --background-modifier-hover:rgba(154,106,31,.13);
+  --background-modifier-active-hover:rgba(154,106,31,.22);
+  --text-normal:var(--sp-paper); --text-muted:var(--sp-paper-dim); --text-faint:#9b8761;
+  --text-accent:var(--sp-brass-hi); --text-accent-hover:#52330a;
+  --text-selection:rgba(47,117,102,.28); --text-highlight-bg:rgba(154,106,31,.28);
+  --interactive-accent:var(--sp-brass); --interactive-accent-hover:var(--sp-brass-hi);
+  --text-on-accent:var(--sp-ink-on-brass);
+  --code-background:#2a1f16; --sp-gutter:#1d150e;
+  --sp-rivet:radial-gradient(circle at 35% 35%,#f0d28f 0,#b07c2a 45%,#5b3d16 100%);
+  --sp-shadow:rgba(60,40,15,.35); --sp-watermark-opacity:.1;
+  --sp-orn-color:var(--sp-orn-color-light,#6b5530); --sp-ornament-opacity:.6;
+  --sp-vig-center:rgba(255,250,228,.5); --sp-vig-edge:rgba(120,92,40,.34);
+  --sp-grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.353  0 0 0 0 0.235  0 0 0 0 0.098  0.9 0 0 0 -0.36'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"); --sp-blotch:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='700'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.008' numOctaves='3' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.588  0 0 0 0 0.478  0 0 0 0 0.227  0.9 0 0 0 -0.36'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+}
+
+/* ---------- 3. 標題與層級 ---------- */
+body {
+  --h1-font:var(--sp-font-head); --h2-font:var(--sp-font-head); --h3-font:var(--sp-font-head);
+  --h4-font:var(--sp-font-head); --h5-font:var(--sp-font-head); --h6-font:var(--sp-font-head);
+  --h1-size:2.1em; --h1-weight:900; --h2-size:1.65em; --h2-weight:700; --h3-size:1.35em; --h3-weight:700;
+  --h4-size:1.15em; --h4-weight:600; --h5-size:1.05em; --h5-weight:600; --h6-size:1em; --h6-weight:500;
+  --h1-line-height:1.25; --h2-line-height:1.3; --h3-line-height:1.35;
+  --h1-color:var(--sp-brass-hi); --h2-color:var(--sp-copper); --h3-color:var(--sp-verdigris);
+  --h4-color:var(--sp-steel); --h5-color:var(--sp-rust); --h6-color:var(--text-muted);
+  --bold-color:var(--sp-brass-hi); --italic-color:var(--sp-verdigris);
+  --link-color:var(--sp-verdigris); --link-color-hover:var(--sp-brass-hi);
+  --link-external-color:var(--sp-copper); --link-unresolved-color:var(--sp-rust);
+}
+.markdown-rendered h1, .markdown-source-view.mod-cm6 .HyperMD-header-1 {
+  padding-bottom:.28em; margin-bottom:.4em; letter-spacing:.04em; text-shadow:0 2px 0 var(--sp-shadow);
+  background:
+    linear-gradient(90deg,var(--sp-brass-lo),var(--sp-brass),var(--sp-brass-lo)) left bottom / 100% 3px no-repeat,
+    linear-gradient(90deg,var(--sp-brass-lo),var(--sp-copper),var(--sp-brass-lo)) left calc(100% - 6px) / 100% 3px no-repeat;
+}
+.markdown-rendered h2, .markdown-source-view.mod-cm6 .HyperMD-header-2 {
+  padding-bottom:.2em; letter-spacing:.03em;
+  background:linear-gradient(90deg,var(--sp-copper),transparent 85%) left bottom / 100% 3px no-repeat;
+}
+.markdown-rendered h3, .markdown-source-view.mod-cm6 .HyperMD-header-3 {
+  padding-bottom:.15em;
+  background:radial-gradient(circle,var(--sp-verdigris) 1.2px,transparent 1.6px) left bottom / 9px 3px repeat-x;
+}
+.markdown-rendered h1::before, .markdown-rendered h2::before {
+  content:""; display:inline-block; width:.8em; height:.8em; margin-right:.35em; vertical-align:-.05em;
+  background:currentColor; -webkit-mask:var(--sp-gear) center / contain no-repeat; mask:var(--sp-gear) center / contain no-repeat;
+  transition:transform .8s cubic-bezier(.3,1.4,.5,1);
+}
+.markdown-rendered h2::before { width:.65em; height:.65em; }
+.markdown-rendered h1:hover::before, .markdown-rendered h2:hover::before { transform:rotate(180deg); }
+.markdown-rendered h3::before {
+  content:""; display:inline-block; width:.45em; height:.45em; margin-right:.45em; vertical-align:.1em;
+  border-radius:50%; background:var(--sp-rivet);
+}
+.markdown-rendered h4::before { content:"▸ "; color:var(--sp-brass); }
+.markdown-rendered h5::before, .markdown-rendered h6::before { content:"· "; color:var(--sp-brass); }
+
+/* ---------- 4. 檔案瀏覽器 ---------- */
+body {
+  --nav-indentation-guide-width:2px;
+  --nav-indentation-guide-color:var(--sp-brass-lo);
+  --nav-collapse-icon-color:var(--sp-copper);
+  --nav-collapse-icon-color-collapsed:var(--sp-copper);
+  --nav-item-color:var(--text-muted);
+  --nav-item-color-hover:var(--sp-paper);
+  --nav-item-color-active:var(--sp-brass-hi);
+  --nav-item-background-hover:rgba(200,146,58,.1);
+  --nav-item-background-active:rgba(200,146,58,.16);
+}
+
+/* 4a. 縮排線 → 鐵軌鏈條：雙軌 + 橫梁，每個項目接一顆小齒輪（滑過會轉動） */
+.nav-folder-children {
+  position:relative; margin-inline-start:12px; padding-inline-start:10px; border-inline-start:0;
+}
+.nav-folder-children::before {
+  content:""; position:absolute; left:0; top:0; bottom:0; width:5px; pointer-events:none;
+  background:
+    linear-gradient(90deg,var(--sp-brass-lo) 0 1px,transparent 1px calc(100% - 1px),var(--sp-brass-lo) calc(100% - 1px)),
+    repeating-linear-gradient(to bottom,var(--sp-copper) 0 2px,transparent 2px 7px);
+  opacity:.85;
+}
+.nav-folder.mod-root > .nav-folder-children { margin-inline-start:0; padding-inline-start:0; }
+.nav-folder.mod-root > .nav-folder-children::before { display:none; }
+.nav-folder-children > .tree-item > .tree-item-self { position:relative; }
+.nav-folder-children > .tree-item > .tree-item-self::before {
+  content:""; position:absolute; left:-5px; top:50%; width:5px; height:2px; margin-top:-1px;
+  background:var(--sp-copper);
+}
+.nav-folder-children > .tree-item > .tree-item-self::after {
+  content:""; position:absolute; left:-13px; top:50%; width:11px; height:11px; margin-top:-5.5px;
+  background:var(--sp-brass-hi);
+  -webkit-mask:var(--sp-gear) center / contain no-repeat; mask:var(--sp-gear) center / contain no-repeat;
+  filter:drop-shadow(0 1px 1px var(--sp-shadow));
+  transition:transform .5s cubic-bezier(.3,1.3,.5,1), background .2s;
+}
+.nav-folder-children > .tree-item > .tree-item-self:hover::after { transform:rotate(90deg); background:var(--sp-verdigris); }
+.nav-folder.mod-root > .nav-folder-children > .tree-item > .tree-item-self::before,
+.nav-folder.mod-root > .nav-folder-children > .tree-item > .tree-item-self::after { display:none; }
+
+/* 4b. 展開符號：齒輪＋箭頭，展開時轉 90° 並亮起 */
+.nav-folder-title .collapse-icon { width:18px; }
+.nav-folder-title .collapse-icon svg { display:none; }
+.nav-folder-title .collapse-icon::before {
+  content:""; display:block; width:15px; height:15px;
+  background:var(--sp-brass-hi);
+  -webkit-mask:var(--sp-cog-arrow) center / contain no-repeat; mask:var(--sp-cog-arrow) center / contain no-repeat;
+  transform:rotate(90deg);
+  transition:transform .5s cubic-bezier(.3,1.3,.5,1), background .2s;
+  filter:drop-shadow(0 0 3px rgba(232,184,90,.5));
+}
+.nav-folder.is-collapsed > .nav-folder-title .collapse-icon::before {
+  transform:rotate(0deg); background:var(--sp-copper); filter:none;
+}
+
+/* 4c. 文件夾圖標：鉚接銅盒 */
+.nav-folder-title-content::before {
+  content:""; display:inline-block; width:15px; height:15px; margin-right:6px; vertical-align:-3px;
+  background:var(--sp-brass-hi);
+  -webkit-mask:var(--sp-folder) center / contain no-repeat; mask:var(--sp-folder) center / contain no-repeat;
+}
+.nav-folder.is-collapsed > .nav-folder-title .nav-folder-title-content::before { background:var(--sp-copper); }
+.nav-folder-title { font-family:var(--sp-font-head); font-weight:600; letter-spacing:.02em; color:var(--sp-copper); }
+.nav-folder-title:hover { color:var(--sp-brass-hi); }
+/* 特定文件夾換圖標：把變數換成 --sp-gear / --sp-dial / --sp-compass 等
+.nav-folder-title[data-path="Projects"] .nav-folder-title-content::before { -webkit-mask-image:var(--sp-gear); mask-image:var(--sp-gear); }
+*/
+
+/* 4d. 文件圖標：筆記＝機械錶盤；canvas＝羅盤、pdf / base＝打孔卡、圖片＝鏡頭、html＝尖括號、音樂＝音符、影片＝放映框、程式碼＝大括號、壓縮檔＝木箱、文件＝紙頁、試算表＝格線 */
+.nav-file-title-content::before {
+  content:""; display:inline-block; width:14px; height:14px; margin-right:6px; vertical-align:-2px;
+  background:var(--sp-steel);
+  -webkit-mask:var(--sp-dial) center / contain no-repeat; mask:var(--sp-dial) center / contain no-repeat;
+}
+.nav-file-title[data-path$=".canvas"] .nav-file-title-content::before { -webkit-mask-image:var(--sp-compass); mask-image:var(--sp-compass); }
+.nav-file-title[data-path$=".pdf"] .nav-file-title-content::before,
+.nav-file-title[data-path$=".base"] .nav-file-title-content::before { -webkit-mask-image:var(--sp-card); mask-image:var(--sp-card); }
+.nav-file-title[data-path$=".png"] .nav-file-title-content::before,
+.nav-file-title[data-path$=".jpg"] .nav-file-title-content::before,
+.nav-file-title[data-path$=".jpeg"] .nav-file-title-content::before,
+.nav-file-title[data-path$=".gif"] .nav-file-title-content::before,
+.nav-file-title[data-path$=".webp"] .nav-file-title-content::before,
+.nav-file-title[data-path$=".svg"] .nav-file-title-content::before { -webkit-mask-image:var(--sp-lens); mask-image:var(--sp-lens); }
+.nav-file-title[data-path$=".html" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".htm" i] .nav-file-title-content::before { -webkit-mask-image:var(--sp-ico-html); mask-image:var(--sp-ico-html); }
+.nav-file-title[data-path$=".mp3" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".wav" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".m4a" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".ogg" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".flac" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".aac" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".opus" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".3gp" i] .nav-file-title-content::before { -webkit-mask-image:var(--sp-ico-audio); mask-image:var(--sp-ico-audio); }
+.nav-file-title[data-path$=".mp4" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".webm" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".ogv" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".mov" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".mkv" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".avi" i] .nav-file-title-content::before { -webkit-mask-image:var(--sp-ico-video); mask-image:var(--sp-ico-video); }
+.nav-file-title[data-path$=".js" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".ts" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".jsx" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".tsx" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".json" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".css" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".py" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".java" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".c" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".cpp" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".go" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".rs" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".sh" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".yml" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".yaml" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".xml" i] .nav-file-title-content::before { -webkit-mask-image:var(--sp-ico-code); mask-image:var(--sp-ico-code); }
+.nav-file-title[data-path$=".zip" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".rar" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".7z" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".tar" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".gz" i] .nav-file-title-content::before { -webkit-mask-image:var(--sp-ico-zip); mask-image:var(--sp-ico-zip); }
+.nav-file-title[data-path$=".txt" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".doc" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".docx" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".ppt" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".pptx" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".rtf" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".log" i] .nav-file-title-content::before { -webkit-mask-image:var(--sp-ico-doc); mask-image:var(--sp-ico-doc); }
+.nav-file-title[data-path$=".xls" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".xlsx" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".csv" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".tsv" i] .nav-file-title-content::before { -webkit-mask-image:var(--sp-ico-sheet); mask-image:var(--sp-ico-sheet); }
+.nav-file-title:hover .nav-file-title-content::before { background:var(--sp-brass); }
+.nav-file-title.is-active .nav-file-title-content::before { background:var(--sp-brass-hi); filter:drop-shadow(0 0 3px rgba(232,184,90,.6)); }
+
+.nav-file-tag { font-family:var(--sp-font-code); color:var(--sp-ink-on-brass); background:var(--sp-brass); border-radius:2px; padding:0 4px; }
+.nav-file-title.is-active, .nav-folder-title.is-active {
+  background:linear-gradient(90deg,rgba(232,184,90,.22),rgba(232,184,90,.04));
+  box-shadow:inset 3px 0 0 var(--sp-brass-hi),0 0 10px rgba(232,184,90,.12);
+  border-radius:0 4px 4px 0;
+}
+
+/* ---------- 5. 機械時間感：刻度尺 + 咬合轉動的背景齒輪 ---------- */
+.view-header {
+  border-bottom:2px solid var(--sp-brass-lo);
+  background-image:
+    linear-gradient(90deg,var(--sp-brass-lo) 1px,transparent 1px),
+    linear-gradient(90deg,var(--sp-brass) 1px,transparent 1px);
+  background-size:10px 4px, 50px 8px;
+  background-position:left bottom, left bottom;
+  background-repeat:repeat-x;
+}
+.workspace-leaf-content[data-type="markdown"] { position:relative; }
+.workspace-leaf-content[data-type="markdown"]::before,
+.workspace-leaf-content[data-type="markdown"]::after {
+  content:""; position:absolute; pointer-events:none; z-index:0;
+  background:var(--sp-brass); opacity:var(--sp-watermark-opacity);
+}
+/* 編輯區右上角：一大一小兩顆齒輪直接咬合（大 24 齒、小 12 齒，轉速 2:1、方向相反） */
+.workspace-leaf-content[data-type="markdown"]::before {   /* 大齒輪，順時針 */
+  width:110px; height:110px; right:48px; top:calc(var(--header-height,40px) + 26px);
+  -webkit-mask:var(--sp-gear-big) center / contain no-repeat; mask:var(--sp-gear-big) center / contain no-repeat;
+  animation:sp-spin 80s linear -0.8s infinite;
+}
+.workspace-leaf-content[data-type="markdown"]::after {    /* 小齒輪，逆時針，齒對著大齒輪的齒隙 */
+  width:58px; height:58px; right:147px; top:calc(var(--header-height,40px) + 52px);
+  -webkit-mask:var(--sp-gear-small) center / contain no-repeat; mask:var(--sp-gear-small) center / contain no-repeat;
+  animation:sp-spin 40s linear -0.833s infinite reverse;
+}
+@keyframes sp-spin { to { transform:rotate(360deg); } }
+@media (max-width:700px) {
+  .workspace-leaf-content[data-type="markdown"]::before,
+  .workspace-leaf-content[data-type="markdown"]::after { display:none; }
+}
+
+/* 5b. 滾動連動齒輪：捲動 / 拖動滾動條時，齒輪沿著右側軌道移動並轉動
+   （用 CSS scroll-driven animation，需要較新的 Obsidian / Electron；不支援時齒輪停在頂端不動） */
+.workspace-leaf-content[data-type="markdown"] { timeline-scope:--sp-scroll; }
+.workspace-leaf-content[data-type="markdown"] :is(.markdown-preview-view, .cm-scroller):not(.markdown-embed *) {
+  scroll-timeline:--sp-scroll block;
+}
+.workspace-leaf-content[data-type="markdown"] > .view-content { position:relative; }
+.workspace-leaf-content[data-type="markdown"] > .view-content::before {
+  content:""; position:absolute; right:22px; top:14px; width:22px; height:22px; z-index:6; pointer-events:none;
+  background:var(--sp-brass-hi); filter:drop-shadow(0 1px 2px var(--sp-shadow));
+  -webkit-mask:var(--sp-gear) center / contain no-repeat; mask:var(--sp-gear) center / contain no-repeat;
+}
+@keyframes sp-ride { from { top:14px; } to { top:calc(100% - 36px); } }
+@keyframes sp-turn { from { rotate:0deg; } to { rotate:1440deg; } }
+@keyframes sp-turn-rev { from { rotate:0deg; } to { rotate:-2880deg; } }
+@keyframes sp-turn-fast { from { rotate:0deg; } to { rotate:2160deg; } }
+@supports (animation-timeline: scroll()) {
+  .workspace-leaf-content[data-type="markdown"] > .view-content::before {
+    animation:sp-ride auto linear both, sp-turn-fast auto linear both;
+    animation-timeline:--sp-scroll, --sp-scroll;
+  }
+  .workspace-leaf-content[data-type="markdown"]::before {
+    animation:sp-spin 80s linear -0.8s infinite, sp-turn auto linear both;
+    animation-timeline:auto, --sp-scroll;
+  }
+  .workspace-leaf-content[data-type="markdown"]::after {
+    animation:sp-spin 40s linear -0.833s infinite reverse, sp-turn-rev auto linear both;
+    animation-timeline:auto, --sp-scroll;
+  }
+}
+@media (max-width:700px) { .workspace-leaf-content[data-type="markdown"] > .view-content::before { display:none; } }
+
+/* 5c. 檔案名稱標題 → 黃銅銘牌（編輯器內的大標題；需在 設定→編輯器→外觀 開啟「顯示內嵌標題」） */
+body {
+  --sp-gear-brass: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(200,146,58)' fill-rule='evenodd' d='M12 3.8a8.2 8.2 0 1 0 0 16.4a8.2 8.2 0 1 0 0-16.4zm0 5.2a3 3 0 1 1 0 6a3 3 0 1 1 0-6z'/><circle cx='12' cy='12' r='9.6' fill='none' stroke='rgb(200,146,58)' stroke-width='3' stroke-dasharray='2.4 2.574'/></svg>");
+  --inline-title-font:var(--sp-font-head);
+  --inline-title-size:2.2em;
+  --inline-title-weight:900;
+  --inline-title-color:var(--sp-brass-hi);
+}
+.inline-title {
+  display:block; text-align:center; letter-spacing:.07em; line-height:1.3;
+  color:#e8b85a; text-shadow:0 2px 0 #000, 0 0 14px rgba(232,184,90,.28);
+  margin:.2em 0 .9em; padding:.4em 2.6em;
+  border:3px double var(--sp-brass); border-radius:8px;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(200,146,58)' fill-rule='evenodd' d='M12 3.8a8.2 8.2 0 1 0 0 16.4a8.2 8.2 0 1 0 0-16.4zm0 5.2a3 3 0 1 1 0 6a3 3 0 1 1 0-6z'/><circle cx='12' cy='12' r='9.6' fill='none' stroke='rgb(200,146,58)' stroke-width='3' stroke-dasharray='2.4 2.574'/></svg>") left 14px center / 26px 26px no-repeat,
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='rgb(200,146,58)' fill-rule='evenodd' d='M12 3.8a8.2 8.2 0 1 0 0 16.4a8.2 8.2 0 1 0 0-16.4zm0 5.2a3 3 0 1 1 0 6a3 3 0 1 1 0-6z'/><circle cx='12' cy='12' r='9.6' fill='none' stroke='rgb(200,146,58)' stroke-width='3' stroke-dasharray='2.4 2.574'/></svg>") right 14px center / 26px 26px no-repeat,
+    radial-gradient(circle,#f3d28b 0,#c8923a 38%,#5b3d16 62%,transparent 66%) 6px 6px / 11px 11px no-repeat,
+    radial-gradient(circle,#f3d28b 0,#c8923a 38%,#5b3d16 62%,transparent 66%) calc(100% - 6px) 6px / 11px 11px no-repeat,
+    linear-gradient(to bottom,#33241a,#150e09);
+  box-shadow:inset 0 0 26px rgba(0,0,0,.65), 0 4px 12px var(--sp-shadow);
+}
+.view-header-title {
+  font-family:var(--sp-font-head); font-weight:700; letter-spacing:.06em;
+  color:var(--sp-brass-hi); text-shadow:0 1px 0 var(--sp-shadow);
+}
+
+/* 5d. 背景齒輪群：輻條齒輪、小齒輪、棘輪、錶用細齒輪、擒縱輪；編輯區右上是一大一小咬合齒輪，兩側欄底部是各自的齒輪 */
+body {
+  --sp-gear-ratchet:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill-rule='evenodd' d='M50.00 17.00L50.00 3.00L63.24 19.77L64.32 20.27L70.39 7.65L75.05 28.51L75.80 29.42L86.75 20.70L81.89 41.51L82.17 42.66L95.82 39.54L82.42 56.18L82.17 57.34L95.82 60.46L76.52 69.64L75.80 70.58L86.75 79.30L65.38 79.20L64.32 79.73L70.39 92.35L51.18 82.98L50.00 83.00L50.00 97.00L36.76 80.23L35.68 79.73L29.61 92.35L24.95 71.49L24.20 70.58L13.25 79.30L18.11 58.49L17.83 57.34L4.18 60.46L17.58 43.82L17.83 42.66L4.18 39.54L23.48 30.36L24.20 29.42L13.25 20.70L34.62 20.80L35.68 20.27L29.61 7.65L48.82 17.02zM43.00 50.00a7 7 0 1 0 14 0a7 7 0 1 0 -14 0zM42.00 29.00a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM61.97 43.51a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM54.34 66.99a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM29.66 66.99a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM22.03 43.51a8 8 0 1 0 16 0a8 8 0 1 0 -16 0z'/></svg>");
+  --sp-gear-fine:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill-rule='evenodd' d='M12.00 50.00a38 38 0 1 0 76 0a38 38 0 1 0 -76 0zM20.00 50.00a30 30 0 1 0 60 0a30 30 0 1 0 -60 0z'/><circle cx='50' cy='50' r='41.5' fill='none' stroke='black' stroke-width='7' stroke-dasharray='3.4 3.843'/><path fill-rule='evenodd' d='M39.00 50.00a11 11 0 1 0 22 0a11 11 0 1 0 -22 0zM46.00 50.00a4 4 0 1 0 8 0a4 4 0 1 0 -8 0z'/><line x1='50.00' y1='40.00' x2='50.00' y2='19.00' stroke='black' stroke-width='4.5'/><line x1='58.66' y1='45.00' x2='76.85' y2='34.50' stroke='black' stroke-width='4.5'/><line x1='58.66' y1='55.00' x2='76.85' y2='65.50' stroke='black' stroke-width='4.5'/><line x1='50.00' y1='60.00' x2='50.00' y2='81.00' stroke='black' stroke-width='4.5'/><line x1='41.34' y1='55.00' x2='23.15' y2='65.50' stroke='black' stroke-width='4.5'/><line x1='41.34' y1='45.00' x2='23.15' y2='34.50' stroke='black' stroke-width='4.5'/></svg>");
+  --sp-gear-escape:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill-rule='evenodd' d='M50.00 13.00L50.00 3.00L63.91 15.71L65.05 16.20L69.12 7.06L76.65 24.33L77.50 25.24L84.93 18.55L84.79 37.39L85.19 38.57L94.70 35.48L86.91 52.63L86.80 53.87L96.74 54.91L82.64 67.42L82.04 68.50L90.70 73.50L72.74 79.19L71.75 79.93L77.63 88.02L58.90 85.91L57.69 86.19L59.77 95.97L43.52 86.43L42.31 86.19L40.23 95.97L29.27 80.65L28.25 79.93L22.37 88.02L18.59 69.56L17.96 68.50L9.30 73.50L13.35 55.10L13.20 53.87L3.26 54.91L14.45 39.75L14.81 38.57L5.30 35.48L21.69 26.18L22.50 25.24L15.07 18.55L33.83 16.72L34.95 16.20L30.88 7.06L48.76 13.02zM20.00 50.00a30 30 0 1 0 60 0a30 30 0 1 0 -60 0z'/><path fill-rule='evenodd' d='M40.00 50.00a10 10 0 1 0 20 0a10 10 0 1 0 -20 0zM46.00 50.00a4 4 0 1 0 8 0a4 4 0 1 0 -8 0z'/><line x1='54.50' y1='42.21' x2='65.50' y2='23.15' stroke='black' stroke-width='5'/><line x1='54.50' y1='57.79' x2='65.50' y2='76.85' stroke='black' stroke-width='5'/><line x1='41.00' y1='50.00' x2='19.00' y2='50.00' stroke='black' stroke-width='5'/></svg>");
+}
+/* 左側欄底部：細齒輪 + 擒縱輪咬合；右側欄底部：棘輪 */
+.workspace-split.mod-left-split, .workspace-split.mod-right-split { position:relative; }
+.workspace-split.mod-left-split::before, .workspace-split.mod-left-split::after,
+.workspace-split.mod-right-split::before {
+  content:""; position:absolute; z-index:0; pointer-events:none;
+  background:var(--sp-brass); opacity:var(--sp-watermark-opacity);
+}
+.workspace-split.mod-left-split::before {
+  left:10px; bottom:12px; width:130px; height:130px;
+  -webkit-mask:var(--sp-gear-fine) center / contain no-repeat; mask:var(--sp-gear-fine) center / contain no-repeat;
+  animation:sp-spin 120s linear infinite;
+}
+.workspace-split.mod-left-split::after {
+  left:123px; bottom:39px; width:76px; height:76px;
+  -webkit-mask:var(--sp-gear-escape) center / contain no-repeat; mask:var(--sp-gear-escape) center / contain no-repeat;
+  animation:sp-spin 62s linear infinite reverse;
+}
+.workspace-split.mod-right-split::before {
+  right:12px; bottom:12px; width:100px; height:100px;
+  -webkit-mask:var(--sp-gear-ratchet) center / contain no-repeat; mask:var(--sp-gear-ratchet) center / contain no-repeat;
+  animation:sp-spin 110s linear infinite reverse;
+}
+
+/* ---------- 日月星空 ---------- */
+@property --sp-sky1 { syntax:'<color>'; inherits:false; initial-value:#4a3f6b; }
+@property --sp-sky2 { syntax:'<color>'; inherits:false; initial-value:#e8a06a; }
+@property --sp-star { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-eclipse-dim { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-nebula { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-cosmos { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-blood { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-aurora { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-meteor { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-comet { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-neb-h { syntax:'<number>'; inherits:false; initial-value:270; }
+@property --sp-aur-h { syntax:'<number>'; inherits:false; initial-value:140; }
+@property --sp-neb-x { syntax:'<length>'; inherits:false; initial-value:0px; }
+@property --sp-aur-x { syntax:'<length>'; inherits:false; initial-value:0px; }
+@property --sp-comet-x { syntax:'<percentage>'; inherits:false; initial-value:112%; }
+@property --sp-m1x { syntax:'<length-percentage>'; inherits:false; initial-value:0%; }
+@property --sp-m1y { syntax:'<length-percentage>'; inherits:false; initial-value:-200%; }
+@property --sp-m2x { syntax:'<length-percentage>'; inherits:false; initial-value:0%; }
+@property --sp-m2y { syntax:'<length-percentage>'; inherits:false; initial-value:-200%; }
+@property --sp-m3x { syntax:'<length-percentage>'; inherits:false; initial-value:0%; }
+@property --sp-m3y { syntax:'<length-percentage>'; inherits:false; initial-value:-200%; }
+@property --sp-cloud { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-storm { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-fog { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-flash { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-w-solar { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-w-galaxy { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-w-bh { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-w-cluster { syntax:'<number>'; inherits:false; initial-value:0; }
+@property --sp-o1 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-o2 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-o3 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-o4 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-o5 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-o6 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-o7 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-o8 { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@property --sp-pulse { syntax:'<number>'; inherits:false; initial-value:1; }
+@property --sp-tw1 { syntax:'<number>'; inherits:false; initial-value:1; }
+@property --sp-tw2 { syntax:'<number>'; inherits:false; initial-value:1; }
+@property --sp-cel-x { syntax:'<percentage>'; inherits:false; initial-value:106%; }
+@property --sp-cel-y { syntax:'<length>'; inherits:false; initial-value:100px; }
+@property --sp-cel-size { syntax:'<length>'; inherits:false; initial-value:18px; }
+@property --sp-cel-a { syntax:'<color>'; inherits:false; initial-value:#fff6c2; }
+@property --sp-cel-b { syntax:'<color>'; inherits:false; initial-value:#ffd45c; }
+@property --sp-cel-c { syntax:'<color>'; inherits:false; initial-value:#f0a030; }
+@property --sp-cel-glow { syntax:'<color>'; inherits:false; initial-value:rgba(255,214,110,.55); }
+@property --sp-cel-inset { syntax:'<length>'; inherits:false; initial-value:0px; }
+@property --sp-cel-inset-c { syntax:'<color>'; inherits:false; initial-value:rgba(0,0,0,0); }
+@property --sp-cover { syntax:'<length>'; inherits:false; initial-value:30px; }
+@property --sp-cel-op { syntax:'<number>'; inherits:false; initial-value:1; }
+@property --sp-crater { syntax:'<number>'; inherits:false; initial-value:0; }
+:where(html) { --sp-day-length:90s; --sp-sky-dim:.45; }
+:where(.theme-dark) { --sp-orn-color:#c8923a; --sp-ornament-opacity:.4; }
+:where(.theme-light) { --sp-orn-color:#6b5530; --sp-ornament-opacity:.6; }
+@keyframes sp-sky {
+  0% { --sp-sky1:#4a3f6b; --sp-sky2:#e8a06a; --sp-star:0.3; }
+  8% { --sp-sky1:#5a8fc0; --sp-sky2:#f3cf93; --sp-star:0; }
+  25% { --sp-sky1:#4f9fe0; --sp-sky2:#bfe3f5; --sp-star:0; }
+  42% { --sp-sky1:#5a8fc0; --sp-sky2:#f3cf93; --sp-star:0; }
+  50% { --sp-sky1:#3a2a5c; --sp-sky2:#e0703c; --sp-star:0.35; }
+  58% { --sp-sky1:#151a3d; --sp-sky2:#4a3358; --sp-star:0.85; }
+  75% { --sp-sky1:#0a0e2a; --sp-sky2:#1b2750; --sp-star:1; }
+  92% { --sp-sky1:#151a3d; --sp-sky2:#4a3358; --sp-star:0.85; }
+  100% { --sp-sky1:#4a3f6b; --sp-sky2:#e8a06a; --sp-star:0.3; }
+}
+@keyframes sp-cel-x { 0% { --sp-cel-x:-6%; } 49.99% { --sp-cel-x:106%; } 50% { --sp-cel-x:-6%; } 100% { --sp-cel-x:106%; } }
+@keyframes sp-cel-y {
+  0% { --sp-cel-y:100.0px; }
+  3.125% { --sp-cel-y:79.8px; }
+  6.25% { --sp-cel-y:62.4px; }
+  9.375% { --sp-cel-y:47.6px; }
+  12.5% { --sp-cel-y:35.5px; }
+  15.625% { --sp-cel-y:26.1px; }
+  18.75% { --sp-cel-y:19.4px; }
+  21.875% { --sp-cel-y:15.3px; }
+  25% { --sp-cel-y:14.0px; }
+  28.125% { --sp-cel-y:15.3px; }
+  31.25% { --sp-cel-y:19.4px; }
+  34.375% { --sp-cel-y:26.1px; }
+  37.5% { --sp-cel-y:35.5px; }
+  40.625% { --sp-cel-y:47.6px; }
+  43.75% { --sp-cel-y:62.4px; }
+  46.875% { --sp-cel-y:79.8px; }
+  49.99% { --sp-cel-y:100.0px; }
+  50% { --sp-cel-y:100.0px; }
+  53.125% { --sp-cel-y:79.8px; }
+  56.25% { --sp-cel-y:62.4px; }
+  59.375% { --sp-cel-y:47.6px; }
+  62.5% { --sp-cel-y:35.5px; }
+  65.625% { --sp-cel-y:26.1px; }
+  68.75% { --sp-cel-y:19.4px; }
+  71.875% { --sp-cel-y:15.3px; }
+  75% { --sp-cel-y:14.0px; }
+  78.125% { --sp-cel-y:15.3px; }
+  81.25% { --sp-cel-y:19.4px; }
+  84.375% { --sp-cel-y:26.1px; }
+  87.5% { --sp-cel-y:35.5px; }
+  90.625% { --sp-cel-y:47.6px; }
+  93.75% { --sp-cel-y:62.4px; }
+  96.875% { --sp-cel-y:79.8px; }
+  100% { --sp-cel-y:100.0px; }
+}
+@keyframes sp-neb-drift { from { --sp-neb-x:-120px; } to { --sp-neb-x:120px; } }
+@keyframes sp-aur-drift { from { --sp-aur-x:-60px; } to { --sp-aur-x:60px; } }
+@keyframes sp-m1 { 0% { --sp-m1x:20.4%; --sp-m1y:-70%; } 42%,100% { --sp-m1x:17.6%; --sp-m1y:150%; } }
+@keyframes sp-m2 { 0% { --sp-m2x:53.4%; --sp-m2y:-70%; } 42%,100% { --sp-m2x:50.6%; --sp-m2y:150%; } }
+@keyframes sp-m3 { 0% { --sp-m3x:84.4%; --sp-m3y:-70%; } 42%,100% { --sp-m3x:81.6%; --sp-m3y:150%; } }
+@keyframes sp-flash { 0%,10% { --sp-flash:0; } 10.5% { --sp-flash:.9; } 12% { --sp-flash:.15; } 13% { --sp-flash:1; } 15%,55% { --sp-flash:0; } 55.5% { --sp-flash:.7; } 57%,100% { --sp-flash:0; } }
+@keyframes sp-o1 { to { --sp-o1:360deg; } }
+@keyframes sp-o2 { to { --sp-o2:360deg; } }
+@keyframes sp-o3 { to { --sp-o3:360deg; } }
+@keyframes sp-o4 { to { --sp-o4:360deg; } }
+@keyframes sp-o5 { to { --sp-o5:360deg; } }
+@keyframes sp-o6 { to { --sp-o6:360deg; } }
+@keyframes sp-o7 { to { --sp-o7:360deg; } }
+@keyframes sp-o8 { to { --sp-o8:360deg; } }
+@keyframes sp-pulse { from { --sp-pulse:.85; } to { --sp-pulse:1.15; } }
+@keyframes sp-tw1 { from { --sp-tw1:.45; } to { --sp-tw1:1; } }
+@keyframes sp-tw2 { from { --sp-tw2:1; } to { --sp-tw2:.45; } }
+/* ---- 預烤節目表（已依保底規則模擬好，72 天一輪） ---- */
+@keyframes sp-prog-cel {
+  0% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  0.6944% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  1.3889% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  2.0833% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:0; --sp-crater:0; animation-timing-function:step-end; }
+  2.7778% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  3.4722% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  4.1667% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  4.8611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  5.5556% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  6.25% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  6.9444% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:0px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  7.6389% { --sp-cel-size:15px; --sp-cel-a:#fff0c8; --sp-cel-b:#f3c97a; --sp-cel-c:#c08a3a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  8.3333% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  9.0278% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  9.7222% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  10.4167% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  11.1111% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  11.8056% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  12.5% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  13.1944% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  13.8889% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  14.5833% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:0; --sp-crater:0; animation-timing-function:step-end; }
+  15.2778% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  15.9722% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  16.6667% { --sp-cel-size:18px; --sp-cel-a:#ffb08a; --sp-cel-b:#e8452a; --sp-cel-c:#8f1d12; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  17.3611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:0; --sp-crater:0; animation-timing-function:step-end; }
+  18.0556% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  18.75% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  19.4444% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:0px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  20.1389% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  20.8333% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  21.5278% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  22.2222% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  22.9167% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  23.6111% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  24.3056% { --sp-cel-size:15px; --sp-cel-a:#ff8a5c; --sp-cel-b:#c4301c; --sp-cel-c:#6e120c; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  25% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  25.6944% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  26.3889% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  27.0833% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  27.7778% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  28.4722% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  29.1667% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  29.8611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  30.5556% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  31.25% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:-8px; --sp-cel-inset-c:rgba(125,30,18,.86); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  31.9444% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:0px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  32.6389% { --sp-cel-size:24px; --sp-cel-a:#ffe9b0; --sp-cel-b:#f5b85a; --sp-cel-c:#c9782a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  33.3333% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  34.0278% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  34.7222% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  35.4167% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  36.1111% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  36.8056% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  37.5% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  38.1944% { --sp-cel-size:15px; --sp-cel-a:#fff0c8; --sp-cel-b:#f3c97a; --sp-cel-c:#c08a3a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  38.8889% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  39.5833% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  40.2778% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  40.9722% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  41.6667% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  42.3611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  43.0556% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  43.75% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  44.4444% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:0px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  45.1389% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  45.8333% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  46.5278% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  47.2222% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  47.9167% { --sp-cel-size:24px; --sp-cel-a:#ffe9b0; --sp-cel-b:#f5b85a; --sp-cel-c:#c9782a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  48.6111% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  49.3056% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  50% { --sp-cel-size:18px; --sp-cel-a:#ffb08a; --sp-cel-b:#e8452a; --sp-cel-c:#8f1d12; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  50.6944% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:0; --sp-crater:0; animation-timing-function:step-end; }
+  51.3889% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  52.0833% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  52.7778% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  53.4722% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  54.1667% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  54.8611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  55.5556% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  56.25% { --sp-cel-size:15px; --sp-cel-a:#ff8a5c; --sp-cel-b:#c4301c; --sp-cel-c:#6e120c; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  56.9444% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  57.6389% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  58.3333% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  59.0278% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  59.7222% { --sp-cel-size:18px; --sp-cel-a:#ffb08a; --sp-cel-b:#e8452a; --sp-cel-c:#8f1d12; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  60.4167% { --sp-cel-size:15px; --sp-cel-a:#fff0c8; --sp-cel-b:#f3c97a; --sp-cel-c:#c08a3a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  61.1111% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  61.8056% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  62.5% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  63.1944% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  63.8889% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  64.5833% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:-8px; --sp-cel-inset-c:rgba(125,30,18,.86); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  65.2778% { --sp-cel-size:18px; --sp-cel-a:#ffb08a; --sp-cel-b:#e8452a; --sp-cel-c:#8f1d12; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  65.9722% { --sp-cel-size:24px; --sp-cel-a:#ffe9b0; --sp-cel-b:#f5b85a; --sp-cel-c:#c9782a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  66.6667% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  67.3611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  68.0556% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  68.75% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  69.4444% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  70.1389% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  70.8333% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  71.5278% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  72.2222% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  72.9167% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  73.6111% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:0px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  74.3056% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  75% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  75.6944% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  76.3889% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  77.0833% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  77.7778% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  78.4722% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  79.1667% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  79.8611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  80.5556% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  81.25% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  81.9444% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  82.6389% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  83.3333% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  84.0278% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  84.7222% { --sp-cel-size:18px; --sp-cel-a:#ffe2a0; --sp-cel-b:#ff9f3c; --sp-cel-c:#d9611a; --sp-cel-glow:rgba(255,150,60,.6); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  85.4167% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  86.1111% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  86.8056% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:0; --sp-crater:0; animation-timing-function:step-end; }
+  87.5% { --sp-cel-size:18px; --sp-cel-a:#ffb08a; --sp-cel-b:#e8452a; --sp-cel-c:#8f1d12; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  88.1944% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  88.8889% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  89.5833% { --sp-cel-size:24px; --sp-cel-a:#ffe9b0; --sp-cel-b:#f5b85a; --sp-cel-c:#c9782a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  90.2778% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  90.9722% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  91.6667% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  92.3611% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  93.0556% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  93.75% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:3px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:0; --sp-crater:0; animation-timing-function:step-end; }
+  94.4444% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  95.1389% { --sp-cel-size:15px; --sp-cel-a:#fff0c8; --sp-cel-b:#f3c97a; --sp-cel-c:#c08a3a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  95.8333% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  96.5278% { --sp-cel-size:15px; --sp-cel-a:#222c52; --sp-cel-b:#141a38; --sp-cel-c:#0b0f26; --sp-cel-glow:rgba(190,205,255,.2); --sp-cel-inset:-5px; --sp-cel-inset-c:#cdd5e8; --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  97.2222% { --sp-cel-size:18px; --sp-cel-a:#ffb08a; --sp-cel-b:#e8452a; --sp-cel-c:#8f1d12; --sp-cel-glow:rgba(255,70,40,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  97.9167% { --sp-cel-size:24px; --sp-cel-a:#ffe9b0; --sp-cel-b:#f5b85a; --sp-cel-c:#c9782a; --sp-cel-glow:rgba(255,200,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  98.6111% { --sp-cel-size:18px; --sp-cel-a:#ffffff; --sp-cel-b:#f4efe0; --sp-cel-c:#d9d2bd; --sp-cel-glow:rgba(255,255,255,.45); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:0; animation-timing-function:step-end; }
+  99.3056% { --sp-cel-size:15px; --sp-cel-a:#f4f6fb; --sp-cel-b:#cdd5e8; --sp-cel-c:#9aa6c4; --sp-cel-glow:rgba(190,205,255,.5); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:30px; --sp-cel-op:1; --sp-crater:1; animation-timing-function:step-end; }
+  100% { --sp-cel-size:18px; --sp-cel-a:#fff6c2; --sp-cel-b:#ffd45c; --sp-cel-c:#f0a030; --sp-cel-glow:rgba(255,214,110,.55); --sp-cel-inset:0px; --sp-cel-inset-c:rgba(0,0,0,0); --sp-cover:6px; --sp-cel-op:1; --sp-crater:0; }
+}
+@keyframes sp-prog-eclipse-dim {
+  0% { --sp-eclipse-dim:0; }
+  0.2847% { --sp-eclipse-dim:0; }
+  0.3306% { --sp-eclipse-dim:0.3; }
+  0.3639% { --sp-eclipse-dim:0.3; }
+  0.4097% { --sp-eclipse-dim:0; }
+  7.2292% { --sp-eclipse-dim:0; }
+  7.275% { --sp-eclipse-dim:0.8; }
+  7.3083% { --sp-eclipse-dim:0.8; }
+  7.3542% { --sp-eclipse-dim:0; }
+  14.1736% { --sp-eclipse-dim:0; }
+  14.2194% { --sp-eclipse-dim:0.3; }
+  14.2528% { --sp-eclipse-dim:0.3; }
+  14.2986% { --sp-eclipse-dim:0; }
+  19.7292% { --sp-eclipse-dim:0; }
+  19.775% { --sp-eclipse-dim:0.8; }
+  19.8083% { --sp-eclipse-dim:0.8; }
+  19.8542% { --sp-eclipse-dim:0; }
+  22.5069% { --sp-eclipse-dim:0; }
+  22.5528% { --sp-eclipse-dim:0.3; }
+  22.5861% { --sp-eclipse-dim:0.3; }
+  22.6319% { --sp-eclipse-dim:0; }
+  29.4514% { --sp-eclipse-dim:0; }
+  29.4972% { --sp-eclipse-dim:0.3; }
+  29.5306% { --sp-eclipse-dim:0.3; }
+  29.5764% { --sp-eclipse-dim:0; }
+  32.2292% { --sp-eclipse-dim:0; }
+  32.275% { --sp-eclipse-dim:0.8; }
+  32.3083% { --sp-eclipse-dim:0.8; }
+  32.3542% { --sp-eclipse-dim:0; }
+  44.7292% { --sp-eclipse-dim:0; }
+  44.775% { --sp-eclipse-dim:0.8; }
+  44.8083% { --sp-eclipse-dim:0.8; }
+  44.8542% { --sp-eclipse-dim:0; }
+  48.8958% { --sp-eclipse-dim:0; }
+  48.9417% { --sp-eclipse-dim:0.3; }
+  48.975% { --sp-eclipse-dim:0.3; }
+  49.0208% { --sp-eclipse-dim:0; }
+  73.8958% { --sp-eclipse-dim:0; }
+  73.9417% { --sp-eclipse-dim:0.8; }
+  73.975% { --sp-eclipse-dim:0.8; }
+  74.0208% { --sp-eclipse-dim:0; }
+  82.2292% { --sp-eclipse-dim:0; }
+  82.275% { --sp-eclipse-dim:0.3; }
+  82.3083% { --sp-eclipse-dim:0.3; }
+  82.3542% { --sp-eclipse-dim:0; }
+  91.9514% { --sp-eclipse-dim:0; }
+  91.9972% { --sp-eclipse-dim:0.3; }
+  92.0306% { --sp-eclipse-dim:0.3; }
+  92.0764% { --sp-eclipse-dim:0; }
+  100% { --sp-eclipse-dim:0; }
+}
+@keyframes sp-prog-nebula {
+  0% { --sp-nebula:0; }
+  6.2736% { --sp-nebula:0; }
+  6.5389% { --sp-nebula:1; }
+  6.7708% { --sp-nebula:1; }
+  6.8986% { --sp-nebula:0; }
+  15.9958% { --sp-nebula:0; }
+  16.2611% { --sp-nebula:1; }
+  16.4931% { --sp-nebula:1; }
+  16.6208% { --sp-nebula:0; }
+  20.1625% { --sp-nebula:0; }
+  20.4278% { --sp-nebula:1; }
+  20.6597% { --sp-nebula:1; }
+  20.7875% { --sp-nebula:0; }
+  35.4403% { --sp-nebula:0; }
+  35.7056% { --sp-nebula:1; }
+  35.9375% { --sp-nebula:1; }
+  36.0653% { --sp-nebula:0; }
+  53.4958% { --sp-nebula:0; }
+  53.7611% { --sp-nebula:1; }
+  53.9931% { --sp-nebula:1; }
+  54.1208% { --sp-nebula:0; }
+  75.7181% { --sp-nebula:0; }
+  75.9833% { --sp-nebula:1; }
+  76.2153% { --sp-nebula:1; }
+  76.3431% { --sp-nebula:0; }
+  82.6625% { --sp-nebula:0; }
+  82.9278% { --sp-nebula:1; }
+  83.1597% { --sp-nebula:1; }
+  83.2875% { --sp-nebula:0; }
+  90.9958% { --sp-nebula:0; }
+  91.2611% { --sp-nebula:1; }
+  91.4931% { --sp-nebula:1; }
+  91.6208% { --sp-nebula:0; }
+  100% { --sp-nebula:0; }
+}
+@keyframes sp-prog-cosmos {
+  0% { --sp-cosmos:0; }
+  39.6069% { --sp-cosmos:0; }
+  39.8722% { --sp-cosmos:1; }
+  40.1042% { --sp-cosmos:1; }
+  40.2319% { --sp-cosmos:0; }
+  92.3847% { --sp-cosmos:0; }
+  92.65% { --sp-cosmos:1; }
+  92.8819% { --sp-cosmos:1; }
+  93.0097% { --sp-cosmos:0; }
+  100% { --sp-cosmos:0; }
+}
+@keyframes sp-prog-blood {
+  0% { --sp-blood:0; }
+  24.3292% { --sp-blood:0; }
+  24.5944% { --sp-blood:1; }
+  24.8264% { --sp-blood:1; }
+  24.9542% { --sp-blood:0; }
+  56.2736% { --sp-blood:0; }
+  56.5389% { --sp-blood:1; }
+  56.7708% { --sp-blood:1; }
+  56.8986% { --sp-blood:0; }
+  100% { --sp-blood:0; }
+}
+@keyframes sp-prog-aurora {
+  0% { --sp-aurora:0; }
+  3.4958% { --sp-aurora:0; }
+  3.7611% { --sp-aurora:1; }
+  3.9931% { --sp-aurora:1; }
+  4.1208% { --sp-aurora:0; }
+  9.0514% { --sp-aurora:0; }
+  9.3167% { --sp-aurora:1; }
+  9.5486% { --sp-aurora:1; }
+  9.6764% { --sp-aurora:0; }
+  29.8847% { --sp-aurora:0; }
+  30.15% { --sp-aurora:1; }
+  30.3819% { --sp-aurora:1; }
+  30.5097% { --sp-aurora:0; }
+  40.9958% { --sp-aurora:0; }
+  41.2611% { --sp-aurora:1; }
+  41.4931% { --sp-aurora:1; }
+  41.6208% { --sp-aurora:0; }
+  46.5514% { --sp-aurora:0; }
+  46.8167% { --sp-aurora:1; }
+  47.0486% { --sp-aurora:1; }
+  47.1764% { --sp-aurora:0; }
+  63.2181% { --sp-aurora:0; }
+  63.4833% { --sp-aurora:1; }
+  63.7153% { --sp-aurora:1; }
+  63.8431% { --sp-aurora:0; }
+  68.7736% { --sp-aurora:0; }
+  69.0389% { --sp-aurora:1; }
+  69.2708% { --sp-aurora:1; }
+  69.3986% { --sp-aurora:0; }
+  71.5514% { --sp-aurora:0; }
+  71.8167% { --sp-aurora:1; }
+  72.0486% { --sp-aurora:1; }
+  72.1764% { --sp-aurora:0; }
+  77.1069% { --sp-aurora:0; }
+  77.3722% { --sp-aurora:1; }
+  77.6042% { --sp-aurora:1; }
+  77.7319% { --sp-aurora:0; }
+  100% { --sp-aurora:0; }
+}
+@keyframes sp-prog-meteor {
+  0% { --sp-meteor:0; }
+  52.1069% { --sp-meteor:0; }
+  52.3722% { --sp-meteor:1; }
+  52.6042% { --sp-meteor:1; }
+  52.7319% { --sp-meteor:0; }
+  61.8292% { --sp-meteor:0; }
+  62.0944% { --sp-meteor:1; }
+  62.3264% { --sp-meteor:1; }
+  62.4542% { --sp-meteor:0; }
+  85.4403% { --sp-meteor:0; }
+  85.7056% { --sp-meteor:1; }
+  85.9375% { --sp-meteor:1; }
+  86.0653% { --sp-meteor:0; }
+  100% { --sp-meteor:0; }
+}
+@keyframes sp-prog-comet {
+  0% { --sp-comet:0; }
+  21.5514% { --sp-comet:0; }
+  21.8167% { --sp-comet:1; }
+  22.0486% { --sp-comet:1; }
+  22.1764% { --sp-comet:0; }
+  88.2181% { --sp-comet:0; }
+  88.4833% { --sp-comet:1; }
+  88.7153% { --sp-comet:1; }
+  88.8431% { --sp-comet:0; }
+  100% { --sp-comet:0; }
+}
+@keyframes sp-prog-w-solar {
+  0% { --sp-w-solar:0; }
+  2.1069% { --sp-w-solar:0; }
+  2.3722% { --sp-w-solar:1; }
+  2.6042% { --sp-w-solar:1; }
+  2.7319% { --sp-w-solar:0; }
+  17.3847% { --sp-w-solar:0; }
+  17.65% { --sp-w-solar:1; }
+  17.8819% { --sp-w-solar:1; }
+  18.0097% { --sp-w-solar:0; }
+  86.8292% { --sp-w-solar:0; }
+  87.0944% { --sp-w-solar:1; }
+  87.3264% { --sp-w-solar:1; }
+  87.4542% { --sp-w-solar:0; }
+  100% { --sp-w-solar:0; }
+}
+@keyframes sp-prog-w-galaxy {
+  0% { --sp-w-galaxy:0; }
+  10.4403% { --sp-w-galaxy:0; }
+  10.7056% { --sp-w-galaxy:1; }
+  10.9375% { --sp-w-galaxy:1; }
+  11.0653% { --sp-w-galaxy:0; }
+  57.6625% { --sp-w-galaxy:0; }
+  57.9278% { --sp-w-galaxy:1; }
+  58.1597% { --sp-w-galaxy:1; }
+  58.2875% { --sp-w-galaxy:0; }
+  67.3847% { --sp-w-galaxy:0; }
+  67.65% { --sp-w-galaxy:1; }
+  67.8819% { --sp-w-galaxy:1; }
+  68.0097% { --sp-w-galaxy:0; }
+  74.3292% { --sp-w-galaxy:0; }
+  74.5944% { --sp-w-galaxy:1; }
+  74.8264% { --sp-w-galaxy:1; }
+  74.9542% { --sp-w-galaxy:0; }
+  81.2736% { --sp-w-galaxy:0; }
+  81.5389% { --sp-w-galaxy:1; }
+  81.7708% { --sp-w-galaxy:1; }
+  81.8986% { --sp-w-galaxy:0; }
+  100% { --sp-w-galaxy:0; }
+}
+@keyframes sp-prog-w-bh {
+  0% { --sp-w-bh:0; }
+  14.6069% { --sp-w-bh:0; }
+  14.8722% { --sp-w-bh:1; }
+  15.1042% { --sp-w-bh:1; }
+  15.2319% { --sp-w-bh:0; }
+  50.7181% { --sp-w-bh:0; }
+  50.9833% { --sp-w-bh:1; }
+  51.2153% { --sp-w-bh:1; }
+  51.3431% { --sp-w-bh:0; }
+  93.7736% { --sp-w-bh:0; }
+  94.0389% { --sp-w-bh:1; }
+  94.2708% { --sp-w-bh:1; }
+  94.3986% { --sp-w-bh:0; }
+  100% { --sp-w-bh:0; }
+}
+@keyframes sp-prog-w-cluster {
+  0% { --sp-w-cluster:0; }
+  25.7181% { --sp-w-cluster:0; }
+  25.9833% { --sp-w-cluster:1; }
+  26.2153% { --sp-w-cluster:1; }
+  26.3431% { --sp-w-cluster:0; }
+  72.9403% { --sp-w-cluster:0; }
+  73.2056% { --sp-w-cluster:1; }
+  73.4375% { --sp-w-cluster:1; }
+  73.5653% { --sp-w-cluster:0; }
+  100% { --sp-w-cluster:0; }
+}
+@keyframes sp-prog-neb-h {
+  0% { --sp-neb-h:270; animation-timing-function:step-end; }
+  5.5556% { --sp-neb-h:270; animation-timing-function:step-end; }
+  15.2778% { --sp-neb-h:270; animation-timing-function:step-end; }
+  19.4444% { --sp-neb-h:175; animation-timing-function:step-end; }
+  34.7222% { --sp-neb-h:175; animation-timing-function:step-end; }
+  52.7778% { --sp-neb-h:270; animation-timing-function:step-end; }
+  75% { --sp-neb-h:175; animation-timing-function:step-end; }
+  81.9444% { --sp-neb-h:270; animation-timing-function:step-end; }
+  90.2778% { --sp-neb-h:175; animation-timing-function:step-end; }
+  100% { --sp-neb-h:270; }
+}
+@keyframes sp-prog-aur-h {
+  0% { --sp-aur-h:140; animation-timing-function:step-end; }
+  2.7778% { --sp-aur-h:285; animation-timing-function:step-end; }
+  8.3333% { --sp-aur-h:285; animation-timing-function:step-end; }
+  29.1667% { --sp-aur-h:140; animation-timing-function:step-end; }
+  40.2778% { --sp-aur-h:285; animation-timing-function:step-end; }
+  45.8333% { --sp-aur-h:285; animation-timing-function:step-end; }
+  62.5% { --sp-aur-h:285; animation-timing-function:step-end; }
+  68.0556% { --sp-aur-h:285; animation-timing-function:step-end; }
+  70.8333% { --sp-aur-h:140; animation-timing-function:step-end; }
+  76.3889% { --sp-aur-h:140; animation-timing-function:step-end; }
+  100% { --sp-aur-h:140; }
+}
+@keyframes sp-prog-comet-x {
+  0% { --sp-comet-x:112%; animation-timing-function:step-end; }
+  21.5972% { --sp-comet-x:-12%; animation-timing-function:linear; }
+  22.1528% { --sp-comet-x:112%; animation-timing-function:step-end; }
+  88.2639% { --sp-comet-x:-12%; animation-timing-function:linear; }
+  88.8194% { --sp-comet-x:112%; animation-timing-function:step-end; }
+  100% { --sp-comet-x:112%; }
+}
+body.sp-on-sky .workspace-split.mod-root {
+  --sp-sky-k:1; --sp-sky-h:calc(var(--header-height,40px) * 2);
+  position:relative; isolation:isolate; overflow:clip; background-color:var(--background-primary);
+}
+body.sp-on-sky:not(.sp-sky-extend) .workspace-split.mod-root, body.is-phone.sp-on-sky .workspace-split.mod-root { --sp-sky-k:.5; --sp-sky-h:var(--header-height,40px); }
+/* ① 天空（.mod-root::before）：天色漸層、星星、日食壓暗；overflow:clip 讓太陽/月亮不會越過側欄 */
+body.sp-on-sky .workspace-split.mod-root::before {
+  content:""; position:absolute; top:0; left:0; right:0; height:var(--sp-sky-h); z-index:-1; pointer-events:none;
+  --sp-star-a:calc(var(--sp-star) + var(--sp-eclipse-dim) * .9);
+  background:
+    linear-gradient(rgba(10,6,4,var(--sp-sky-dim)),rgba(10,6,4,calc(var(--sp-sky-dim) * .6))),
+    linear-gradient(rgba(0,0,14,var(--sp-eclipse-dim)),rgba(0,0,14,var(--sp-eclipse-dim))),
+    radial-gradient(circle 1.1px at 18px calc(8px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 137px 100% repeat-x,
+    radial-gradient(circle 0.9px at 77px calc(40px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 137px 100% repeat-x,
+    radial-gradient(circle 1.2px at 119px calc(62px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 137px 100% repeat-x,
+    radial-gradient(circle 1px at 40px calc(26px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 211px 100% repeat-x,
+    radial-gradient(circle 1.2px at 150px calc(7px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 211px 100% repeat-x,
+    radial-gradient(circle 0.9px at 188px calc(56px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 211px 100% repeat-x,
+    radial-gradient(circle 1px at 50px calc(14px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 89px 100% repeat-x,
+    radial-gradient(circle 0.9px at 20px calc(70px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-star-a)) 0,rgba(255,255,255,0) 100%) 0 0 / 89px 100% repeat-x,
+    linear-gradient(to bottom,var(--sp-sky1),var(--sp-sky2));
+}
+/* ② 天體（.mod-root::after）：前半天太陽、後半天月亮；月相 = 暗底 + 亮色內陰影，日食 = 黑圓蓋住太陽 */
+body.sp-on-sky .workspace-split.mod-root::after {
+  content:""; position:absolute; z-index:-1; pointer-events:none;
+  left:var(--sp-cel-x); top:calc(var(--sp-cel-y) * var(--sp-sky-k)); width:var(--sp-cel-size); height:var(--sp-cel-size);
+  margin:calc(var(--sp-cel-size) / -2) 0 0 calc(var(--sp-cel-size) / -2); border-radius:50%; opacity:var(--sp-cel-op);
+  background:
+    radial-gradient(circle calc(var(--sp-cel-size) * .46) at calc(50% + var(--sp-cover)) 50%,#0b0714 0,#0b0714 96%,rgba(11,7,20,0) 100%),
+    radial-gradient(circle 1.6px at 32% 38%,rgba(110,120,150,calc(.55 * var(--sp-crater))) 0,rgba(110,120,150,0) 100%),
+    radial-gradient(circle 1.2px at 62% 60%,rgba(110,120,150,calc(.5 * var(--sp-crater))) 0,rgba(110,120,150,0) 100%),
+    radial-gradient(circle 0.9px at 55% 28%,rgba(110,120,150,calc(.45 * var(--sp-crater))) 0,rgba(110,120,150,0) 100%),
+    radial-gradient(circle at 38% 38%,var(--sp-cel-a) 0,var(--sp-cel-b) 65%,var(--sp-cel-c) 100%);
+  box-shadow:inset var(--sp-cel-inset) 0 0 0 var(--sp-cel-inset-c), 0 0 10px 4px var(--sp-cel-glow), 0 0 28px 10px color-mix(in srgb,var(--sp-cel-glow) 38%,transparent);
+}
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs { position:relative; isolation:isolate; }
+/* ③ 光影（.workspace-tabs::before）：極光、星雲、星河、血月、彗星、流星；全部歸零時 opacity=0，瀏覽器不繪製 */
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs::before {
+  content:""; position:absolute; top:0; left:0; right:0; height:var(--sp-sky-h); z-index:-1; pointer-events:none;
+  opacity:min(1, calc(max(var(--sp-nebula), var(--sp-cosmos), var(--sp-blood), var(--sp-aurora), var(--sp-meteor), var(--sp-comet)) * 1000));
+  background:
+    linear-gradient(165deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 30%,rgba(255,255,255,calc(.95 * var(--sp-meteor))) 100%) var(--sp-m1x) var(--sp-m1y) / 7px 34px no-repeat,
+    linear-gradient(165deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 30%,rgba(255,255,255,calc(.95 * var(--sp-meteor))) 100%) var(--sp-m2x) var(--sp-m2y) / 7px 34px no-repeat,
+    linear-gradient(165deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 30%,rgba(255,255,255,calc(.95 * var(--sp-meteor))) 100%) var(--sp-m3x) var(--sp-m3y) / 7px 34px no-repeat,
+    radial-gradient(circle 3.4px at var(--sp-comet-x) calc(26px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-comet)) 0,rgba(200,230,255,calc(.6 * var(--sp-comet))) 60%,rgba(200,230,255,0) 100%),
+    radial-gradient(ellipse 62px 2.6px at calc(var(--sp-comet-x) - 46px) calc(26px * var(--sp-sky-k)),rgba(190,225,255,calc(.55 * var(--sp-comet))) 0,rgba(190,225,255,0) 100%),
+    radial-gradient(circle 0.8px at 6px calc(9px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 23px 100% repeat-x,
+    radial-gradient(circle 0.7px at 15px calc(28px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 31px 100% repeat-x,
+    radial-gradient(circle 0.9px at 29px calc(17px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 47px 100% repeat-x,
+    radial-gradient(circle 0.6px at 11px calc(33px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 29px 100% repeat-x,
+    radial-gradient(circle 0.7px at 21px calc(6px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 41px 100% repeat-x,
+    radial-gradient(circle 0.8px at 37px calc(24px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 53px 100% repeat-x,
+    radial-gradient(circle 0.7px at 22px calc(50px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 37px 100% repeat-x,
+    radial-gradient(circle 0.8px at 35px calc(66px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 43px 100% repeat-x,
+    radial-gradient(circle 0.6px at 8px calc(72px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 59px 100% repeat-x,
+    radial-gradient(circle 0.7px at 26px calc(44px * var(--sp-sky-k)),rgba(255,255,255,var(--sp-cosmos)) 0,rgba(255,255,255,0) 100%) 0 0 / 61px 100% repeat-x,
+    linear-gradient(100deg,transparent 15%,rgba(190,180,255,calc(.30 * var(--sp-cosmos))) 40%,rgba(255,226,196,calc(.36 * var(--sp-cosmos))) 52%,rgba(190,180,255,calc(.28 * var(--sp-cosmos))) 62%,transparent 85%),
+    radial-gradient(ellipse 70px 46px at calc(18% + var(--sp-aur-x)) calc(32px * var(--sp-sky-k)),hsl(var(--sp-aur-h) 90% 60% / calc(0.55 * var(--sp-aurora))) 0,hsl(var(--sp-aur-h) 90% 60% / 0) 100%),
+    radial-gradient(ellipse 120px 38px at calc(44% - var(--sp-aur-x)) calc(46px * var(--sp-sky-k)),hsl(calc(var(--sp-aur-h) + 25) 85% 55% / calc(0.5 * var(--sp-aurora))) 0,hsl(calc(var(--sp-aur-h) + 25) 85% 55% / 0) 100%),
+    radial-gradient(ellipse 90px 52px at calc(72% + var(--sp-aur-x) * .7) calc(30px * var(--sp-sky-k)),hsl(calc(var(--sp-aur-h) - 20) 90% 62% / calc(0.5 * var(--sp-aurora))) 0,hsl(calc(var(--sp-aur-h) - 20) 90% 62% / 0) 100%),
+    linear-gradient(to bottom,hsl(var(--sp-aur-h) 80% 55% / 0) 6%,hsl(var(--sp-aur-h) 80% 55% / calc(.24 * var(--sp-aurora))) 48%,hsl(var(--sp-aur-h) 80% 55% / 0) 92%),
+    radial-gradient(ellipse 160px 38px at calc(22% + var(--sp-neb-x)) calc(44px * var(--sp-sky-k)),hsl(var(--sp-neb-h) 75% 60% / calc(0.6 * var(--sp-nebula))) 0,hsl(var(--sp-neb-h) 75% 60% / 0) 100%),
+    radial-gradient(ellipse 230px 30px at calc(63% - var(--sp-neb-x)) calc(26px * var(--sp-sky-k)),hsl(calc(var(--sp-neb-h) + 55) 70% 55% / calc(0.55 * var(--sp-nebula))) 0,hsl(calc(var(--sp-neb-h) + 55) 70% 55% / 0) 100%),
+    radial-gradient(ellipse 130px 26px at calc(86% + var(--sp-neb-x) * .6) calc(60px * var(--sp-sky-k)),hsl(calc(var(--sp-neb-h) - 40) 80% 60% / calc(0.5 * var(--sp-nebula))) 0,hsl(calc(var(--sp-neb-h) - 40) 80% 60% / 0) 100%),
+    linear-gradient(rgba(110,15,10,calc(var(--sp-blood) * .38)),rgba(70,10,8,calc(var(--sp-blood) * .22)));
+}
+/* ④ 天氣與奇觀（.workspace-tabs::after）：雲、霧、閃電、太陽系 / 銀河系 / 黑洞 / 星團 */
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs::after {
+  content:""; position:absolute; top:0; left:0; right:0; height:var(--sp-sky-h); z-index:-1; pointer-events:none;
+  opacity:min(1, calc(max(var(--sp-cloud), var(--sp-fog), var(--sp-storm), var(--sp-w-solar), var(--sp-w-galaxy), var(--sp-w-bh), var(--sp-w-cluster)) * 1000));
+  transition:--sp-cloud 4s, --sp-fog 4s, --sp-storm 4s;
+  background:
+    linear-gradient(rgba(235,240,255,calc(var(--sp-flash) * var(--sp-storm) * .55)),rgba(235,240,255,calc(var(--sp-flash) * var(--sp-storm) * .55))),
+    linear-gradient(rgba(210,216,222,calc(.55 * var(--sp-fog))),rgba(190,198,205,calc(.35 * var(--sp-fog)))),
+    radial-gradient(ellipse 90px 20px at 14% calc(14px * var(--sp-sky-k)),rgba(70,78,95,calc(0.85 * var(--sp-cloud))) 0,rgba(70,78,95,0) 100%),
+    radial-gradient(ellipse 130px 24px at 48% calc(40px * var(--sp-sky-k)),rgba(60,68,86,calc(0.85 * var(--sp-cloud))) 0,rgba(60,68,86,0) 100%),
+    radial-gradient(ellipse 110px 22px at 82% calc(22px * var(--sp-sky-k)),rgba(66,74,92,calc(0.85 * var(--sp-cloud))) 0,rgba(66,74,92,0) 100%),
+    linear-gradient(rgba(25,30,45,calc(var(--sp-cloud) * .5)),rgba(25,30,45,calc(var(--sp-cloud) * .4))),
+    radial-gradient(circle 15px at 9% 50%,rgba(255,236,170,var(--sp-w-solar)) 0,rgba(255,190,80,calc(.8 * var(--sp-w-solar))) 55%,rgba(255,150,40,0) 100%),
+    radial-gradient(circle 46px at 9% 50%,rgba(255,190,90,calc(.35 * var(--sp-w-solar))),rgba(255,190,90,0)),
+    radial-gradient(circle 1.6px at calc(9% + 34px * cos(var(--sp-o1))) calc(50% + 5.4px * sin(var(--sp-o1))),rgba(181,181,181,var(--sp-w-solar)) 0,rgba(181,181,181,var(--sp-w-solar)) 65%,rgba(181,181,181,0) 100%),
+    radial-gradient(ellipse 34px 5.4px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(circle 2.4px at calc(9% + 56px * cos(var(--sp-o2))) calc(50% + 9px * sin(var(--sp-o2))),rgba(232,199,138,var(--sp-w-solar)) 0,rgba(232,199,138,var(--sp-w-solar)) 65%,rgba(232,199,138,0) 100%),
+    radial-gradient(ellipse 56px 9px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(circle 2.6px at calc(9% + 80px * cos(var(--sp-o3))) calc(50% + 12.8px * sin(var(--sp-o3))),rgba(90,160,224,var(--sp-w-solar)) 0,rgba(90,160,224,var(--sp-w-solar)) 65%,rgba(90,160,224,0) 100%),
+    radial-gradient(ellipse 80px 12.8px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(circle 2.0px at calc(9% + 108px * cos(var(--sp-o4))) calc(50% + 17.3px * sin(var(--sp-o4))),rgba(217,99,58,var(--sp-w-solar)) 0,rgba(217,99,58,var(--sp-w-solar)) 65%,rgba(217,99,58,0) 100%),
+    radial-gradient(ellipse 108px 17.3px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(circle 5.0px at calc(9% + 160px * cos(var(--sp-o5))) calc(50% + 25.6px * sin(var(--sp-o5))),rgba(216,180,138,var(--sp-w-solar)) 0,rgba(216,180,138,var(--sp-w-solar)) 65%,rgba(216,180,138,0) 100%),
+    radial-gradient(ellipse 160px 25.6px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(circle 4.2px at calc(9% + 220px * cos(var(--sp-o6))) calc(50% + 34px * sin(var(--sp-o6))),rgba(232,212,160,var(--sp-w-solar)) 0,rgba(232,212,160,var(--sp-w-solar)) 65%,rgba(232,212,160,0) 100%),
+    radial-gradient(ellipse 220px 34px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(circle 3.4px at calc(9% + 290px * cos(var(--sp-o7))) calc(50% + 36px * sin(var(--sp-o7))),rgba(159,216,224,var(--sp-w-solar)) 0,rgba(159,216,224,var(--sp-w-solar)) 65%,rgba(159,216,224,0) 100%),
+    radial-gradient(ellipse 290px 36px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(circle 3.4px at calc(9% + 360px * cos(var(--sp-o8))) calc(50% + 36px * sin(var(--sp-o8))),rgba(79,111,224,var(--sp-w-solar)) 0,rgba(79,111,224,var(--sp-w-solar)) 65%,rgba(79,111,224,0) 100%),
+    radial-gradient(ellipse 360px 36px at 9% 50%,rgba(255,255,255,0) 97%,rgba(255,255,255,calc(.14 * var(--sp-w-solar))) 98.4%,rgba(255,255,255,0) 100%),
+    radial-gradient(ellipse 18px 5px at calc(58% + 120px * cos(var(--sp-o2))) calc(50% + 12px * sin(var(--sp-o2))),rgba(170,200,255,calc(.9 * var(--sp-w-galaxy))) 0,rgba(170,200,255,0) 100%),
+    radial-gradient(ellipse 18px 5px at calc(58% + 170px * cos(var(--sp-o3))) calc(50% + 17px * sin(var(--sp-o3))),rgba(255,230,190,calc(.9 * var(--sp-w-galaxy))) 0,rgba(255,230,190,0) 100%),
+    radial-gradient(ellipse 18px 5px at calc(58% + 220px * cos(var(--sp-o4))) calc(50% + 22px * sin(var(--sp-o4))),rgba(190,170,255,calc(.9 * var(--sp-w-galaxy))) 0,rgba(190,170,255,0) 100%),
+    radial-gradient(ellipse 18px 5px at calc(58% + 270px * cos(var(--sp-o5))) calc(50% + 27px * sin(var(--sp-o5))),rgba(255,210,170,calc(.9 * var(--sp-w-galaxy))) 0,rgba(255,210,170,0) 100%),
+    radial-gradient(ellipse 18px 5px at calc(58% + 310px * cos(var(--sp-o6))) calc(50% + 31px * sin(var(--sp-o6))),rgba(170,200,255,calc(.9 * var(--sp-w-galaxy))) 0,rgba(170,200,255,0) 100%),
+    radial-gradient(ellipse 18px 5px at calc(58% + 150px * cos(var(--sp-o7))) calc(50% + 15px * sin(var(--sp-o7))),rgba(255,240,210,calc(.9 * var(--sp-w-galaxy))) 0,rgba(255,240,210,0) 100%),
+    radial-gradient(circle 24px at 58% 50%,rgba(255,246,220,calc(.95 * var(--sp-w-galaxy))) 0,rgba(255,214,150,calc(.5 * var(--sp-w-galaxy))) 55%,rgba(255,214,150,0) 100%),
+    linear-gradient(to bottom,rgba(10,6,20,0) 46%,rgba(10,6,20,calc(.5 * var(--sp-w-galaxy))) 50%,rgba(10,6,20,0) 54%),
+    radial-gradient(ellipse 380px 24px at 58% 50%,rgba(255,236,200,calc(.75 * var(--sp-w-galaxy))) 0,rgba(180,160,255,calc(.4 * var(--sp-w-galaxy))) 38%,rgba(90,80,170,calc(.16 * var(--sp-w-galaxy))) 68%,rgba(90,80,170,0) 100%),
+    radial-gradient(circle 13px at 72% 52%,rgba(0,0,0,var(--sp-w-bh)) 0,rgba(0,0,0,var(--sp-w-bh)) 92%,rgba(0,0,0,0) 100%),
+    radial-gradient(circle 3px at calc(72% + 70px * cos(var(--sp-o3))) calc(52% + 7px * sin(var(--sp-o3))),rgba(255,230,180,calc(var(--sp-w-bh) * var(--sp-pulse))) 0,rgba(255,200,120,0) 100%),
+    radial-gradient(ellipse 90px 10px at 72% 52%,rgba(255,190,110,0) 40%,rgba(255,200,120,calc(.9 * var(--sp-w-bh) * var(--sp-pulse))) 62%,rgba(255,120,60,calc(.6 * var(--sp-w-bh))) 80%,rgba(255,120,60,0) 100%),
+    radial-gradient(ellipse 22px 36px at 72% 52%,rgba(255,200,130,0) 55%,rgba(255,210,150,calc(.45 * var(--sp-w-bh))) 75%,rgba(255,210,150,0) 100%),
+    radial-gradient(circle 70px at 72% 52%,rgba(255,150,70,calc(.25 * var(--sp-w-bh))) 0,rgba(255,150,70,0) 100%),
+    radial-gradient(circle 110px at 36% 50%,rgba(255,240,200,calc(.5 * var(--sp-w-cluster))) 0,rgba(255,210,150,calc(.22 * var(--sp-w-cluster))) 35%,rgba(255,210,150,0) 70%),
+    radial-gradient(circle 1.0px at calc(36% + -64px) calc(50% + -10px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw1))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.25px at calc(36% + -35px) calc(50% + 8px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw2))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.5px at calc(36% + -13px) calc(50% + -20px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw1))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.0px at calc(36% + 10px) calc(50% + 2px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw2))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.25px at calc(36% + 32px) calc(50% + -12px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw1))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.5px at calc(36% + 54px) calc(50% + 14px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw2))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.0px at calc(36% + 74px) calc(50% + -4px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw1))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.25px at calc(36% + -48px) calc(50% + 18px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw2))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.5px at calc(36% + -6px) calc(50% + 22px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw1))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.0px at calc(36% + 22px) calc(50% + 24px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw2))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.25px at calc(36% + 45px) calc(50% + -26px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw1))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.5px at calc(36% + -74px) calc(50% + 4px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw2))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.0px at calc(36% + 3px) calc(50% + -8px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw1))) 0,rgba(255,250,235,0) 100%),
+    radial-gradient(circle 1.25px at calc(36% + -22px) calc(50% + -2px),rgba(255,250,235,calc(var(--sp-w-cluster) * var(--sp-tw2))) 0,rgba(255,250,235,0) 100%),
+    linear-gradient(transparent,transparent);
+}
+/* 分頁列、路徑列、標題列透明：天空從 .mod-root 後面透出來；文字固定淺色 + 陰影 */
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-tab-header-container,
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-tab-container,
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-leaf,
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-leaf-content,
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header,
+body.is-phone.sp-on-sky .workspace-split.mod-root .workspace-leaf, body.is-phone.sp-on-sky .workspace-split.mod-root .workspace-leaf-content, body.is-phone.sp-on-sky .workspace-split.mod-root .view-header { background:transparent; }
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-tab-header.is-active { background:rgba(18,11,7,.72); }
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-tab-header .workspace-tab-header-inner-title { color:#ecdcb8; text-shadow:0 1px 3px #000, 0 0 2px #000; }
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-tab-header.is-active .workspace-tab-header-inner-title { color:#ffd98a; }
+body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-tab-header-container .workspace-tab-header-inner-icon, body.sp-on-sky .workspace-split.mod-root > .workspace-tabs .workspace-tab-header-container .clickable-icon { color:#e8d8b4; filter:drop-shadow(0 1px 2px #000); }
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header .view-header-title,
+body.is-phone.sp-on-sky .workspace-split.mod-root .view-header .view-header-title,
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header .view-header-breadcrumb,
+body.is-phone.sp-on-sky .workspace-split.mod-root .view-header .view-header-breadcrumb,
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header .view-header-breadcrumb-separator,
+body.is-phone.sp-on-sky .workspace-split.mod-root .view-header .view-header-breadcrumb-separator,
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header .view-header-title-parent,
+body.is-phone.sp-on-sky .workspace-split.mod-root .view-header .view-header-title-parent { color:#ecdcb8; text-shadow:0 1px 3px #000, 0 0 2px #000; }
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header .view-header-title,
+body.is-phone.sp-on-sky .workspace-split.mod-root .view-header .view-header-title { color:#ffd98a; }
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header .clickable-icon,
+body.is-phone.sp-on-sky .workspace-split.mod-root .view-header .clickable-icon,
+body.sp-on-sky.sp-sky-extend .workspace-split.mod-root > .workspace-tabs .view-header .view-header-icon,
+body.is-phone.sp-on-sky .workspace-split.mod-root .view-header .view-header-icon { color:#e8d8b4; filter:drop-shadow(0 1px 2px #000); }
+body.sp-perf-low::before, body.sp-perf-low::after, body.sp-perf-low .app-container::before, body.sp-perf-low .app-container::after,
+body.sp-perf-auto::before, body.sp-perf-auto::after, body.sp-perf-auto .app-container::before, body.sp-perf-auto .app-container::after { display:none !important; }
+:where(body) { --sp-engine:1; }
+/* 動畫掛在各偽元素自己身上（屬性不繼承）：只有這幾個小元素會重畫；幀率 / 更新率可用 sp-fps-* 與 sp-rate-* 或效能預設調整 */
+body.sp-motion .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(52,end) infinite, sp-m2 5.9s steps(70,end) -1.7s infinite, sp-m3 7.7s steps(92,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate; }
+body.sp-motion .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(84,end) infinite; }
+body.sp-motion:not(.sp-live) .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(52,end) infinite, sp-m2 5.9s steps(70,end) -1.7s infinite, sp-m3 7.7s steps(92,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate, sp-prog-nebula calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-cosmos calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-blood calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-aurora calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-meteor calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-comet calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-neb-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-aur-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-comet-x calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live) .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(84,end) infinite, sp-prog-w-solar calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-galaxy calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-bh calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-cluster calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion.sp-rate-mid .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(26,end) infinite, sp-m2 5.9s steps(35,end) -1.7s infinite, sp-m3 7.7s steps(46,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate; }
+body.sp-motion.sp-rate-mid .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(42,end) infinite; }
+body.sp-motion:not(.sp-live).sp-rate-mid .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(26,end) infinite, sp-m2 5.9s steps(35,end) -1.7s infinite, sp-m3 7.7s steps(46,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate, sp-prog-nebula calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-cosmos calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-blood calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-aurora calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-meteor calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-comet calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-neb-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-aur-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-comet-x calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live).sp-rate-mid .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(42,end) infinite, sp-prog-w-solar calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-galaxy calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-bh calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-cluster calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion.sp-perf-balanced .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(26,end) infinite, sp-m2 5.9s steps(35,end) -1.7s infinite, sp-m3 7.7s steps(46,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate; }
+body.sp-motion.sp-perf-balanced .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(42,end) infinite; }
+body.sp-motion:not(.sp-live).sp-perf-balanced .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(26,end) infinite, sp-m2 5.9s steps(35,end) -1.7s infinite, sp-m3 7.7s steps(46,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate, sp-prog-nebula calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-cosmos calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-blood calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-aurora calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-meteor calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-comet calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-neb-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-aur-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-comet-x calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live).sp-perf-balanced .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(42,end) infinite, sp-prog-w-solar calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-galaxy calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-bh calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-cluster calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion.sp-rate-low .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(13,end) infinite, sp-m2 5.9s steps(18,end) -1.7s infinite, sp-m3 7.7s steps(23,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate; }
+body.sp-motion.sp-rate-low .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(21,end) infinite; }
+body.sp-motion:not(.sp-live).sp-rate-low .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(13,end) infinite, sp-m2 5.9s steps(18,end) -1.7s infinite, sp-m3 7.7s steps(23,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate, sp-prog-nebula calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-cosmos calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-blood calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-aurora calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-meteor calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-comet calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-neb-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-aur-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-comet-x calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live).sp-rate-low .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(21,end) infinite, sp-prog-w-solar calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-galaxy calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-bh calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-cluster calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion.sp-perf-low .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(13,end) infinite, sp-m2 5.9s steps(18,end) -1.7s infinite, sp-m3 7.7s steps(23,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate; }
+body.sp-motion.sp-perf-low .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(21,end) infinite; }
+body.sp-motion:not(.sp-live).sp-perf-low .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(13,end) infinite, sp-m2 5.9s steps(18,end) -1.7s infinite, sp-m3 7.7s steps(23,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate, sp-prog-nebula calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-cosmos calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-blood calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-aurora calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-meteor calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-comet calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-neb-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-aur-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-comet-x calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live).sp-perf-low .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(21,end) infinite, sp-prog-w-solar calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-galaxy calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-bh calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-cluster calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion.sp-perf-auto .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(13,end) infinite, sp-m2 5.9s steps(18,end) -1.7s infinite, sp-m3 7.7s steps(23,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate; }
+body.sp-motion.sp-perf-auto .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(21,end) infinite; }
+body.sp-motion:not(.sp-live).sp-perf-auto .workspace-split.mod-root > .workspace-tabs::before { animation:sp-m1 4.3s steps(13,end) infinite, sp-m2 5.9s steps(18,end) -1.7s infinite, sp-m3 7.7s steps(23,end) -3.1s infinite, sp-neb-drift 200s ease-in-out infinite alternate, sp-aur-drift 37s ease-in-out infinite alternate, sp-prog-nebula calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-cosmos calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-blood calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-aurora calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-meteor calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-comet calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-neb-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-aur-h calc(var(--sp-day-length) * 72) linear infinite, sp-prog-comet-x calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live).sp-perf-auto .workspace-split.mod-root > .workspace-tabs::after { animation:sp-o1 8s steps(96,end) infinite, sp-o2 20s steps(240,end) infinite, sp-o3 33s steps(396,end) infinite, sp-o4 60s steps(720,end) infinite, sp-o5 110s steps(1320,end) infinite, sp-o6 180s steps(2160,end) infinite, sp-o7 300s steps(3600,end) infinite, sp-o8 480s steps(5760,end) infinite, sp-pulse 3s steps(18,end) infinite alternate, sp-tw1 2.2s steps(5,end) infinite alternate, sp-tw2 1.7s steps(4,end) infinite alternate, sp-flash 7s steps(21,end) infinite, sp-prog-w-solar calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-galaxy calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-bh calc(var(--sp-day-length) * 72) steps(60,end) infinite, sp-prog-w-cluster calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live) .workspace-split.mod-root::before { animation:sp-sky var(--sp-day-length) steps(30,end) infinite, sp-prog-eclipse-dim calc(var(--sp-day-length) * 72) steps(60,end) infinite; }
+body.sp-motion:not(.sp-live) .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) linear infinite, sp-cel-y var(--sp-day-length) linear infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-perf-balanced .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) steps(1350,end) infinite, sp-cel-y var(--sp-day-length) steps(84,end) infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-perf-low .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) steps(450,end) infinite, sp-cel-y var(--sp-day-length) steps(28,end) infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-perf-auto .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) steps(450,end) infinite, sp-cel-y var(--sp-day-length) steps(28,end) infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-fps-30 .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) steps(1350,end) infinite, sp-cel-y var(--sp-day-length) steps(84,end) infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-fps-15 .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) steps(675,end) infinite, sp-cel-y var(--sp-day-length) steps(42,end) infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-fps-10 .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) steps(450,end) infinite, sp-cel-y var(--sp-day-length) steps(28,end) infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-fps-5 .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) steps(225,end) infinite, sp-cel-y var(--sp-day-length) steps(14,end) infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body.sp-motion:not(.sp-live).sp-fps-60 .workspace-split.mod-root::after { animation:sp-cel-x var(--sp-day-length) linear infinite, sp-cel-y var(--sp-day-length) linear infinite, sp-prog-cel calc(var(--sp-day-length) * 72) linear infinite; }
+body:not(.sp-motion) .workspace-split.mod-root::before { --sp-sky1:#3a2a5c; --sp-sky2:#e0703c; --sp-star:.35; }
+body:not(.sp-motion) .workspace-split.mod-root::after { --sp-cel-x:70%; --sp-cel-y:46px; }
+
+/* 5f. 羊皮紙質感（主題專屬；引擎部分在上面）*/
+.workspace-leaf-content[data-type="markdown"] > .view-content {
+  background-color:var(--background-primary);
+  background-image:
+    var(--sp-grain), var(--sp-blotch),
+    radial-gradient(ellipse at 50% 42%,var(--sp-vig-center) 0,transparent 62%),
+    radial-gradient(ellipse at 50% 50%,transparent 52%,var(--sp-vig-edge) 100%);
+  background-size:240px 240px, 700px 700px, 100% 100%, 100% 100%;
+}
+.workspace-leaf-content[data-type="markdown"] :is(.markdown-source-view, .markdown-reading-view, .markdown-preview-view) { background-color:transparent; }
+.workspace-split.mod-left-split .workspace-leaf-content, .workspace-split.mod-right-split .workspace-leaf-content { background-image:var(--sp-grain); background-size:240px 240px; }
+body { --sp-theme:1; }
+
+/* ---------- 6. 正文：列表、縮排線、引用、分隔線 ---------- */
+.markdown-rendered, .markdown-source-view.mod-cm6 .cm-scroller { line-height:1.75; font-size:1.12em; }
+body {
+  --indentation-guide-width:2px;
+  --indentation-guide-color:rgba(192,105,58,.5);
+  --indentation-guide-color-active:var(--sp-brass-hi);
+  --list-marker-color:var(--sp-brass);
+}
+.markdown-rendered ul > li > ul, .markdown-rendered ol > li > ul,
+.markdown-rendered ul > li > ol, .markdown-rendered ol > li > ol { border-inline-start-style:dotted; }
+.markdown-rendered ul > li::marker { content:"⚙  "; color:var(--sp-brass); font-size:.85em; }
+.markdown-rendered ul ul > li::marker { content:"◈  "; color:var(--sp-copper); }
+.markdown-rendered ul ul ul > li::marker { content:"▪  "; color:var(--sp-verdigris); }
+.markdown-rendered ol > li::marker { font-family:var(--sp-font-head); color:var(--sp-brass); }
+.markdown-source-view.mod-cm6 .list-bullet::after { background:var(--sp-rivet); box-shadow:0 1px 2px var(--sp-shadow); width:6px; height:6px; }
+
+.markdown-rendered blockquote, .markdown-source-view.mod-cm6 .HyperMD-quote {
+  border-left:5px solid var(--sp-brass); background:linear-gradient(90deg,rgba(200,146,58,.12),transparent 70%);
+  padding:.4em 1em; border-radius:0 6px 6px 0; color:var(--sp-paper-dim); font-style:italic;
+}
+
+/* 分隔線 → 帶法蘭與鉚釘的水平管道，正中央一顆齒輪 */
+body { --hr-color:var(--sp-brass-lo); --hr-thickness:2px; }
+hr {
+  position:relative; height:9px; margin:2.2em 0; border:0 !important; border-radius:4px; overflow:visible;
+  background:linear-gradient(to bottom,var(--sp-brass-hi) 0,var(--sp-brass) 30%,var(--sp-brass-lo) 70%,#2a1b0d 100%);
+  box-shadow:0 2px 5px var(--sp-shadow);
+}
+hr::before {
+  content:""; position:absolute; left:0; right:0; top:-4px; bottom:-4px; border-radius:3px;
+  background:
+    linear-gradient(to bottom,var(--sp-brass-hi),var(--sp-brass-lo)) left center / 9px 100% no-repeat,
+    linear-gradient(to bottom,var(--sp-brass-hi),var(--sp-brass-lo)) right center / 9px 100% no-repeat,
+    radial-gradient(circle,#2a1b0d 1.5px,transparent 2px) 22% center / 8px 8px no-repeat,
+    radial-gradient(circle,#2a1b0d 1.5px,transparent 2px) 78% center / 8px 8px no-repeat;
+}
+hr::after {
+  content:""; position:absolute; left:50%; top:50%; width:30px; height:30px; transform:translate(-50%,-50%);
+  background:var(--sp-brass-hi); filter:drop-shadow(0 1px 2px var(--sp-shadow));
+  -webkit-mask:var(--sp-gear) center / contain no-repeat; mask:var(--sp-gear) center / contain no-repeat;
+}
+.markdown-rendered mark, .cm-highlight { box-shadow:0 1px 0 var(--sp-brass); }
+.markdown-rendered .internal-link { text-decoration:underline dotted; text-underline-offset:3px; }
+
+/* ---------- 7. 提示框（Callout）→ 儀表銘牌 ---------- */
+body {
+  --callout-radius:6px; --callout-padding:0;
+  --callout-title-padding:7px 14px 7px 16px; --callout-content-padding:10px 18px 12px;
+  --callout-title-weight:700; --callout-border-width:0;
+}
+.callout {
+  position:relative; overflow:hidden;
+  border:2px solid rgba(var(--callout-color),.75);
+  border-left:9px solid rgb(var(--callout-color));
+  border-radius:6px;
+  background:
+    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),rgba(var(--callout-color),.95) 2px,transparent 2.7px) no-repeat,
+    radial-gradient(circle at 9px calc(100% - 9px),rgba(var(--callout-color),.95) 2px,transparent 2.7px) no-repeat,
+    linear-gradient(rgba(var(--callout-color),.1),rgba(var(--callout-color),.04));
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.35),0 3px 8px var(--sp-shadow);
+}
+.callout-title {
+  font-family:var(--sp-font-head); letter-spacing:.03em; color:rgb(var(--callout-color));
+  background:linear-gradient(to bottom,rgba(var(--callout-color),.36),rgba(var(--callout-color),.14));
+  border-bottom:2px solid rgba(var(--callout-color),.6);
+}
+.callout.is-collapsed > .callout-title { border-bottom:0; }
+.callout-icon svg { filter:drop-shadow(0 1px 1px rgba(0,0,0,.4)); }
+.callout[data-callout="note"]     { --callout-color:95,168,150; }
+.callout[data-callout="info"]     { --callout-color:110,170,190; }
+.callout[data-callout="todo"]     { --callout-color:110,170,190; }
+.callout[data-callout="abstract"], .callout[data-callout="summary"], .callout[data-callout="tldr"] { --callout-color:95,168,150; }
+.callout[data-callout="tip"], .callout[data-callout="hint"], .callout[data-callout="important"] { --callout-color:232,184,90; }
+.callout[data-callout="question"], .callout[data-callout="help"], .callout[data-callout="faq"] { --callout-color:200,146,58; }
+.callout[data-callout="success"], .callout[data-callout="check"], .callout[data-callout="done"] { --callout-color:120,170,110; }
+.callout[data-callout="warning"], .callout[data-callout="caution"], .callout[data-callout="attention"] { --callout-color:214,130,58; }
+.callout[data-callout="failure"], .callout[data-callout="fail"], .callout[data-callout="missing"],
+.callout[data-callout="danger"], .callout[data-callout="error"], .callout[data-callout="bug"] { --callout-color:196,84,58; }
+.callout[data-callout="example"]  { --callout-color:150,120,170; }
+.callout[data-callout="quote"], .callout[data-callout="cite"] { --callout-color:169,178,173; }
+/* 自訂類型：> [!gear] 黃銅齒輪   > [!time] 計時   > [!steam] 蒸氣 */
+.callout[data-callout="gear"]  { --callout-color:200,146,58;  --callout-icon:lucide-cog; }
+.callout[data-callout="time"]  { --callout-color:95,168,150;  --callout-icon:lucide-timer; }
+.callout[data-callout="steam"] { --callout-color:169,178,173; --callout-icon:lucide-cloud; }
+
+/* ---------- 8. 表格 → 打孔紙帶帳本 ---------- */
+body {
+  --table-border-width:1px; --table-border-color:var(--sp-brass-lo);
+  --table-header-background:transparent; --table-header-color:var(--sp-brass-hi); --table-header-weight:700;
+}
+.markdown-rendered table, .markdown-source-view.mod-cm6 .cm-table-widget table {
+  border-collapse:separate; border-spacing:0; overflow:hidden;
+  border:2px solid var(--sp-brass-lo); border-radius:6px; box-shadow:0 3px 10px var(--sp-shadow);
+}
+.markdown-rendered th, .markdown-source-view.mod-cm6 .cm-table-widget th {
+  position:relative; font-family:var(--sp-font-head); text-align:left; letter-spacing:.04em;
+  color:var(--sp-brass-hi); text-shadow:0 1px 0 #000;
+  background:linear-gradient(to bottom,#3b2a1a,#1b130d);
+  box-shadow:inset 0 1px 0 rgba(232,184,90,.35);
+  border:0; border-bottom:3px double var(--sp-brass); border-right:1px solid rgba(122,85,36,.6);
+  padding:.55em 1.2em;
+}
+.markdown-rendered th:last-child, .markdown-source-view.mod-cm6 .cm-table-widget th:last-child { border-right:0; }
+.markdown-rendered td, .markdown-source-view.mod-cm6 .cm-table-widget td {
+  border:0; border-bottom:1px dashed rgba(122,85,36,.55); border-right:1px solid rgba(122,85,36,.3); padding:.45em 1em;
+}
+.markdown-rendered td:last-child, .markdown-source-view.mod-cm6 .cm-table-widget td:last-child { border-right:0; }
+.markdown-rendered tbody tr:last-child td, .markdown-source-view.mod-cm6 .cm-table-widget tbody tr:last-child td { border-bottom:0; }
+.markdown-rendered th:first-child, .markdown-rendered td:first-child,
+.markdown-source-view.mod-cm6 .cm-table-widget th:first-child, .markdown-source-view.mod-cm6 .cm-table-widget td:first-child { padding-left:2.3em; }
+.markdown-rendered td:first-child, .markdown-source-view.mod-cm6 .cm-table-widget td:first-child {
+  font-weight:600;
+  background:
+    radial-gradient(circle at 13px 50%,#0a0705 0 3px,var(--sp-copper) 3.5px 4.6px,transparent 5.2px) no-repeat,
+    linear-gradient(90deg,rgba(192,105,58,.16),transparent 80%);
+}
+.markdown-rendered th:first-child::before {
+  content:""; position:absolute; left:6px; top:50%; width:17px; height:17px; transform:translateY(-50%);
+  background:var(--sp-brass-hi); -webkit-mask:var(--sp-gear) center / contain no-repeat; mask:var(--sp-gear) center / contain no-repeat;
+}
+.markdown-rendered tbody tr:nth-child(even) td { background-color:rgba(200,146,58,.06); }
+.markdown-rendered tbody tr:hover td { background-color:rgba(95,168,150,.13); }
+
+/* ---------- 9. 代碼塊：控制台面板（頂部指示燈 + 左側行號槽） ---------- */
+body {
+  --code-normal:#d8c9a6; --code-comment:#7b6d55; --code-function:#e8b85a; --code-keyword:#c0693a;
+  --code-string:#7fc0ae; --code-value:#d98a5f; --code-property:#9bc4d0; --code-tag:#c0693a;
+  --code-important:#e06a4a; --code-punctuation:#8f8168; --code-size:.9em;
+  --sp-lh:1.65; --sp-strip:28px; --sp-gutter-w:3.4em;
+}
+.markdown-rendered code {
+  font-family:var(--sp-font-code); background:rgba(200,146,58,.14); border:1px solid var(--sp-brass-lo);
+  border-radius:3px; padding:.05em .35em; color:var(--sp-brass-hi);
+}
+.markdown-rendered pre {
+  position:relative; font-family:var(--sp-font-code); font-size:var(--code-size); line-height:var(--sp-lh);
+  padding:calc(var(--sp-strip) + .9em) 1.2em .9em calc(var(--sp-gutter-w) + 1em);
+  border:2px solid var(--sp-brass-lo); border-radius:8px; overflow-x:auto;
+  background:
+    radial-gradient(circle at 16px 14px,var(--sp-copper) 0 4.5px,transparent 5.2px),
+    radial-gradient(circle at 34px 14px,var(--sp-brass-hi) 0 4.5px,transparent 5.2px),
+    radial-gradient(circle at 52px 14px,var(--sp-verdigris) 0 4.5px,transparent 5.2px),
+    linear-gradient(to bottom,#4a3219,#2a1c10) top / 100% var(--sp-strip) no-repeat,
+    var(--code-background);
+  box-shadow:inset 0 0 28px rgba(0,0,0,.5),0 3px 10px var(--sp-shadow);
+}
+.markdown-rendered pre::before {
+  content:"1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20\A 21\A 22\A 23\A 24\A 25\A 26\A 27\A 28\A 29\A 30\A 31\A 32\A 33\A 34\A 35\A 36\A 37\A 38\A 39\A 40\A 41\A 42\A 43\A 44\A 45\A 46\A 47\A 48\A 49\A 50\A 51\A 52\A 53\A 54\A 55\A 56\A 57\A 58\A 59\A 60\A 61\A 62\A 63\A 64\A 65\A 66\A 67\A 68\A 69\A 70\A 71\A 72\A 73\A 74\A 75\A 76\A 77\A 78\A 79\A 80\A 81\A 82\A 83\A 84\A 85\A 86\A 87\A 88\A 89\A 90\A 91\A 92\A 93\A 94\A 95\A 96\A 97\A 98\A 99\A 100\A 101\A 102\A 103\A 104\A 105\A 106\A 107\A 108\A 109\A 110\A 111\A 112\A 113\A 114\A 115\A 116\A 117\A 118\A 119\A 120\A 121\A 122\A 123\A 124\A 125\A 126\A 127\A 128\A 129\A 130\A 131\A 132\A 133\A 134\A 135\A 136\A 137\A 138\A 139\A 140\A 141\A 142\A 143\A 144\A 145\A 146\A 147\A 148\A 149\A 150\A 151\A 152\A 153\A 154\A 155\A 156\A 157\A 158\A 159\A 160\A 161\A 162\A 163\A 164\A 165\A 166\A 167\A 168\A 169\A 170\A 171\A 172\A 173\A 174\A 175\A 176\A 177\A 178\A 179\A 180\A 181\A 182\A 183\A 184\A 185\A 186\A 187\A 188\A 189\A 190\A 191\A 192\A 193\A 194\A 195\A 196\A 197\A 198\A 199\A 200\A 201\A 202\A 203\A 204\A 205\A 206\A 207\A 208\A 209\A 210\A 211\A 212\A 213\A 214\A 215\A 216\A 217\A 218\A 219\A 220\A 221\A 222\A 223\A 224\A 225\A 226\A 227\A 228\A 229\A 230\A 231\A 232\A 233\A 234\A 235\A 236\A 237\A 238\A 239\A 240\A 241\A 242\A 243\A 244\A 245\A 246\A 247\A 248\A 249\A 250\A 251\A 252\A 253\A 254\A 255\A 256\A 257\A 258\A 259\A 260\A 261\A 262\A 263\A 264\A 265\A 266\A 267\A 268\A 269\A 270\A 271\A 272\A 273\A 274\A 275\A 276\A 277\A 278\A 279\A 280\A 281\A 282\A 283\A 284\A 285\A 286\A 287\A 288\A 289\A 290\A 291\A 292\A 293\A 294\A 295\A 296\A 297\A 298\A 299\A 300\A 301\A 302\A 303\A 304\A 305\A 306\A 307\A 308\A 309\A 310\A 311\A 312\A 313\A 314\A 315\A 316\A 317\A 318\A 319\A 320\A 321\A 322\A 323\A 324\A 325\A 326\A 327\A 328\A 329\A 330\A 331\A 332\A 333\A 334\A 335\A 336\A 337\A 338\A 339\A 340\A 341\A 342\A 343\A 344\A 345\A 346\A 347\A 348\A 349\A 350\A 351\A 352\A 353\A 354\A 355\A 356\A 357\A 358\A 359\A 360\A 361\A 362\A 363\A 364\A 365\A 366\A 367\A 368\A 369\A 370\A 371\A 372\A 373\A 374\A 375\A 376\A 377\A 378\A 379\A 380\A 381\A 382\A 383\A 384\A 385\A 386\A 387\A 388\A 389\A 390\A 391\A 392\A 393\A 394\A 395\A 396\A 397\A 398\A 399\A 400\A 401\A 402\A 403\A 404\A 405\A 406\A 407\A 408\A 409\A 410\A 411\A 412\A 413\A 414\A 415\A 416\A 417\A 418\A 419\A 420\A 421\A 422\A 423\A 424\A 425\A 426\A 427\A 428\A 429\A 430\A 431\A 432\A 433\A 434\A 435\A 436\A 437\A 438\A 439\A 440\A 441\A 442\A 443\A 444\A 445\A 446\A 447\A 448\A 449\A 450\A 451\A 452\A 453\A 454\A 455\A 456\A 457\A 458\A 459\A 460\A 461\A 462\A 463\A 464\A 465\A 466\A 467\A 468\A 469\A 470\A 471\A 472\A 473\A 474\A 475\A 476\A 477\A 478\A 479\A 480\A 481\A 482\A 483\A 484\A 485\A 486\A 487\A 488\A 489\A 490\A 491\A 492\A 493\A 494\A 495\A 496\A 497\A 498\A 499\A 500\A";
+  position:absolute; left:0; top:var(--sp-strip); bottom:0; width:var(--sp-gutter-w); box-sizing:border-box;
+  padding:.9em .8em 0 0; overflow:hidden; white-space:pre; text-align:right;
+  font-size:1em; line-height:var(--sp-lh); color:var(--sp-brass-lo);
+  background:var(--sp-gutter); border-right:2px dashed rgba(122,85,36,.7); user-select:none; pointer-events:none;
+}
+.markdown-rendered pre code { display:block; background:none; border:0; padding:0; white-space:pre; font-size:1em; line-height:var(--sp-lh); color:var(--code-normal); }
+.markdown-rendered .code-block-flair {
+  top:0; right:0; height:var(--sp-strip); display:flex; align-items:center; padding:0 14px;
+  background:none; font-family:var(--sp-font-head); font-size:.72em; letter-spacing:.08em; color:var(--sp-brass-hi);
+}
+.markdown-rendered .copy-code-button { top:1px; color:var(--sp-brass); }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  position:relative; font-family:var(--sp-font-code); background:var(--code-background);
+  padding-left:calc(var(--sp-gutter-w) + 1em) !important; padding-right:1em;
+  border-left:2px solid var(--sp-brass-lo); border-right:2px solid var(--sp-brass-lo);
+}
+.markdown-source-view.mod-cm6 .HyperMD-codeblock::before {
+  content:""; position:absolute; left:0; top:0; bottom:0; width:var(--sp-gutter-w); box-sizing:border-box;
+  padding-right:.8em; text-align:right; color:var(--sp-brass-lo);
+  background:var(--sp-gutter); border-right:2px dashed rgba(122,85,36,.7); user-select:none; pointer-events:none;
+}
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin { counter-reset:sp-line; }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) { counter-increment:sp-line; }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end)::before { content:counter(sp-line); }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin, .markdown-source-view.mod-cm6 .HyperMD-codeblock-end { background:linear-gradient(to bottom,#4a3219,#2a1c10); color:var(--sp-brass-hi); }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin { border-top:2px solid var(--sp-brass-lo); border-radius:8px 8px 0 0; }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-end { border-bottom:2px solid var(--sp-brass-lo); border-radius:0 0 8px 8px; }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin::before, .markdown-source-view.mod-cm6 .HyperMD-codeblock-end::before { background:rgba(0,0,0,.28); }
+
+/* ---------- 10. 任務清單：機械錶面複選框 ---------- */
+body {
+  --checkbox-size:18px; --checkbox-radius:50%;
+  --checkbox-color:var(--sp-brass); --checkbox-color-hover:var(--sp-brass-hi);
+  --checkbox-border-color:var(--sp-brass); --checkbox-border-color-hover:var(--sp-brass-hi);
+  --checkbox-marker-color:var(--sp-ink-on-brass);
+}
+input[type="checkbox"] {
+  border:2px solid var(--sp-brass);
+  background:
+    radial-gradient(circle,var(--background-primary) 0 54%,transparent 56%),
+    repeating-conic-gradient(from 0deg,var(--sp-brass) 0 3deg,transparent 3deg 30deg);
+  box-shadow:inset 0 0 0 1px var(--sp-brass-lo),0 1px 3px var(--sp-shadow);
+}
+input[type="checkbox"]:checked {
+  background:
+    radial-gradient(circle,var(--sp-brass) 0 54%,transparent 56%),
+    repeating-conic-gradient(from 0deg,var(--sp-brass-hi) 0 3deg,transparent 3deg 30deg);
+}
+input[type="checkbox"]:checked::after {
+  background-color:var(--sp-ink-on-brass);
+  -webkit-mask:var(--sp-needle) center / 80% no-repeat; mask:var(--sp-needle) center / 80% no-repeat;
+  transform:rotate(60deg);
+}
+.markdown-rendered .task-list-item.is-checked > p, .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] { color:var(--text-faint); }
+
+/* ---------- 11. 外框：分頁、側欄、捲軸 ---------- */
+.workspace-tab-header.is-active { border-top:2px solid var(--sp-brass-hi); box-shadow:0 -2px 8px rgba(232,184,90,.18); }
+.workspace-tab-header-inner-title { font-family:var(--sp-font-head); letter-spacing:.02em; }
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle { background:linear-gradient(to right,var(--sp-brass-lo),var(--sp-copper),var(--sp-brass-lo)); width:3px; }
+.view-header-title { font-family:var(--sp-font-head); font-weight:700; letter-spacing:.06em; color:var(--sp-brass-hi); text-shadow:0 1px 0 var(--sp-shadow); }
+.status-bar { background:var(--background-secondary); border-top:2px solid var(--sp-brass-lo); }
+.modal, .menu, .suggestion-container, .prompt { border:2px solid var(--sp-brass-lo); box-shadow:0 8px 30px var(--sp-shadow); }
+button.mod-cta { background:linear-gradient(to bottom,var(--sp-brass-hi),var(--sp-brass)); border:1px solid var(--sp-brass-lo); font-family:var(--sp-font-head); }
+
+/* 滾動條 → 活塞滑桿：刻度軌道 + 黃銅圓柱滑塊（中間有防滑刻紋） */
+::-webkit-scrollbar { width:16px; height:16px; }
+::-webkit-scrollbar-button { display:none; width:0; height:0; }
+::-webkit-scrollbar-corner { background:var(--background-secondary); }
+::-webkit-scrollbar-track:vertical {
+  background:
+    repeating-linear-gradient(to bottom,var(--sp-brass-lo) 0 1px,transparent 1px 8px) 2px 0 / 3px 100% no-repeat,
+    repeating-linear-gradient(to bottom,var(--sp-brass-lo) 0 1px,transparent 1px 8px) calc(100% - 2px) 0 / 3px 100% no-repeat,
+    linear-gradient(90deg,#0a0705,var(--background-primary-alt) 50%,#0a0705);
+  border-left:1px solid var(--sp-brass-lo);
+}
+::-webkit-scrollbar-track:horizontal {
+  background:
+    repeating-linear-gradient(to right,var(--sp-brass-lo) 0 1px,transparent 1px 8px) 0 2px / 100% 3px no-repeat,
+    repeating-linear-gradient(to right,var(--sp-brass-lo) 0 1px,transparent 1px 8px) 0 calc(100% - 2px) / 100% 3px no-repeat,
+    linear-gradient(to bottom,#0a0705,var(--background-primary-alt) 50%,#0a0705);
+  border-top:1px solid var(--sp-brass-lo);
+}
+::-webkit-scrollbar-thumb { border:2px solid #3a2610; border-radius:4px; box-shadow:inset 0 1px 0 rgba(255,235,180,.45), 0 1px 3px var(--sp-shadow); }
+::-webkit-scrollbar-thumb:vertical {
+  min-height:44px;
+  background:
+    repeating-linear-gradient(to bottom,#3a2610 0 1px,transparent 1px 4px) center / 60% 13px no-repeat,
+    radial-gradient(circle at 50% 6px,#3a2610 1.4px,transparent 2px),
+    radial-gradient(circle at 50% calc(100% - 6px),#3a2610 1.4px,transparent 2px),
+    linear-gradient(90deg,var(--sp-brass-lo),var(--sp-brass-hi) 40%,var(--sp-brass) 60%,var(--sp-brass-lo));
+}
+::-webkit-scrollbar-thumb:horizontal {
+  min-width:44px;
+  background:
+    repeating-linear-gradient(to right,#3a2610 0 1px,transparent 1px 4px) center / 13px 60% no-repeat,
+    radial-gradient(circle at 6px 50%,#3a2610 1.4px,transparent 2px),
+    radial-gradient(circle at calc(100% - 6px) 50%,#3a2610 1.4px,transparent 2px),
+    linear-gradient(to bottom,var(--sp-brass-lo),var(--sp-brass-hi) 40%,var(--sp-brass) 60%,var(--sp-brass-lo));
+}
+::-webkit-scrollbar-thumb:hover { border-color:var(--sp-brass-lo); filter:brightness(1.15); }
+::-webkit-scrollbar-thumb:active { filter:hue-rotate(-12deg) brightness(.95); }
+@media (prefers-reduced-motion:reduce) {
+  .workspace-leaf-content[data-type="markdown"]::before, .workspace-leaf-content[data-type="markdown"]::after { animation:none; }
+  .nav-folder-title .collapse-icon::before, .markdown-rendered h1::before, .markdown-rendered h2::before { transition:none; }
+}
+
+/* ---------- 12. 手機 / 平板適配 ---------- */
+body.is-mobile {
+  --h1-size:1.75em; --h2-size:1.45em; --h3-size:1.25em; --h4-size:1.1em;
+  --checkbox-size:22px;
+  --code-size:.85em; --sp-gutter-w:2.8em; --sp-strip:26px;
+  --callout-title-padding:6px 12px; --callout-content-padding:8px 14px 10px;
+}
+body.is-mobile .markdown-rendered, body.is-mobile .markdown-source-view.mod-cm6 .cm-scroller { font-size:1.05em; line-height:1.7; }
+body.is-mobile .inline-title {
+  font-size:1.7em; letter-spacing:.04em; padding:.35em 1.9em;
+  background-size:20px 20px, 20px 20px, 11px 11px, 11px 11px, 100% 100%;
+  background-position:left 8px center, right 8px center, 6px 6px, calc(100% - 6px) 6px, 0 0;
+}
+body.is-mobile hr { margin:1.6em 0; }
+body.is-mobile .markdown-rendered table { display:block; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+body.is-mobile .markdown-rendered th, body.is-mobile .markdown-rendered td { padding:.4em .7em; }
+body.is-mobile .markdown-rendered th:first-child, body.is-mobile .markdown-rendered td:first-child { padding-left:2em; }
+body.is-mobile .markdown-rendered pre { padding-right:.8em; }
+body.is-mobile .nav-file-title, body.is-mobile .nav-folder-title { padding-top:6px; padding-bottom:6px; }
+body.is-mobile .workspace-leaf-content[data-type="markdown"]::before,
+body.is-mobile .workspace-leaf-content[data-type="markdown"]::after,
+body.is-mobile .workspace-leaf-content[data-type="markdown"] > .view-content::before,
+body.is-mobile .workspace-split.mod-left-split::before, body.is-mobile .workspace-split.mod-left-split::after,
+body.is-mobile .workspace-split.mod-right-split::before { display:none; }
+
+/* ---------- 13. Style Settings 開關對應的 CSS ---------- */
+/* 日月星空規則全部寫在 body.sp-on-sky 底下：沒開啟就不會套用 */
+/* 沒開啟背景動態＝靜止版本（天空停在黃昏、齒輪 / 蒸汽 / 金屬閃光停止） */
+body:not(.sp-motion) .workspace-leaf-content[data-type="markdown"]::before,
+body:not(.sp-motion) .workspace-leaf-content[data-type="markdown"]::after,
+body:not(.sp-motion) .workspace-leaf-content[data-type="markdown"] > .view-content::before,
+body:not(.sp-motion) .workspace-split.mod-left-split::before, body:not(.sp-motion) .workspace-split.mod-left-split::after,
+body:not(.sp-motion) .workspace-split.mod-right-split::before,
+body:not(.sp-motion) .workspace::before, body:not(.sp-motion) .markdown-source-view::after, body:not(.sp-motion) .markdown-reading-view::after { animation:none !important; }
+/* 背景齒輪、捲動齒輪、邊角裝飾、紙張質感 */
+body:not(.sp-on-gears) .workspace-leaf-content[data-type="markdown"]::before,
+body:not(.sp-on-gears) .workspace-leaf-content[data-type="markdown"]::after,
+body:not(.sp-on-gears) .workspace-split.mod-left-split::before, body:not(.sp-on-gears) .workspace-split.mod-left-split::after,
+body:not(.sp-on-gears) .workspace-split.mod-right-split::before { display:none; }
+body:not(.sp-on-scrollgear) .workspace-leaf-content[data-type="markdown"] > .view-content::before { display:none; }
+body:not(.sp-on-parchment) .workspace-leaf-content[data-type="markdown"] > .view-content,
+body:not(.sp-on-parchment) .workspace-split.mod-left-split .workspace-leaf-content,
+body:not(.sp-on-parchment) .workspace-split.mod-right-split .workspace-leaf-content { background-image:none; }
+/* 檔名銘牌 → 一般標題 */
+body:not(.sp-on-nameplate) .inline-title {
+  display:block; text-align:left; letter-spacing:normal; text-shadow:none; color:var(--sp-brass-hi);
+  padding:0; margin:0 0 .4em; border:0; border-radius:0; background:none; box-shadow:none;
+}
+/* 與其他圖標 / 檔案管理插件並用時 */
+body:not(.sp-on-fileicons) .nav-folder-title-content::before, body:not(.sp-on-fileicons) .nav-file-title-content::before { display:none; }
+body:not(.sp-on-cogarrow) .nav-folder-title .collapse-icon svg { display:block; }
+body:not(.sp-on-cogarrow) .nav-folder-title .collapse-icon::before { display:none; }
+body:not(.sp-on-guides) .nav-folder-children::before,
+body:not(.sp-on-guides) .nav-folder-children > .tree-item > .tree-item-self::before,
+body:not(.sp-on-guides) .nav-folder-children > .tree-item > .tree-item-self::after { display:none; }
+
+/* ---------- 14. 併入你上傳的兩個 CSS ---------- */
+/* 14a. 內容欄寬度：預設使用 Obsidian 原本的欄寬；在 Style Settings 開啟「自訂內容欄寬度」才會套用 */
+body.sp-on-linewidth { --file-line-width: var(--sp-line-width, 60rem); }
+
+/* 14b. 蒸氣朋克.css：蒸氣霧氣、鉚釘外框、金屬閃光（都可個別關閉；「關閉所有背景動態」會讓它們停住） */
+.theme-dark  { --sp-steam-rgb:210,210,195; --sp-shine-rgb:255,210,130; --sp-shine-a:.02; }
+.theme-light { --sp-steam-rgb:255,252,240; --sp-shine-rgb:255,255,255; --sp-shine-a:.14; }
+body { --sp-steam-opacity:.8; }
+body.sp-on-steam .workspace::before {
+  content:""; position:fixed; left:-20%; bottom:-10%; width:140%; height:35%; pointer-events:none; z-index:30;
+  background:
+    radial-gradient(ellipse at 20% 50%,rgba(var(--sp-steam-rgb),.07),transparent 30%),
+    radial-gradient(ellipse at 60% 40%,rgba(var(--sp-steam-rgb),.045),transparent 28%),
+    radial-gradient(ellipse at 85% 60%,rgba(var(--sp-steam-rgb),.06),transparent 25%);
+  opacity:var(--sp-steam-opacity); animation:sp-steam 18s ease-in-out infinite alternate;
+}
+@keyframes sp-steam {
+  0%   { transform:translateX(-3%) translateY(5%) scale(1);     opacity:calc(var(--sp-steam-opacity) * .45); }
+  50%  { transform:translateX(3%)  translateY(-3%) scale(1.04); opacity:var(--sp-steam-opacity); }
+  100% { transform:translateX(-2%) translateY(-6%) scale(1.08); opacity:calc(var(--sp-steam-opacity) * .5); }
+}
+.workspace-split.mod-root { position:relative; }
+body.sp-on-frame .workspace-split.mod-root {
+  outline:1px solid color-mix(in srgb,var(--sp-brass) 30%,transparent); outline-offset:-7px;
+}
+body.sp-on-shine :is(.markdown-source-view, .markdown-reading-view) { position:relative; }
+body.sp-on-shine :is(.markdown-source-view, .markdown-reading-view)::after {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(115deg,transparent 0%,transparent 45%,rgba(var(--sp-shine-rgb),var(--sp-shine-a)) 50%,transparent 55%,transparent 100%);
+  background-size:250% 250%; animation:sp-metal-shine 14s linear infinite;
+}
+@keyframes sp-metal-shine { 0% { background-position:200% 0%; } 100% { background-position:-100% 100%; } }
+
+/* 14c. 蒸氣朋克.css：按鈕、標籤、搜尋框、連結、選取色（改用 Obsidian 變數，深淺色主題都適用；可整組關閉） */
+body.sp-on-widgets {
+  --interactive-normal:var(--sp-soot-3); --interactive-hover:var(--sp-soot-2);
+  --background-modifier-form-field:var(--sp-soot-2);
+  --tag-color:var(--sp-brass-hi); --tag-background:var(--sp-soot-3); --tag-border-color:var(--sp-brass-lo);
+  --tag-border-width:1px; --tag-radius:2px;
+}
+body.sp-on-widgets button:not(.clickable-icon):not(.mod-cta) {
+  border:1px solid var(--sp-brass-lo); color:var(--sp-brass-hi);
+  box-shadow:inset 0 1px 0 rgba(255,210,120,.14), 0 2px 4px var(--sp-shadow); transition:all .2s ease;
+}
+body.sp-on-widgets button:not(.clickable-icon):not(.mod-cta):hover {
+  border-color:var(--sp-brass); box-shadow:0 0 10px color-mix(in srgb,var(--sp-brass) 35%,transparent);
+}
+body.sp-on-widgets .search-input-container input { border:1px solid var(--sp-brass-lo); box-shadow:inset 0 0 8px var(--sp-shadow); }
+body.sp-on-widgets .markdown-rendered a:hover, body.sp-on-widgets .cm-hmd-internal-link:hover {
+  text-shadow:0 0 8px color-mix(in srgb,var(--sp-brass-hi) 50%,transparent);
+}
+body.sp-on-widgets ::selection { background:color-mix(in srgb,var(--sp-brass) 38%,transparent); }
+
+/* ---------- 15. 效能預設對主題專屬效果的影響 ---------- */
+body.sp-perf-low .workspace::before, body.sp-perf-auto .workspace::before, body.sp-perf-balanced .workspace::before { display:none; }                       /* 蒸氣霧氣 */
+body.sp-perf-low :is(.markdown-source-view, .markdown-reading-view)::after, body.sp-perf-auto :is(.markdown-source-view, .markdown-reading-view)::after,
+body.sp-perf-balanced :is(.markdown-source-view, .markdown-reading-view)::after { display:none; }                                                          /* 金屬閃光 */
+body.sp-perf-low .workspace-leaf-content[data-type="markdown"] > .view-content::before, body.sp-perf-auto .workspace-leaf-content[data-type="markdown"] > .view-content::before,
+body.sp-perf-balanced .workspace-leaf-content[data-type="markdown"] > .view-content::before { display:none; }                                              /* 捲動連動齒輪 */
+body.sp-perf-low .workspace-leaf-content[data-type="markdown"]::before, body.sp-perf-low .workspace-leaf-content[data-type="markdown"]::after,
+body.sp-perf-auto .workspace-leaf-content[data-type="markdown"]::before, body.sp-perf-auto .workspace-leaf-content[data-type="markdown"]::after { animation:none !important; }

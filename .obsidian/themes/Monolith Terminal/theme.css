@@ -1,0 +1,1618 @@
+/* @settings
+
+name: Monolith Terminal
+id: monolith-terminal
+settings:
+    -
+        id: monolith-themes-section
+        title: Color Scheme / Theme Variant
+        type: heading
+        level: 1
+    -
+        id: monolith-color-scheme
+        title: Terminal Theme
+        description: Select your preferred terminal color scheme
+        type: class-select
+        allowEmpty: false
+        default: scheme-oled
+        options:
+            -
+                label: OLED (Monochrome True Black) [Default]
+                value: scheme-oled
+            -
+                label: Kingsley (Amber Phosphor)
+                value: scheme-kingsley
+            -
+                label: Cyberpunk (Neon Yellow & Cyan)
+                value: scheme-cyberpunk
+            -
+                label: Arasaka (Corporate Crimson & White)
+                value: scheme-arasaka
+            -
+                label: Matrix (Classic Phosphor Green)
+                value: scheme-matrix
+            -
+                label: Cobalt (Deep Electric Ice Blue)
+                value: scheme-cobalt
+*/
+
+/* ============================================
+   MONOLITH TERMINAL — An Obsidian Theme
+   Pure Black Monospaced Terminal Theme
+   ============================================ */
+
+/* ── Font Stack: Pure Iosevka Monospace (Tanpa Pengecualian) ── */
+:root {
+  --font-monospace-theme: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-default: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-monospace-default: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-interface-override: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-text-override: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-monospace-override: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-text: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-interface: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-ui: "Iosevka", "Iosevka Nerd Font", monospace;
+  --inline-title-font: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-editor: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-preview: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-monospace: "Iosevka", "Iosevka Nerd Font", monospace;
+}
+
+:root,
+.theme-dark,
+.theme-light {
+  --font-default: var(--font-monospace-theme);
+  --font-monospace-default: var(--font-monospace-theme);
+  --font-interface-override: var(--font-monospace-theme);
+  --font-text-override: var(--font-monospace-theme);
+  --font-monospace-override: var(--font-monospace-theme);
+  --font-text: var(--font-monospace-theme);
+  --font-interface: var(--font-monospace-theme);
+  --font-ui: var(--font-monospace-theme);
+  --inline-title-font: var(--font-monospace-theme);
+  --font-editor: var(--font-monospace-theme);
+  --font-preview: var(--font-monospace-theme);
+  --font-monospace: var(--font-monospace-theme);
+  --font-text-size: 14px;
+
+  /* Global zero radius for true terminal look */
+  --radius-s: 0px;
+  --radius-m: 0px;
+  --radius-l: 0px;
+  --radius-xl: 0px;
+  --tab-radius: 0px;
+  --tab-radius-active: 0px;
+  --tab-curve: 0px;
+  --clickable-icon-radius: 0px;
+  --icon-stroke: 1.5px;
+
+  /* Global Divider & Wireframe settings */
+  --divider-color: var(--background-modifier-border);
+  --divider-color-hover: var(--text-accent);
+  --divider-width: 1px;
+  --divider-width-hover: 1px;
+  --tab-outline-color: var(--background-modifier-border);
+  --tab-divider-color: var(--background-modifier-border);
+  --titlebar-border-color: var(--background-modifier-border);
+
+  /* Loading & Progress */
+  --loading-spinner-color: var(--text-accent);
+  --spinner-color: var(--text-accent);
+}
+
+/* ============================================
+   1. THEME: OLED (Default - Monochrome True Black)
+   ============================================ */
+:root,
+body.scheme-oled,
+body:not([class*="scheme-"]) {
+  /* Pure black backgrounds */
+  --background-primary: #000000;
+  --background-primary-alt: #000000;
+  --background-secondary: #000000;
+  --background-secondary-alt: #000000;
+  --background-modifier-border: #383838;
+  --background-modifier-border-hover: #666666;
+  --background-modifier-border-focus: #ffffff;
+  --background-modifier-form-field: #080808;
+  --background-modifier-form-field-highlighted: #141414;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.95);
+  --background-modifier-success: #151515;
+  --background-modifier-error: #383838;
+  --background-modifier-error-rgb: 56, 56, 56;
+  --background-modifier-error-hover: #484848;
+  --background-modifier-cover: rgba(0, 0, 0, 0.92);
+
+  /* Monochrome text palette */
+  --text-normal: #ffffff;
+  --text-muted: #aaaaaa;
+  --text-faint: #555555;
+  --text-on-accent: #000000;
+  --text-on-accent-inverted: #ffffff;
+  --text-error: #ffffff;
+  --text-error-hover: #cccccc;
+  --text-success: #ffffff;
+  --text-selection: rgba(255, 255, 255, 0.28);
+  --text-highlight-bg: rgba(255, 255, 255, 0.12);
+  --text-highlight-bg-active: rgba(255, 255, 255, 0.22);
+  --text-accent: #ffffff;
+  --text-accent-hover: #cccccc;
+
+  /* Interactive */
+  --interactive-normal: #0a0a0a;
+  --interactive-hover: #171717;
+  --interactive-accent: #ffffff;
+  --interactive-accent-hovered: #e0e0e0;
+  --interactive-accent-rgb: 255, 255, 255;
+
+  /* Icons */
+  --icon-color: #ffffff;
+  --icon-color-hover: #aaaaaa;
+  --icon-color-focused: #ffffff;
+  --icon-color-active: #ffffff;
+  --icon-opacity: 0.9;
+  --icon-opacity-hover: 1;
+  --icon-opacity-faint: 0.45;
+
+  /* Headings: Crisp Pure White */
+  --h1-color: #ffffff;
+  --h2-color: #eeeeee;
+  --h3-color: #dddddd;
+  --h4-color: #cccccc;
+  --h5-color: #aaaaaa;
+  --h6-color: #777777;
+
+  /* Links */
+  --link-color: #ffffff;
+  --link-color-hover: #cccccc;
+  --link-external-color: #ffffff;
+  --link-external-color-hover: #cccccc;
+  --link-unresolved-color: #777777;
+  --link-unresolved-opacity: 0.75;
+
+  /* Tags */
+  --tag-color: #ffffff;
+  --tag-color-hover: #cccccc;
+  --tag-background: rgba(255, 255, 255, 0.08);
+  --tag-background-hover: rgba(255, 255, 255, 0.16);
+
+  /* Code */
+  --code-normal: #ffffff;
+  --code-background: #121212;
+  --code-border: #383838;
+  --code-comment: #777777;
+  --code-function: #ffffff;
+  --code-keyword: #cccccc;
+  --code-property: #eeeeee;
+  --code-string: #aaaaaa;
+  --code-value: #ffffff;
+  --code-operator: #ffffff;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
+  --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.35);
+
+  /* Dividers & Nav */
+  --divider-color: #383838;
+  --divider-color-hover: #ffffff;
+  --hr-color: #383838;
+  --nav-item-color: #aaaaaa;
+  --nav-item-color-hover: #ffffff;
+  --nav-item-color-active: #ffffff;
+  --nav-item-background-hover: rgba(255, 255, 255, 0.06);
+  --nav-item-background-active: rgba(255, 255, 255, 0.12);
+  --nav-indentation-guide-color: #2e2e2e;
+
+  /* Tabs */
+  --titlebar-background: #000000;
+  --titlebar-background-focused: #000000;
+  --tab-text-color: #aaaaaa;
+  --tab-text-color-focused: #ffffff;
+  --tab-text-color-focused-active: #ffffff;
+  --tab-background-active: #000000;
+
+  /* Blockquote & Table */
+  --blockquote-border-color: #ffffff;
+  --table-header-background: #101010;
+  --table-header-background-hover: #1a1a1a;
+  --table-row-background-hover: rgba(255, 255, 255, 0.04);
+  --table-border-color: #383838;
+
+  /* Checkbox & Modal */
+  --checkbox-color: #ffffff;
+  --checkbox-color-hover: #cccccc;
+  --checklist-done-color: #555555;
+  --modal-background: #000000;
+  --prompt-border-color: #ffffff;
+}
+
+/* ============================================
+   2. THEME: KINGSLEY (Amber Phosphor)
+   ============================================ */
+body.scheme-kingsley {
+  --background-primary: #000000;
+  --background-primary-alt: #000000;
+  --background-secondary: #000000;
+  --background-secondary-alt: #000000;
+  --background-modifier-border: #523b0a;
+  --background-modifier-border-hover: #886214;
+  --background-modifier-border-focus: #ffbb33;
+  --background-modifier-form-field: #080808;
+  --background-modifier-form-field-highlighted: #141414;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.9);
+  --background-modifier-success: #142414;
+  --background-modifier-error: #3a1a1a;
+  --background-modifier-error-rgb: 58, 26, 26;
+  --background-modifier-error-hover: #4a2222;
+  --background-modifier-cover: rgba(0, 0, 0, 0.85);
+
+  /* Amber phosphor text */
+  --text-normal: #ffbb33;
+  --text-muted: #cc8800;
+  --text-faint: #886600;
+  --text-on-accent: #000000;
+  --text-on-accent-inverted: #ffbb33;
+  --text-error: #ff4444;
+  --text-error-hover: #ff6666;
+  --text-success: #ffbb33;
+  --text-selection: rgba(255, 187, 51, 0.22);
+  --text-highlight-bg: rgba(255, 187, 51, 0.15);
+  --text-highlight-bg-active: rgba(255, 187, 51, 0.25);
+  --text-accent: #ffcc44;
+  --text-accent-hover: #ffdd66;
+
+  /* Interactive */
+  --interactive-normal: #080808;
+  --interactive-hover: #141414;
+  --interactive-accent: #ffbb33;
+  --interactive-accent-hovered: #ffcc55;
+  --interactive-accent-rgb: 255, 187, 51;
+
+  /* Icons */
+  --icon-color: #ffbb33;
+  --icon-color-hover: #ffdd66;
+  --icon-color-focused: #ffbb33;
+  --icon-color-active: #ffbb33;
+  --icon-opacity: 0.85;
+  --icon-opacity-hover: 1;
+  --icon-opacity-faint: 0.5;
+
+  /* Headings: bright amber / white-hot */
+  --h1-color: #ffffff;
+  --h2-color: #ffdd66;
+  --h3-color: #ffcc44;
+  --h4-color: #ffbb33;
+  --h5-color: #cc8800;
+  --h6-color: #996600;
+
+  /* Links: cyan stands out against amber */
+  --link-color: #44dddd;
+  --link-color-hover: #66ffff;
+  --link-external-color: #44dddd;
+  --link-external-color-hover: #66ffff;
+  --link-unresolved-color: #ff5555;
+  --link-unresolved-opacity: 0.8;
+  --link-decoration: underline;
+  --link-external-decoration: underline;
+
+  /* Tags */
+  --tag-color: #44dddd;
+  --tag-color-hover: #66ffff;
+  --tag-background: rgba(68, 221, 221, 0.08);
+  --tag-background-hover: rgba(68, 221, 221, 0.15);
+
+  /* Code */
+  --code-normal: #ffcc44;
+  --code-background: #131313;
+  --code-border: #523b0a;
+  --code-comment: #9e8455;
+  --code-function: #5ccfe6;
+  --code-keyword: #ff6b8b;
+  --code-property: #ffbb33;
+  --code-string: #a6e22e;
+  --code-value: #f0a500;
+  --code-operator: #ffbb33;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(255, 187, 51, 0.15);
+  --scrollbar-active-thumb-bg: rgba(255, 187, 51, 0.3);
+
+  /* Dividers & Nav */
+  --divider-color: #523b0a;
+  --divider-color-hover: #ffbb33;
+  --hr-color: #523b0a;
+
+  /* Nav / file explorer */
+  --nav-item-color: #cc8800;
+  --nav-item-color-hover: #ffbb33;
+  --nav-item-color-active: #ffbb33;
+  --nav-item-background-hover: rgba(255, 187, 51, 0.06);
+  --nav-item-background-active: rgba(255, 187, 51, 0.12);
+  --nav-indentation-guide-color: #3a2806;
+
+  /* Title bar / tabs */
+  --titlebar-background: #000000;
+  --titlebar-background-focused: #000000;
+  --tab-text-color: #cc8800;
+  --tab-text-color-focused: #ffbb33;
+  --tab-text-color-focused-active: #ffbb33;
+  --tab-background-active: #000000;
+
+  /* Blockquote */
+  --blockquote-border-color: #cc8800;
+
+  /* Table */
+  --table-header-background: #0c0c0c;
+  --table-header-background-hover: #161616;
+  --table-row-background-hover: rgba(255, 187, 51, 0.04);
+  --table-border-color: #523b0a;
+
+  /* Checkbox */
+  --checkbox-color: #ffbb33;
+  --checkbox-color-hover: #ffcc55;
+  --checklist-done-color: #886600;
+
+  /* Modal / Prompt / Menu */
+  --modal-background: #000000;
+  --prompt-border-color: #ffbb33;
+}
+
+/* ============================================
+   2. THEME: CYBERPUNK (Neon Yellow & Cyan)
+   ============================================ */
+body.scheme-cyberpunk {
+  --background-primary: #000000;
+  --background-primary-alt: #000000;
+  --background-secondary: #000000;
+  --background-secondary-alt: #000000;
+  --background-modifier-border: #524c06;
+  --background-modifier-border-hover: #00f0ff;
+  --background-modifier-border-focus: #fcee0a;
+  --background-modifier-form-field: #0a0a0d;
+  --background-modifier-form-field-highlighted: #14141a;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.95);
+  --background-modifier-success: #0d2822;
+  --background-modifier-error: #450c1c;
+  --background-modifier-error-rgb: 69, 12, 28;
+  --background-modifier-error-hover: #5a1226;
+  --background-modifier-cover: rgba(0, 0, 0, 0.88);
+
+  /* Cyberpunk text palette */
+  --text-normal: #fcee0a;
+  --text-muted: #c4ba05;
+  --text-faint: #7a7403;
+  --text-on-accent: #000000;
+  --text-on-accent-inverted: #fcee0a;
+  --text-error: #ff0055;
+  --text-error-hover: #ff3377;
+  --text-success: #00f0ff;
+  --text-selection: rgba(0, 240, 255, 0.25);
+  --text-highlight-bg: rgba(252, 238, 10, 0.15);
+  --text-highlight-bg-active: rgba(0, 240, 255, 0.25);
+  --text-accent: #00f0ff;
+  --text-accent-hover: #33f3ff;
+
+  /* Interactive */
+  --interactive-normal: #09090c;
+  --interactive-hover: #16161d;
+  --interactive-accent: #fcee0a;
+  --interactive-accent-hovered: #fff238;
+  --interactive-accent-rgb: 252, 238, 10;
+
+  /* Icons */
+  --icon-color: #fcee0a;
+  --icon-color-hover: #00f0ff;
+  --icon-color-focused: #00f0ff;
+  --icon-color-active: #00f0ff;
+  --icon-opacity: 0.85;
+  --icon-opacity-hover: 1;
+  --icon-opacity-faint: 0.45;
+
+  /* Headings: Cyber neon */
+  --h1-color: #00f0ff;
+  --h2-color: #fcee0a;
+  --h3-color: #ff0055;
+  --h4-color: #00f0ff;
+  --h5-color: #fcee0a;
+  --h6-color: #c4ba05;
+
+  /* Links */
+  --link-color: #ff0055;
+  --link-color-hover: #ff3377;
+  --link-external-color: #ff0055;
+  --link-external-color-hover: #ff3377;
+  --link-unresolved-color: #ff0055;
+  --link-unresolved-opacity: 0.85;
+
+  /* Tags */
+  --tag-color: #00f0ff;
+  --tag-color-hover: #33f3ff;
+  --tag-background: rgba(0, 240, 255, 0.08);
+  --tag-background-hover: rgba(0, 240, 255, 0.18);
+
+  /* Code */
+  --code-normal: #00f0ff;
+  --code-background: #111116;
+  --code-border: #524c06;
+  --code-comment: #7a7403;
+  --code-function: #fcee0a;
+  --code-keyword: #ff0055;
+  --code-property: #00f0ff;
+  --code-string: #00ff66;
+  --code-value: #fcee0a;
+  --code-operator: #ff0055;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(0, 240, 255, 0.15);
+  --scrollbar-active-thumb-bg: rgba(0, 240, 255, 0.35);
+
+  /* Dividers & Nav */
+  --divider-color: #524c06;
+  --divider-color-hover: #00f0ff;
+  --hr-color: #524c06;
+  --nav-item-color: #c4ba05;
+  --nav-item-color-hover: #00f0ff;
+  --nav-item-color-active: #fcee0a;
+  --nav-item-background-hover: rgba(0, 240, 255, 0.06);
+  --nav-item-background-active: rgba(252, 238, 10, 0.1);
+  --nav-indentation-guide-color: #3d3905;
+
+  /* Tabs */
+  --titlebar-background: #000000;
+  --titlebar-background-focused: #000000;
+  --tab-text-color: #c4ba05;
+  --tab-text-color-focused: #00f0ff;
+  --tab-text-color-focused-active: #fcee0a;
+  --tab-background-active: #000000;
+
+  /* Blockquote & Table */
+  --blockquote-border-color: #00f0ff;
+  --table-header-background: #0d0d12;
+  --table-header-background-hover: #15151c;
+  --table-row-background-hover: rgba(0, 240, 255, 0.04);
+  --table-border-color: #524c06;
+
+  /* Checkbox & Modal */
+  --checkbox-color: #00f0ff;
+  --checkbox-color-hover: #33f3ff;
+  --checklist-done-color: #7a7403;
+  --modal-background: #000000;
+  --prompt-border-color: #00f0ff;
+}
+
+/* ============================================
+   3. THEME: ARASAKA (Corporate Crimson & White)
+   ============================================ */
+body.scheme-arasaka {
+  --background-primary: #000000;
+  --background-primary-alt: #000000;
+  --background-secondary: #000000;
+  --background-secondary-alt: #000000;
+  --background-modifier-border: #5c0f1b;
+  --background-modifier-border-hover: #ff003c;
+  --background-modifier-border-focus: #ff003c;
+  --background-modifier-form-field: #0a0808;
+  --background-modifier-form-field-highlighted: #171112;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.95);
+  --background-modifier-success: #0d2613;
+  --background-modifier-error: #4d0a15;
+  --background-modifier-error-rgb: 77, 10, 21;
+  --background-modifier-error-hover: #610d1c;
+  --background-modifier-cover: rgba(0, 0, 0, 0.9);
+
+  /* Arasaka text palette */
+  --text-normal: #ffffff;
+  --text-muted: #a0a0a0;
+  --text-faint: #555555;
+  --text-on-accent: #ffffff;
+  --text-on-accent-inverted: #ff003c;
+  --text-error: #ff003c;
+  --text-error-hover: #ff3366;
+  --text-success: #ffffff;
+  --text-selection: rgba(255, 0, 60, 0.28);
+  --text-highlight-bg: rgba(255, 0, 60, 0.16);
+  --text-highlight-bg-active: rgba(255, 0, 60, 0.28);
+  --text-accent: #ff003c;
+  --text-accent-hover: #ff3366;
+
+  /* Interactive */
+  --interactive-normal: #0d0809;
+  --interactive-hover: #1a0f11;
+  --interactive-accent: #ff003c;
+  --interactive-accent-hovered: #ff2a5e;
+  --interactive-accent-rgb: 255, 0, 60;
+
+  /* Icons */
+  --icon-color: #ff003c;
+  --icon-color-hover: #ffffff;
+  --icon-color-focused: #ff003c;
+  --icon-color-active: #ffffff;
+  --icon-opacity: 0.85;
+  --icon-opacity-hover: 1;
+  --icon-opacity-faint: 0.45;
+
+  /* Headings: Crisp Crimson & Monochromatic White */
+  --h1-color: #ff003c;
+  --h2-color: #ffffff;
+  --h3-color: #ff2a5e;
+  --h4-color: #e0e0e0;
+  --h5-color: #a0a0a0;
+  --h6-color: #666666;
+
+  /* Links */
+  --link-color: #ff003c;
+  --link-color-hover: #ffffff;
+  --link-external-color: #ff003c;
+  --link-external-color-hover: #ffffff;
+  --link-unresolved-color: #888888;
+  --link-unresolved-opacity: 0.8;
+
+  /* Tags */
+  --tag-color: #ff003c;
+  --tag-color-hover: #ffffff;
+  --tag-background: rgba(255, 0, 60, 0.08);
+  --tag-background-hover: rgba(255, 0, 60, 0.18);
+
+  /* Code */
+  --code-normal: #ffffff;
+  --code-background: #110d0e;
+  --code-border: #5c0f1b;
+  --code-comment: #804048;
+  --code-function: #ff2a5e;
+  --code-keyword: #ff003c;
+  --code-property: #ffffff;
+  --code-string: #d1d1d1;
+  --code-value: #ff003c;
+  --code-operator: #ff003c;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(255, 0, 60, 0.15);
+  --scrollbar-active-thumb-bg: rgba(255, 0, 60, 0.35);
+
+  /* Dividers & Nav */
+  --divider-color: #5c0f1b;
+  --divider-color-hover: #ff003c;
+  --hr-color: #5c0f1b;
+  --nav-item-color: #a0a0a0;
+  --nav-item-color-hover: #ffffff;
+  --nav-item-color-active: #ff003c;
+  --nav-item-background-hover: rgba(255, 0, 60, 0.06);
+  --nav-item-background-active: rgba(255, 0, 60, 0.12);
+  --nav-indentation-guide-color: #400a12;
+
+  /* Tabs */
+  --titlebar-background: #000000;
+  --titlebar-background-focused: #000000;
+  --tab-text-color: #a0a0a0;
+  --tab-text-color-focused: #ffffff;
+  --tab-text-color-focused-active: #ff003c;
+  --tab-background-active: #000000;
+
+  /* Blockquote & Table */
+  --blockquote-border-color: #ff003c;
+  --table-header-background: #12090b;
+  --table-header-background-hover: #1c0e11;
+  --table-row-background-hover: rgba(255, 0, 60, 0.04);
+  --table-border-color: #5c0f1b;
+
+  /* Checkbox & Modal */
+  --checkbox-color: #ff003c;
+  --checkbox-color-hover: #ff3366;
+  --checklist-done-color: #555555;
+  --modal-background: #000000;
+  --prompt-border-color: #ff003c;
+}
+
+/* ============================================
+   5. THEME: MATRIX (Classic Phosphor Green)
+   ============================================ */
+body.scheme-matrix {
+  --background-primary: #000000;
+  --background-primary-alt: #000000;
+  --background-secondary: #000000;
+  --background-secondary-alt: #000000;
+  --background-modifier-border: #145926;
+  --background-modifier-border-hover: #33ff66;
+  --background-modifier-border-focus: #33ff66;
+  --background-modifier-form-field: #060d08;
+  --background-modifier-form-field-highlighted: #0e1c12;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.95);
+  --background-modifier-success: #0d2e16;
+  --background-modifier-error: #3a101a;
+  --background-modifier-error-rgb: 58, 16, 26;
+  --background-modifier-error-hover: #4d1522;
+  --background-modifier-cover: rgba(0, 0, 0, 0.88);
+
+  /* Matrix green text palette */
+  --text-normal: #33ff66;
+  --text-muted: #20b845;
+  --text-faint: #106825;
+  --text-on-accent: #000000;
+  --text-on-accent-inverted: #33ff66;
+  --text-error: #ff4466;
+  --text-error-hover: #ff6688;
+  --text-success: #33ff66;
+  --text-selection: rgba(51, 255, 102, 0.25);
+  --text-highlight-bg: rgba(51, 255, 102, 0.15);
+  --text-highlight-bg-active: rgba(51, 255, 102, 0.25);
+  --text-accent: #80ffaa;
+  --text-accent-hover: #b3ffd1;
+
+  /* Interactive */
+  --interactive-normal: #07120a;
+  --interactive-hover: #0f2414;
+  --interactive-accent: #33ff66;
+  --interactive-accent-hovered: #5cff85;
+  --interactive-accent-rgb: 51, 255, 102;
+
+  /* Icons */
+  --icon-color: #33ff66;
+  --icon-color-hover: #80ffaa;
+  --icon-color-focused: #33ff66;
+  --icon-color-active: #80ffaa;
+  --icon-opacity: 0.85;
+  --icon-opacity-hover: 1;
+  --icon-opacity-faint: 0.45;
+
+  /* Headings: Emerald / Lime Phosphor */
+  --h1-color: #ffffff;
+  --h2-color: #80ffaa;
+  --h3-color: #33ff66;
+  --h4-color: #20b845;
+  --h5-color: #106825;
+  --h6-color: #0b4d1b;
+
+  /* Links */
+  --link-color: #a3e635;
+  --link-color-hover: #bef264;
+  --link-external-color: #a3e635;
+  --link-external-color-hover: #bef264;
+  --link-unresolved-color: #ff4466;
+  --link-unresolved-opacity: 0.8;
+
+  /* Tags */
+  --tag-color: #80ffaa;
+  --tag-color-hover: #b3ffd1;
+  --tag-background: rgba(51, 255, 102, 0.08);
+  --tag-background-hover: rgba(51, 255, 102, 0.18);
+
+  /* Code */
+  --code-normal: #80ffaa;
+  --code-background: #09140c;
+  --code-border: #145926;
+  --code-comment: #1f6e35;
+  --code-function: #33ff66;
+  --code-keyword: #a3e635;
+  --code-property: #80ffaa;
+  --code-string: #6ee7b7;
+  --code-value: #33ff66;
+  --code-operator: #80ffaa;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(51, 255, 102, 0.15);
+  --scrollbar-active-thumb-bg: rgba(51, 255, 102, 0.35);
+
+  /* Dividers & Nav */
+  --divider-color: #145926;
+  --divider-color-hover: #33ff66;
+  --hr-color: #145926;
+  --nav-item-color: #20b845;
+  --nav-item-color-hover: #80ffaa;
+  --nav-item-color-active: #33ff66;
+  --nav-item-background-hover: rgba(51, 255, 102, 0.06);
+  --nav-item-background-active: rgba(51, 255, 102, 0.12);
+  --nav-indentation-guide-color: #0e3d1a;
+
+  /* Tabs */
+  --titlebar-background: #000000;
+  --titlebar-background-focused: #000000;
+  --tab-text-color: #20b845;
+  --tab-text-color-focused: #80ffaa;
+  --tab-text-color-focused-active: #33ff66;
+  --tab-background-active: #000000;
+
+  /* Blockquote & Table */
+  --blockquote-border-color: #33ff66;
+  --table-header-background: #0a170d;
+  --table-header-background-hover: #112616;
+  --table-row-background-hover: rgba(51, 255, 102, 0.04);
+  --table-border-color: #145926;
+
+  /* Checkbox & Modal */
+  --checkbox-color: #33ff66;
+  --checkbox-color-hover: #80ffaa;
+  --checklist-done-color: #106825;
+  --modal-background: #000000;
+  --prompt-border-color: #33ff66;
+}
+
+/* ============================================
+   6. THEME: COBALT (Deep Electric Ice Blue)
+   ============================================ */
+body.scheme-cobalt {
+  --background-primary: #000000;
+  --background-primary-alt: #000000;
+  --background-secondary: #000000;
+  --background-secondary-alt: #000000;
+  --background-modifier-border: #144975;
+  --background-modifier-border-hover: #38bdf8;
+  --background-modifier-border-focus: #38bdf8;
+  --background-modifier-form-field: #060b12;
+  --background-modifier-form-field-highlighted: #0e1724;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.95);
+  --background-modifier-success: #0b2e21;
+  --background-modifier-error: #3a0e1c;
+  --background-modifier-error-rgb: 58, 14, 28;
+  --background-modifier-error-hover: #4d1426;
+  --background-modifier-cover: rgba(0, 0, 0, 0.88);
+
+  /* Cobalt blue text palette */
+  --text-normal: #38bdf8;
+  --text-muted: #0284c7;
+  --text-faint: #0369a1;
+  --text-on-accent: #000000;
+  --text-on-accent-inverted: #38bdf8;
+  --text-error: #fb7185;
+  --text-error-hover: #f43f5e;
+  --text-success: #38bdf8;
+  --text-selection: rgba(56, 189, 248, 0.25);
+  --text-highlight-bg: rgba(56, 189, 248, 0.15);
+  --text-highlight-bg-active: rgba(56, 189, 248, 0.25);
+  --text-accent: #7dd3fc;
+  --text-accent-hover: #bae6fd;
+
+  /* Interactive */
+  --interactive-normal: #07101a;
+  --interactive-hover: #0f1f33;
+  --interactive-accent: #38bdf8;
+  --interactive-accent-hovered: #5ecaf9;
+  --interactive-accent-rgb: 56, 189, 248;
+
+  /* Icons */
+  --icon-color: #38bdf8;
+  --icon-color-hover: #7dd3fc;
+  --icon-color-focused: #38bdf8;
+  --icon-color-active: #7dd3fc;
+  --icon-opacity: 0.85;
+  --icon-opacity-hover: 1;
+  --icon-opacity-faint: 0.45;
+
+  /* Headings: Electric Sky Blue */
+  --h1-color: #ffffff;
+  --h2-color: #bae6fd;
+  --h3-color: #38bdf8;
+  --h4-color: #0284c7;
+  --h5-color: #0369a1;
+  --h6-color: #075985;
+
+  /* Links */
+  --link-color: #67e8f9;
+  --link-color-hover: #a5f3fc;
+  --link-external-color: #67e8f9;
+  --link-external-color-hover: #a5f3fc;
+  --link-unresolved-color: #fb7185;
+  --link-unresolved-opacity: 0.8;
+
+  /* Tags */
+  --tag-color: #7dd3fc;
+  --tag-color-hover: #bae6fd;
+  --tag-background: rgba(56, 189, 248, 0.08);
+  --tag-background-hover: rgba(56, 189, 248, 0.18);
+
+  /* Code */
+  --code-normal: #bae6fd;
+  --code-background: #0a121c;
+  --code-border: #144975;
+  --code-comment: #1e4976;
+  --code-function: #38bdf8;
+  --code-keyword: #67e8f9;
+  --code-property: #bae6fd;
+  --code-string: #7dd3fc;
+  --code-value: #38bdf8;
+  --code-operator: #67e8f9;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(56, 189, 248, 0.15);
+  --scrollbar-active-thumb-bg: rgba(56, 189, 248, 0.35);
+
+  /* Dividers & Nav */
+  --divider-color: #144975;
+  --divider-color-hover: #38bdf8;
+  --hr-color: #144975;
+  --nav-item-color: #0284c7;
+  --nav-item-color-hover: #7dd3fc;
+  --nav-item-color-active: #38bdf8;
+  --nav-item-background-hover: rgba(56, 189, 248, 0.06);
+  --nav-item-background-active: rgba(56, 189, 248, 0.12);
+  --nav-indentation-guide-color: #0e3352;
+
+  /* Tabs */
+  --titlebar-background: #000000;
+  --titlebar-background-focused: #000000;
+  --tab-text-color: #0284c7;
+  --tab-text-color-focused: #7dd3fc;
+  --tab-text-color-focused-active: #38bdf8;
+  --tab-background-active: #000000;
+
+  /* Blockquote & Table */
+  --blockquote-border-color: #38bdf8;
+  --table-header-background: #0a1524;
+  --table-header-background-hover: #10233b;
+  --table-row-background-hover: rgba(56, 189, 248, 0.04);
+  --table-border-color: #144975;
+
+  /* Checkbox & Modal */
+  --checkbox-color: #38bdf8;
+  --checkbox-color-hover: #7dd3fc;
+  --checklist-done-color: #0369a1;
+  --modal-background: #000000;
+  --prompt-border-color: #38bdf8;
+}
+
+/* ============================================
+   GLOBAL MONOSPACE TYPOGRAPHY & INTERFACE
+   ============================================ */
+
+/* Force Iosevka monospace on EVERYTHING — strictly no exceptions */
+*,
+*::before,
+*::after,
+html,
+body,
+input,
+button,
+textarea,
+select,
+option,
+optgroup,
+.app-container,
+.workspace,
+.workspace-split,
+.workspace-leaf,
+.workspace-leaf-content,
+.workspace-tabs,
+.workspace-tab-header,
+.markdown-source-view,
+.markdown-reading-view,
+.markdown-preview-view,
+.markdown-preview-view *,
+.markdown-reading-view *,
+.cm-editor,
+.cm-content,
+.cm-line,
+.nav-file-title,
+.nav-folder-title,
+.view-header-title,
+.view-header-breadcrumb,
+.status-bar,
+.tooltip,
+.menu,
+.modal,
+.setting-item,
+.setting-item-name,
+.setting-item-description,
+code,
+pre,
+.cm-inline-code,
+.cm-hmd-codeblock,
+code[class*="language-"],
+pre[class*="language-"],
+.markdown-rendered code,
+.markdown-rendered pre,
+span.cm-inline-code,
+.HyperMD-codeblock,
+.code-block-flair,
+.copy-code-button,
+.callout,
+.callout-title,
+.callout-content,
+.metadata-container,
+.metadata-container *,
+.sync-log-container,
+.sync-log-container *,
+.sync-log-text,
+.sync-log-text *,
+.search-input,
+.prompt,
+.suggestion-container,
+.canvas-node,
+.canvas-card {
+  font-family: "Iosevka", "Iosevka Nerd Font", monospace !important;
+}
+
+/* Clickable icons & navigation arrows visibility */
+.clickable-icon {
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--icon-color);
+  opacity: var(--icon-opacity);
+}
+
+.clickable-icon:hover {
+  color: var(--icon-color-hover) !important;
+  opacity: var(--icon-opacity-hover) !important;
+}
+
+.clickable-icon.is-disabled,
+.clickable-icon[disabled],
+.view-header-nav-buttons .clickable-icon.is-disabled {
+  color: var(--text-faint) !important;
+  opacity: var(--icon-opacity-faint) !important;
+  cursor: default !important;
+}
+
+.view-header-nav-buttons .clickable-icon {
+  color: var(--icon-color);
+}
+
+/* Mobile & containers: clean backgrounds, square corners */
+.view-actions,
+.view-header-nav-buttons,
+.view-header,
+.mobile-navbar,
+.mobile-navbar-actions,
+.workspace-tab-header-container {
+  border-radius: 0 !important;
+}
+
+/* Tab header completely square without curved fillets */
+.workspace-tab-header,
+.workspace-tab-header-inner,
+.workspace-tab-header-inner-title,
+.workspace-tab-header.is-active,
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+  border-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+/* Kill Obsidian's curved tab fillet wings */
+.workspace-tab-header::before,
+.workspace-tab-header::after,
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after,
+.workspace-tab-header-inner::before,
+.workspace-tab-header-inner::after,
+.workspace-tab-header-inner-title::before,
+.workspace-tab-header-inner-title::after {
+  display: none !important;
+  content: none !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Kill pill shapes on toggles */
+.checkbox-container {
+  border-radius: 0 !important;
+}
+
+.checkbox-container::after {
+  border-radius: 0 !important;
+}
+
+/* ── Scanline / CRT effect ── */
+.markdown-reading-view,
+.markdown-source-view {
+  background-color: #000000 !important;
+  background-image: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.25) 2px,
+      rgba(0, 0, 0, 0.25) 4px);
+  background-attachment: local;
+}
+
+/* Pure black application container surfaces */
+.app-container,
+.horizontal-main-container,
+.workspace,
+.workspace-split,
+.workspace-leaf,
+.workspace-tabs,
+.workspace-tab-header-container,
+.workspace-leaf-content,
+.view-content,
+.view-header,
+.side-dock-settings,
+.side-dock-actions {
+  background-color: #000000 !important;
+}
+
+/* ── Headings ── */
+h1,
+.cm-header-1,
+.markdown-rendered h1,
+.inline-title {
+  font-weight: 700 !important;
+  letter-spacing: 2px;
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+h2,
+.cm-header-2,
+.markdown-rendered h2 {
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+}
+
+h3,
+.cm-header-3,
+.markdown-rendered h3 {
+  font-weight: 600 !important;
+}
+
+/* Prompt prefix on headings */
+h1::before,
+.markdown-rendered h1::before {
+  content: "> ";
+  opacity: 0.5;
+}
+
+/* ── Links: always underlined ── */
+a {
+  text-decoration: underline !important;
+}
+
+/* ── Blockquotes ── */
+blockquote,
+.markdown-rendered blockquote {
+  border-left-width: 3px !important;
+  font-style: normal;
+  border-radius: 0 !important;
+  background-color: #060606 !important;
+  border-left-color: var(--blockquote-border-color, #cc8800) !important;
+  border-top: 1px solid var(--background-modifier-border);
+  border-right: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 8px 14px !important;
+  margin: 1em 0;
+}
+
+/* ── Callouts ── */
+.callout {
+  border-radius: 0px !important;
+  padding: 10px 14px !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  background-color: #060606 !important;
+  border-top: 1px solid var(--background-modifier-border) !important;
+  border-right: 1px solid var(--background-modifier-border) !important;
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+  border-left-width: 4px !important;
+  border-left-style: solid !important;
+  border-left-color: rgba(var(--callout-color), 1) !important;
+}
+
+.callout[data-callout="note"],
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+  border-left-color: #0862cb !important;
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+  border-left-color: #44dddd !important;
+}
+
+.callout[data-callout="info"],
+.callout[data-callout="todo"] {
+  border-left-color: #44dddd !important;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+  border-left-color: #ffaa00 !important;
+}
+
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"],
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"] {
+  border-left-color: #ff4444 !important;
+}
+
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+  border-left-color: #44dd66 !important;
+}
+
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+  border-left-color: #e5a00d !important;
+}
+
+.callout[data-callout="example"] {
+  border-left-color: #aa66ff !important;
+}
+
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+  border-left-color: var(--text-muted, #cc8800) !important;
+}
+
+.callout-title {
+  color: rgb(var(--callout-color, var(--interactive-accent-rgb, 255, 187, 51))) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+}
+
+.callout-icon {
+  color: rgb(var(--callout-color, var(--interactive-accent-rgb, 255, 187, 51))) !important;
+}
+
+.callout-content {
+  color: var(--text-normal);
+}
+
+/* ── Code blocks & Inline Code ── */
+pre,
+.markdown-rendered pre {
+  border-radius: 0px !important;
+  padding: 12px 16px !important;
+  background-color: var(--code-background, #131313) !important;
+  border: 1px solid var(--code-border, var(--background-modifier-border)) !important;
+}
+
+/* Ensure individual code lines in Live Preview have clean solid background and NO borders */
+.HyperMD-codeblock,
+.cm-line.HyperMD-codeblock {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  background-color: var(--code-background, #131313) !important;
+}
+
+.cm-s-obsidian .HyperMD-codeblock-bg {
+  background-color: var(--code-background, #131313) !important;
+  border: none !important;
+}
+
+/* Inline Code */
+code:not(pre code),
+.cm-inline-code,
+.markdown-rendered code:not(pre code),
+span.cm-inline-code {
+  background-color: #1a1a1a !important;
+  color: var(--code-normal, #ffcc44) !important;
+  border: 1px solid var(--code-border, var(--background-modifier-border)) !important;
+  border-radius: 0px !important;
+  padding: 2px 6px !important;
+}
+
+/* Code block flair & copy button */
+.code-block-flair,
+.copy-code-button {
+  background-color: #1a1a1a !important;
+  border: 1px solid var(--code-border, var(--background-modifier-border)) !important;
+  color: var(--text-normal, #ffbb33) !important;
+  border-radius: 0px !important;
+}
+
+.code-block-flair:hover,
+.copy-code-button:hover {
+  background-color: #262626 !important;
+  color: #ffffff !important;
+  border-color: var(--text-accent, #ffbb33) !important;
+}
+
+/* Remove indent guide lines in code blocks and editor */
+.cm-indent,
+.cm-indent-guide,
+.cm-indent-guide::before,
+.cm-indent-guide::after,
+.cm-line .cm-indent,
+.cm-line .cm-indent::before,
+.cm-line .cm-indent::after,
+.HyperMD-codeblock .cm-indent,
+.HyperMD-codeblock .cm-indent-guide,
+.HyperMD-codeblock .cm-indent-guide::before,
+.HyperMD-codeblock .cm-indent-guide::after,
+.HyperMD-codeblock .cm-line .cm-indent,
+.cm-embed-block .cm-indent,
+.cm-embed-block .cm-indent-guide,
+.cm-embed-block .cm-indent-guide::before,
+.cm-embed-block .cm-indent-guide::after,
+pre .cm-indent,
+pre .cm-indent-guide,
+pre .indent-guide {
+  display: none !important;
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  opacity: 0 !important;
+  width: 0 !important;
+}
+
+/* ── Embeds (Markdown / Internal) ── */
+.markdown-embed,
+.internal-embed,
+.file-embed {
+  background-color: #050505 !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 0px !important;
+}
+
+/* ── HR ── */
+hr,
+.markdown-rendered hr {
+  border: none;
+  border-top: 1px solid var(--hr-color);
+  opacity: 0.4;
+}
+
+/* ── Cursor: block-style terminal ── */
+.cm-cursor,
+.cm-cursor-primary {
+  border-left-width: 0.6em !important;
+  opacity: 0.7;
+  border-color: var(--text-accent, #ffbb33) !important;
+  animation: terminal-blink 1s step-end infinite;
+}
+
+@keyframes terminal-blink {
+
+  0%,
+  49% {
+    opacity: 0.8;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ── Scrollbars ── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border: 1px solid var(--background-modifier-border);
+}
+
+/* ── Inputs & Buttons ── */
+input[type="text"],
+input[type="search"],
+textarea,
+.search-input {
+  background-color: var(--background-modifier-form-field) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  color: var(--text-normal) !important;
+  border-radius: 0 !important;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+.search-input:focus {
+  border-color: var(--text-accent) !important;
+}
+
+button:not(.clickable-icon) {
+  background-color: var(--interactive-normal) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  color: var(--text-normal) !important;
+  border-radius: 0 !important;
+}
+
+button:not(.clickable-icon):hover {
+  background-color: var(--interactive-hover) !important;
+  border-color: var(--text-accent) !important;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--text-selection) !important;
+  color: #ffffff !important;
+}
+
+/* ── Modals, Prompts, Popovers, Suggestions & Menus ── */
+.modal,
+.prompt,
+.menu,
+.suggestion-container,
+.popover,
+.tooltip {
+  background-color: #000000 !important;
+  border: 1px solid var(--prompt-border-color, var(--text-accent)) !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.95), 0 0 10px var(--text-selection) !important;
+  border-radius: 0 !important;
+}
+
+.suggestion-item.is-selected,
+.menu-item:hover,
+.menu-item.is-selected {
+  background-color: var(--text-selection) !important;
+  color: var(--text-normal) !important;
+}
+
+/* ── Tooltip, Popover & Dropdown Pointer Arrows ── */
+.tooltip-arrow,
+.popover-arrow,
+[data-popper-arrow],
+[data-popper-arrow]::before,
+.popover::before,
+.popover::after,
+.tooltip::before,
+.tooltip::after {
+  background-color: var(--prompt-border-color, var(--text-accent)) !important;
+  border-color: var(--prompt-border-color, var(--text-accent)) !important;
+  border-top-color: var(--prompt-border-color, var(--text-accent)) !important;
+  border-bottom-color: var(--prompt-border-color, var(--text-accent)) !important;
+  border-left-color: var(--prompt-border-color, var(--text-accent)) !important;
+  border-right-color: var(--prompt-border-color, var(--text-accent)) !important;
+}
+
+/* ── Loading Spinners & Progress Indicators ── */
+.loading-spinner,
+.spinner,
+svg.spinner,
+.sync-status-icon.is-syncing {
+  color: var(--text-accent) !important;
+  border-color: var(--text-accent) !important;
+  border-top-color: transparent !important;
+}
+
+.loading-spinner circle,
+.spinner circle,
+svg.spinner circle,
+svg.spinner path {
+  stroke: var(--text-accent) !important;
+  color: var(--text-accent) !important;
+}
+
+progress,
+.progress-bar {
+  background-color: #111111 !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 0 !important;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #111111 !important;
+  border-radius: 0 !important;
+}
+
+progress::-webkit-progress-value,
+.progress-bar-indicator,
+.progress-bar-value {
+  background-color: var(--text-accent) !important;
+  box-shadow: 0 0 8px var(--text-accent) !important;
+  border-radius: 0 !important;
+}
+
+/* ── Bold: slight glow ── */
+strong,
+.cm-strong {
+  color: var(--h2-color);
+  text-shadow: 0 0 2px var(--text-selection);
+}
+
+/* Ambient phosphor glow ── */
+.markdown-reading-view p,
+.markdown-source-view .cm-line {
+  text-shadow: 0 0 2px var(--text-selection);
+}
+
+/* ============================================
+   TERMINAL WORKSPACE WIREFRAME & DIVIDERS
+   ============================================ */
+
+/* ── Main Application Window Outer Frame (When Not Maximized) ── */
+body:not(.is-maximized) {
+  border: 1px solid var(--background-modifier-border) !important;
+  box-shadow: 0 0 0 1px #000000, 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 16px var(--text-selection) !important;
+}
+
+body.is-maximized {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Ribbon: Left & Right Dock Bar ── */
+.workspace-ribbon.mod-left {
+  background: #000000 !important;
+  border-right: 1px solid var(--background-modifier-border) !important;
+  border-left: none !important;
+}
+
+.workspace-ribbon.mod-right {
+  background: #000000 !important;
+  border-left: 1px solid var(--background-modifier-border) !important;
+  border-right: none !important;
+}
+
+/* ── Sidebars (Left Split & Right Split) ── */
+.workspace-split.mod-left-split,
+.workspace-sidedock-left {
+  border-right: 1px solid var(--background-modifier-border) !important;
+}
+
+.workspace-split.mod-left-split.is-collapsed,
+.workspace-sidedock-left.is-collapsed {
+  border-right: none !important;
+}
+
+.workspace-split.mod-right-split,
+.workspace-sidedock-right {
+  border-left: 1px solid var(--background-modifier-border) !important;
+}
+
+.workspace-split.mod-right-split.is-collapsed,
+.workspace-sidedock-right.is-collapsed {
+  border-left: none !important;
+}
+
+/* ── Resize Handles & Pane Splitters ── */
+.workspace-leaf-resize-handle {
+  background-color: var(--background-modifier-border) !important;
+  opacity: 1 !important;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sidebar-toggle-button.mod-left {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.clickable-icon.side-dock-ribbon-action {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  display: block !important;
+}
+
+.workspace-leaf-resize-handle:hover,
+.workspace-leaf-resize-handle:active {
+  background-color: var(--divider-color-hover, var(--text-accent)) !important;
+  box-shadow: 0 0 6px var(--text-selection) !important;
+}
+
+/* ── Tab Headers & Container Dividers ── */
+.workspace-tab-header-container {
+  background-color: #000000 !important;
+}
+
+.workspace-tab-header {
+  border: 1px solid transparent !important;
+  background-color: transparent !important;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  border-bottom: none !important;
+}
+
+.workspace-tab-header:hover {
+  border-color: var(--background-modifier-border-hover) !important;
+  color: var(--text-normal) !important;
+  border-bottom: none !important;
+}
+
+.workspace-tab-header.is-active {
+  border: 1px solid var(--background-modifier-border) !important;
+  background-color: #000000 !important;
+  color: var(--text-normal) !important;
+  margin-bottom: -1px;
+  border-bottom: none !important;
+}
+
+/* ── Sidebar Headers & Footers ── */
+.workspace-sidedock-left .workspace-tab-header-container,
+.workspace-sidedock-right .workspace-tab-header-container {
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+.nav-header {
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+/* ── Status Bar ── */
+.status-bar {
+  background: #000000 !important;
+  border-top: 1px solid var(--background-modifier-border) !important;
+  color: var(--text-muted);
+}
+
+/* ── Multi-Pane Splits Inside Main Workspace ── */
+.workspace-split.mod-root .workspace-split.mod-vertical>.workspace-leaf:not(:last-child),
+.workspace-split.mod-root .workspace-split.mod-vertical>.workspace-tabs:not(:last-child) {
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.workspace-split.mod-root .workspace-split.mod-horizontal>.workspace-leaf:not(:last-child),
+.workspace-split.mod-root .workspace-split.mod-horizontal>.workspace-tabs:not(:last-child) {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* ── Checkbox: square ── */
+input[type="checkbox"] {
+  border-radius: 0 !important;
+  border-color: var(--checkbox-color);
+}
+
+/* ── Tables ── */
+table {
+  border-color: var(--table-border-color);
+}
+
+th,
+td {
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+
+/* ── File explorer ── */
+.nav-file-title,
+.nav-folder-title {
+  font-family: "Iosevka", "Iosevka Nerd Font", monospace !important;
+  font-size: 13px;
+}
+
+/* Properties / frontmatter */
+.metadata-container,
+.metadata-container *,
+.metadata-container input,
+.metadata-container textarea,
+.metadata-container select,
+.metadata-container button,
+.metadata-container label,
+.metadata-container .metadata-property-key,
+.metadata-container .metadata-property-value,
+.metadata-container .multi-select-pill,
+.metadata-add-button,
+.metadata-add-button *,
+.sync-log-container,
+.sync-log-container *,
+.sync-log-text,
+.sync-log-text * {
+  font-family: "Iosevka", "Iosevka Nerd Font", monospace !important;
+  --font-interface: "Iosevka", "Iosevka Nerd Font", monospace;
+  --font-text: "Iosevka", "Iosevka Nerd Font", monospace;
+}
+
+.metadata-container {
+  background-color: #000000;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 0;
+}
+
+/* ── Canvas cards ── */
+.canvas-node-container,
+.canvas-card {
+  background-color: #000000 !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 0 !important;
+}
