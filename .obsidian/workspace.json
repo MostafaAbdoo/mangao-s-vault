@@ -41,12 +41,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OS/Lecture 1.md",
+                "file": "OS/Lecture 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 1"
+              "title": "Lecture 4"
+            }
+          },
+          {
+            "id": "01d4a254e497fb9b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DL"
             }
           },
           {
@@ -92,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -167,7 +181,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LP.md",
+                "file": "DL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -237,27 +251,28 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "f15af58e2c1ba10a",
+  "active": "01d4a254e497fb9b",
   "lastOpenFiles": [
-    "Pasted image 20261109061813.png",
-    "OS/Lecture 1.md",
-    "OS/Lecture 6.md",
-    "OS/Lecture 5.md",
+    "Pasted image 20261110082018.png",
+    "Pasted image 20261110081728.png",
+    "Pasted image 20261110081717.png",
+    "Pasted image 20261110080855.png",
+    "Pasted image 20261110080201.png",
+    "Pasted image 20261110075859.png",
+    "Pasted image 20261110075315.png",
+    "Pasted image 20261110072521.png",
+    "Pasted image 20261110065016.png",
+    "Pasted image 20261110062319.png",
     "OS/Lecture 4.md",
+    "DL.md",
+    "OS/Lecture 5.md",
+    "OS/Lecture 6.md",
+    "LP.md",
     "OS/Lecture 3.md",
     "OS/Lecture 2.md",
-    "LP.md",
+    "OS/Lecture 1.md",
+    "Pasted image 20261109061813.png",
     "IP.md",
-    "Pasted image 20261108092209.png",
-    "Pasted image 20261108092154.png",
-    "Pasted image 20261108090018.png",
-    "Pasted image 20261108085232.png",
-    "Pasted image 20261108083433.png",
-    "Pasted image 20261108082641.png",
-    "Pasted image 20261108074825.png",
-    "Pasted image 20261108041351.png",
-    "Pasted image 20261108040447.png",
-    "Pasted image 20261108034248.png",
     "DSP.md",
     "copilot/skills/json-canvas/SKILL.md",
     "copilot/skills/json-canvas/LICENSE",
@@ -284,7 +299,6 @@
     "Spanish/New English Words.md",
     "API Hacking/Broken Object Level Authorization.md",
     "Prolog.md",
-    "Cloud and DevOps/Bash Scripting - Examples.md",
     "Untitled.canvas"
   ]
 }
